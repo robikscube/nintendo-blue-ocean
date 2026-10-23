@@ -5,8 +5,9 @@ import { getCurrentLine } from '../core/state'
 import { Boardroom } from './boardroom'
 import type { AdvisorId } from './character-adapter'
 import { Factory } from './factory'
+import { MuseumExhibit } from './museum-exhibit'
 
-type SceneMode = 'boardroom' | 'factory'
+type SceneMode = 'boardroom' | 'factory' | 'museum'
 type FactoryView = 'wide' | 'reveal'
 type SpeakerId = Exclude<CharacterId, 'narrator'>
 
@@ -88,6 +89,13 @@ export class SceneDirector {
   readonly camera: THREE.PerspectiveCamera
   readonly boardroom = new Boardroom()
   readonly factory = new Factory()
+  readonly museum = new MuseumExhibit()
+  museumTourReady = false
+  onMuseumReady: (() => void) | null = null
+  private museumRunKey = ''
+  private museumTour: gsap.core.Tween | null = null
+  private contextLost = false
+  private readonly museumProgress = { value: 0 }
   readonly reducedMotion: boolean
   private mode: SceneMode = 'boardroom'
   private currentSpeaker: SpeakerId | null = null
@@ -186,6 +194,8 @@ export class SceneDirector {
     this.scene.add(this.boardroom.group)
     this.scene.add(this.factory.group)
     this.factory.group.visible = false
+    this.scene.add(this.museum.group)
+    this.museum.group.visible = false
 
     // Static shadow maps are refreshed only when the set changes. An optional
     // GLB advisor can arrive after startup, so refresh once it swaps in.
@@ -205,10 +215,15 @@ export class SceneDirector {
 
   private handleContextLost = (event: Event): void => {
     event.preventDefault()
+    this.contextLost = true
     this.onContextLost?.()
   }
 
   applyState(state: GameState): void {
+    if (state.phase === 'finale') {
+      this.showMuseum(state)
+      return
+    }
     if (state.phase === 'factory') {
       this.showFactory(state.factoryProgress === 'done' ? 'reveal' : 'wide')
       return
@@ -219,7 +234,8 @@ export class SceneDirector {
   }
 
   showBoardroom(): void {
-    if (this.mode === 'factory') {
+    if (this.mode !== 'boardroom') {
+      this.leaveMuseum()
       this.mode = 'boardroom'
       this.boardroom.group.visible = true
       this.factory.group.visible = false
@@ -236,6 +252,7 @@ export class SceneDirector {
 
   showFactory(view: FactoryView = 'wide'): void {
     if (this.mode !== 'factory') {
+      this.leaveMuseum()
       this.mode = 'factory'
       this.boardroom.group.visible = false
       this.factory.group.visible = true
@@ -254,6 +271,77 @@ export class SceneDirector {
       this.applyCameraPose(this.factoryPose(view === 'reveal' ? FACTORY_REVEAL : FACTORY_WIDE), 0.85)
       this.renderer.shadowMap.needsUpdate = true
     }
+  }
+
+  private showMuseum(state: GameState): void {
+    const key = `${state.sceneRevision}:${JSON.stringify(state.choices)}`
+    if (this.mode === 'museum' && this.museumRunKey === key) return
+    this.mode = 'museum'
+    this.museumRunKey = key
+    this.boardroom.group.visible = false
+    this.factory.group.visible = false
+    this.museum.group.visible = true
+    this.museum.setChoices(state.choices)
+    this.renderer.shadowMap.needsUpdate = true
+    this.currentSpeaker = null
+    this.setSpeakerEmphasis(null)
+    this.setSpeakerCue(false)
+    this.keyLight.intensity = 0.5
+    this.animateEnvironment(new THREE.Color(0x182b25), 0.6)
+    this.replayMuseumTour()
+  }
+
+  private leaveMuseum(): void {
+    this.museumTour?.kill()
+    this.museumTour = null
+    this.museum.group.visible = false
+    this.keyLight.intensity = 2.1
+    const fog = this.scene.fog as THREE.Fog
+    fog.near = 20
+    fog.far = 38
+  }
+
+  replayMuseumTour(): void {
+    if (this.mode !== 'museum') return
+    this.museumTour?.kill()
+    for (const tween of this.cameraTweens) tween.kill()
+    this.cameraTweens = []
+    this.museumTourReady = false
+    this.museumProgress.value = 0
+    this.updateMuseumCamera()
+    if (this.reducedMotion || this.contextLost) {
+      this.skipMuseumTour()
+      return
+    }
+    this.museumTour = gsap.to(this.museumProgress, {
+      value: 1, duration: 4.5, delay: 0.35, ease: 'power2.inOut',
+      onUpdate: () => this.updateMuseumCamera(),
+      onComplete: () => this.skipMuseumTour(),
+    })
+  }
+
+  skipMuseumTour(): void {
+    if (this.mode !== 'museum') return
+    this.museumTour?.kill()
+    this.museumTour = null
+    this.museumProgress.value = 1
+    this.updateMuseumCamera()
+    this.museumTourReady = true
+    this.onMuseumReady?.()
+  }
+
+  private updateMuseumCamera(): void {
+    const t = this.museumProgress.value
+    const pullback = Math.max(1, 1.65 / this.camera.aspect)
+    this.camera.position.set(7 * (1 - t), 8.1 - 4.2 * t, (17 - 4.2 * t) * pullback)
+    this.look.set(0, 2.5 + 0.45 * t, -0.8)
+    this.camera.fov = 38 - 3 * t
+    this.camera.far = Math.max(60, this.camera.position.z + 30)
+    const fog = this.scene.fog as THREE.Fog
+    fog.near = Math.max(20, this.camera.position.z - 4)
+    fog.far = Math.max(38, this.camera.position.z + 24)
+    this.camera.updateProjectionMatrix()
+    this.camera.lookAt(this.look)
   }
 
   /**
@@ -888,6 +976,10 @@ export class SceneDirector {
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.75))
     this.renderer.setSize(width, height)
     this.renderer.shadowMap.needsUpdate = true
+    if (this.mode === 'museum') {
+      this.updateMuseumCamera()
+      return
+    }
     if (this.mode === 'factory') {
       this.applyCameraPose(this.factoryPose(this.factoryView === 'reveal' ? FACTORY_REVEAL : FACTORY_WIDE), 0)
       return
@@ -909,7 +1001,7 @@ export class SceneDirector {
     const delta = Math.min(this.clock.getDelta(), 0.1)
     this.elapsed += delta
     if (this.mode === 'boardroom') this.boardroom.update(this.elapsed, delta)
-    else this.factory.update(this.elapsed, delta)
+    else if (this.mode === 'factory') this.factory.update(this.elapsed, delta)
     this.camera.lookAt(this.look)
     this.renderer.render(this.scene, this.camera)
   }
@@ -917,6 +1009,9 @@ export class SceneDirector {
   getDebugInfo(): Record<string, unknown> {
     return {
       mode: this.mode,
+      museumTourReady: this.museumTourReady,
+      museumProgress: Number(this.museumProgress.value.toFixed(3)),
+      museumConcepts: this.museum.specs.map(spec => spec?.key ?? null),
       factoryView: this.factoryView,
       camera: this.camera.position.toArray().map((value) => Number(value.toFixed(2))),
       look: [this.look.x, this.look.y, this.look.z].map((value) => Number(value.toFixed(2))),
@@ -943,6 +1038,9 @@ export class SceneDirector {
     this.setSpeakerEmphasis(null)
     this.avatarMaterialState.clear()
     this.boardroom.dispose()
+    this.museumTour?.kill()
+    this.onMuseumReady = null
+    this.museum.dispose()
     this.factory.dispose()
     this.renderer.dispose()
   }

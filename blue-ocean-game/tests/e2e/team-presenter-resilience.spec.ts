@@ -1,6 +1,7 @@
 import path from 'node:path'
 import { expect, test, type Page } from '@playwright/test'
 import type { ChoiceId, GameState } from '../../src/core/types'
+import { DECISIONS } from '../../src/core/story'
 
 const DIALOGUE_PHASES = new Set(['opening', 'advisors', 'feedback', 'boss'])
 
@@ -100,7 +101,7 @@ test.describe('presenter controls', () => {
     await expect(page.locator('.voting-screen')).toBeVisible()
     await expect(page.locator('.choice-card')).toHaveCount(3)
     await expect(page.locator('#view')).not.toBeEmpty()
-    await expect(page.getByRole('heading', { name: /Where should the next platform compete/i })).toBeVisible()
+    await expect(page.getByRole('heading', { name: DECISIONS.d1.prompt })).toBeVisible()
 
     await page.screenshot({ path: shotPath('team-presenter-jump-revoted-1920') })
     await page.keyboard.press('1')
@@ -130,7 +131,7 @@ test.describe('presenter controls', () => {
     await page.locator('[data-action="show-finale"]').click()
     await page.keyboard.press('Escape')
     await waitForPhase(page, 'finale')
-    await expect(page.getByRole('heading', { name: 'The sealed archive' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'Nintendo’s turn' })).toBeVisible()
     await page.locator('[data-action="open-archive"]').click()
     await expect(page.locator('.archive-screen')).toBeVisible()
 
@@ -222,7 +223,7 @@ test.describe('checkpoints and reset', () => {
     await page.waitForFunction(() => window.__GAME_READY__ === true)
     await waitForPhase(page, 'finale')
     await expect(page.locator('.archive-screen')).toHaveCount(0)
-    await expect(page.getByRole('heading', { name: 'The sealed archive' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'Nintendo’s turn' })).toBeVisible()
     await expect(page.locator('[data-action="open-archive"]')).toBeVisible()
     await expect(page.locator('#seal-indicator')).toHaveText('HISTORICAL RECORD SEALED')
   })

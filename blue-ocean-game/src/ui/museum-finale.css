@@ -1,0 +1,38 @@
+.ui-root[data-phase="finale"][data-finale-stage="tour"] .scene-vignette {
+  background: linear-gradient(180deg, rgb(9 20 17 / .25), transparent 24%, transparent 65%, rgb(9 20 17 / .85));
+}
+.ui-root[data-phase="finale"][data-finale-stage="prompt"] .scene-vignette {
+  background: linear-gradient(180deg, rgb(9 20 17 / .06) 15%, transparent 36%, rgb(9 20 17 / .45) 65%, rgb(9 20 17 / .94));
+}
+.screen.museum-tour {
+  position: absolute; inset: 0; width: 100%; max-width: none; max-height: none;
+  background: none; border: 0; box-shadow: none; padding: 0; pointer-events: none; animation: none; backdrop-filter: none;
+}
+.screen.museum-tour::before, .screen.museum-reveal::before { display: none; }
+.museum-tour-heading { position: absolute; left: 5vw; top: 11vh; text-shadow: 0 2px 20px #13221b; }
+.museum-tour-heading h2 { font-size: clamp(28px, 3.3vw, 56px); margin: 8px 0; }
+.museum-skip { position: absolute; right: 5vw; top: 12vh; pointer-events: auto; background: #182c24df; }
+.museum-captions { position: absolute; bottom: 8vh; left: 15%; right: 15%; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3vw; text-align: center; }
+.museum-captions span { display: block; font-size: 10px; letter-spacing: .15em; color: #e6bf7b; margin-bottom: 8px; }
+.museum-captions strong { font-size: clamp(12px, 1.15vw, 19px); color: #f8ebd5; font-weight: 500; }
+.museum-simulation { position: absolute; bottom: 2vh; width: 100%; text-align: center; font-size: 9px; letter-spacing: .1em; color: #c6bfae; }
+.screen.finale-intro.museum-reveal {
+  position: absolute; bottom: 3vh; left: 0; right: 0; margin-inline: auto; transform: none; animation: none;
+  width: min(800px, 90vw); max-height: 44vh; padding: 20px 30px 12px;
+  background: none; border: 0; box-shadow: none;
+}
+.museum-reveal h2 { font-size: clamp(32px, 4vw, 62px); margin: 8px 0 10px; }
+.museum-reveal .lead { font-size: clamp(15px, 1.25vw, 21px); line-height: 1.45; margin: 0 auto 18px; max-width: 630px; }
+.museum-reveal .primary-button { min-height: 48px; padding: 12px 28px; }
+.museum-replay { display: block; margin: 12px auto 0; border: 0; background: none; color: #d9cfb8; font: inherit; font-size: 12px; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; }
+.museum-replay:focus-visible { outline: 2px solid #edc87f; outline-offset: 5px; }
+@media (max-width: 600px) {
+  .museum-tour-heading { top: 14vh; left: 6vw; }
+  .museum-tour-heading h2 { font-size: 30px; }
+  .museum-skip { top: auto; bottom: 23vh; right: 6vw; }
+  .museum-captions { left: 4%; right: 4%; gap: 12px; bottom: 9vh; }
+  .museum-captions strong { font-size: 12px; }
+  .museum-simulation { padding: 0 25px; font-size: 8px; }
+  .screen.finale-intro.museum-reveal { max-height: 44vh; bottom: 3vh; padding: 12px 10px; }
+  .museum-reveal .lead { font-size: 15px; }
+}

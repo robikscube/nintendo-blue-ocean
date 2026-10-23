@@ -6,7 +6,7 @@ import type { Phase } from '../core/types'
  * "1am" (title), "7am" (boardroom), "6pm" (briefing and voting), "10pm"
  * (factory) and "5am - Goodbye" (finale) by Towball, from the album Towball's
  * Crossing, are used under CC BY 4.0. Source and licence links live in
- * MUSIC_LICENSE.md and are shown in the title screen, presenter drawer and
+ * MUSIC_LICENSE.txt and are shown in the title screen, presenter drawer and
  * finale archive.
  */
 export type MusicMode = 'silent' | 'title' | 'office' | 'context' | 'factory' | 'finale'

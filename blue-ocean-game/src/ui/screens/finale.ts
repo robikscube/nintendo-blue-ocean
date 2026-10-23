@@ -15,23 +15,36 @@ import {
 } from '../../core/story'
 import { MUSIC_CREDIT } from '../../audio/music'
 import { escapeHtml, musicCreditTitles, productSilhouette } from './shared'
+import { museumSpecs } from '../../scene/museum-exhibit'
 
-export function renderFinaleIntroScreen(): string {
+export function renderMuseumTourScreen(state: GameState): string {
+  return `<section class="screen museum-tour" aria-labelledby="museum-heading">
+    <div class="museum-tour-heading"><span class="eyebrow">MADE BY YOUR BOARD</span>
+      <h2 id="museum-heading">Look what you built.</h2></div>
+    <button class="secondary-button museum-skip" type="button" data-action="skip-museum">Skip tour <span aria-hidden="true">↗</span></button>
+    <div class="museum-captions" role="list" aria-label="Your three console concepts">
+      ${museumSpecs(state.choices).map((spec, index) => `<div role="listitem"><span>CONCEPT ${index + 1}</span><strong>${escapeHtml(spec?.title ?? 'No concept built')}</strong></div>`).join('')}
+    </div>
+    <p class="museum-simulation">SIMULATED CONCEPT — NOT AN ACTUAL NINTENDO PRODUCT</p>
+  </section>`
+}
+
+const CONSOLE_PHOTOS: Record<string, { file: string; width: number; height: number; alt: string }> = {
+  wii: { file: 'Wii-Console.png', width: 1280, height: 1280, alt: 'White Wii console with its stand and Wii Remote' },
+  'wii-u': { file: 'Wii_U_Console_and_Gamepad.png', width: 1920, height: 927, alt: 'White Wii U console and touchscreen GamePad' },
+  switch: { file: 'Nintendo-Switch-wJoyCons-BlRd-Standing-FL.png', width: 1920, height: 1060, alt: 'Nintendo Switch with blue and red Joy-Con controllers' },
+}
+
+export function renderFinaleIntroScreen(museum = false): string {
   return `
-    <section class="screen finale-intro" aria-labelledby="finale-heading">
-      <div class="archive-seal" aria-hidden="true">
-        <span class="seal-orbit orbit-one"></span>
-        <span class="seal-orbit orbit-two"></span>
-        <span class="seal-core">N</span>
-      </div>
+    <section class="screen finale-intro${museum ? ' museum-reveal' : ''}" aria-labelledby="finale-heading">
       <span class="eyebrow">${escapeHtml(FINALE_INTRO.eyebrow)}</span>
       <h2 id="finale-heading">${escapeHtml(FINALE_INTRO.title)}</h2>
       <p class="lead">${escapeHtml(FINALE_INTRO.lead)}</p>
-      <p class="finale-note">${escapeHtml(FINALE_INTRO.note)}</p>
       <button class="primary-button large" type="button" data-action="open-archive">
-        Break the seal <span aria-hidden="true">▸</span>
+        Reveal the consoles <span aria-hidden="true">▸</span>
       </button>
-      <span class="fine-print">Official worldwide lifetime hardware figures, with source links, appear on the next screen.</span>
+      ${museum ? '<button class="museum-replay" type="button" data-action="replay-museum">Take another look around</button>' : ''}
     </section>
   `
 }
@@ -52,13 +65,13 @@ export function renderArchiveScreen(state: GameState): string {
         </div>
       </header>
 
-      <div class="class-path" aria-label="The board's path">
-        <span class="mini-label">YOUR BOARD’S PATH</span>
-        <div>
+      <div class="class-path" aria-label="Your board’s choices">
+        <span class="mini-label">YOUR BOARD’S CHOICES</span>
+        <div role="list" aria-label="Four board decisions">
           ${DECISION_ORDER.map((decision) => {
             const option = getOption(decision, state.choices[decision])
             return `
-            <span class="path-chip${option ? ' has-detail' : ''}">
+            <span class="path-chip${option ? ' has-detail' : ''}" role="listitem">
               <span class="path-chip-head">
                 <span>D${decision.slice(1)}</span>
                 <strong>${escapeHtml(getDecisionLabel(decision, state.choices[decision]))}</strong>
@@ -72,6 +85,7 @@ export function renderArchiveScreen(state: GameState): string {
 
       <div class="archive-grid">
         ${ACTUAL_HISTORY.map((product) => {
+          const photo = CONSOLE_PHOTOS[product.id]
           const classChoice = product.id === 'wii'
             ? getDecisionLabel('d1', state.choices.d1)
             : product.id === 'wii-u'
@@ -83,8 +97,8 @@ export function renderArchiveScreen(state: GameState): string {
                 <span class="history-year">${product.launchYear}</span>
                 <span class="history-launch">LAUNCHED</span>
               </div>
-              <div class="product-silhouette silhouette-${escapeHtml(product.id)}" aria-hidden="true">
-                ${productSilhouette(product.id)}
+              <div class="product-silhouette${photo ? ' product-photo' : ` silhouette-${escapeHtml(product.id)}`}"${photo ? '' : ' aria-hidden="true"'}>
+                ${photo ? `<img class="console-photo" src="${import.meta.env.BASE_URL}assets/ui/${escapeHtml(photo.file)}" alt="${escapeHtml(photo.alt)}" width="${photo.width}" height="${photo.height}" decoding="async">` : productSilhouette(product.id)}
               </div>
               <h3>${escapeHtml(product.name)}</h3>
               <p class="history-pitch">${escapeHtml(product.proposition)}</p>
@@ -127,7 +141,7 @@ export function renderArchiveScreen(state: GameState): string {
         <p>Ask the room before revealing your own view. The exhibit is designed to leave the argument open.</p>
         <div class="discussion-actions">
           <button class="primary-button" type="button" data-action="reset-from-archive">Run the case again</button>
-          <button class="secondary-button" type="button" data-action="close-archive">Return to the seal</button>
+          <button class="secondary-button" type="button" data-action="close-archive">Back to the finale</button>
         </div>
       </section>
     </section>

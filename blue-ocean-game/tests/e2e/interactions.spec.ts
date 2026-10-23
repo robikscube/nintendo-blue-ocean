@@ -1,5 +1,6 @@
 import { expect, test, type Page } from '@playwright/test'
 import type { GameState } from '../../src/core/types'
+import { OPENING_LINES } from '../../src/core/story'
 
 async function openGame(page: Page): Promise<void> {
   await page.goto('/', { waitUntil: 'networkidle' })
@@ -67,7 +68,7 @@ test.describe('timed presentation interactions', () => {
     expect(first.isTyping).toBe(false)
     expect(first.isComplete).toBe(true)
     expect(first.ariaBusy).toBe('false')
-    expect(first.accessible).toContain('Welcome to the board')
+    expect(first.accessible).toContain(OPENING_LINES[1]!.text)
     expect(first.accessible.length).toBeGreaterThan(40)
     expect(first.text).toBe(first.accessible.replace(/^[^:]+:\s*/, ''))
 

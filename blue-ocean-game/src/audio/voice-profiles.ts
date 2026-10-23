@@ -35,7 +35,7 @@ export interface VoiceProfile {
   readonly formantQ: number
   /**
    * Envelope duration for one vowel cluster, in milliseconds. Tuned to the
-   * presentation's 1.5× dialogue pace so notes read as syllables.
+   * presentation's 2× dialogue pace so notes read as syllables.
    */
   readonly syllableMs: number
 }

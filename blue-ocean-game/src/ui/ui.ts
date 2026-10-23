@@ -30,7 +30,7 @@ import { renderBriefingScreen } from './screens/briefing'
 import { renderVotingScreen } from './screens/voting'
 import { renderFactoryScreen } from './screens/factory'
 import { renderTransitionScreen } from './screens/transition'
-import { renderFinaleIntroScreen, renderArchiveScreen } from './screens/finale'
+import { renderFinaleIntroScreen, renderArchiveScreen, renderMuseumTourScreen } from './screens/finale'
 import { renderPresenterDrawer } from './screens/presenter'
 import { escapeHtml } from './screens/shared'
 
@@ -53,16 +53,16 @@ const PHASE_LABELS: Record<PhaseKind, string> = {
   feedback: 'BOARD CONSEQUENCE',
   boss: 'THE CHAIR SPEAKS',
   transition: 'TRANSITION',
-  finale: 'THE SEALED ARCHIVE',
+  finale: 'THE GRAND FINALE',
 }
 
 /**
  * Reveal pacing. Text and synthesized vowels share one clock: the natural
- * 62 ms-per-character pace is sped up 1.5× at the presenter's request. The
- * text is accelerated with the voice so the mumble can never run ahead of the
- * visible line. Clicking while it types still completes it instantly.
+ * 62 ms-per-character pace runs at 2× at the presenter's request. The text is
+ * accelerated with the voice so the mumble can never run ahead of the visible
+ * line. Clicking while it types still completes it instantly.
  */
-const DIALOGUE_SPEED_MULTIPLIER = 1.5
+const DIALOGUE_SPEED_MULTIPLIER = 2
 const SPEECH_BASE_INTERVAL_MS = 62 / DIALOGUE_SPEED_MULTIPLIER
 // Wall-clock safety net for throttled animation frames. It is deliberately
 // generous so it never cuts off a normally-paced line.
@@ -155,9 +155,13 @@ export class UI {
       this.fallbackNote.hidden = false
     }
     if (scene) {
+      scene.onMuseumReady = () => {
+        if (!this.disposed && this.store.state.phase === 'finale') this.renderView(this.store.state)
+      }
       scene.onContextLost = () => {
         this.root.classList.add('no-webgl')
         this.fallbackNote.hidden = false
+        scene.skipMuseumTour()
         this.showToast('3D preview lost its graphics context. The story remains playable.', 6500)
       }
     }
@@ -267,7 +271,7 @@ export class UI {
       this.chapterLabel.textContent = 'FICTIONAL CLASSROOM CASE'
       this.hudPhase.textContent = '2005 — 2016'
     } else if (state.chapterIndex >= 3) {
-      this.chapterLabel.textContent = 'HISTORICAL ARCHIVE'
+      this.chapterLabel.textContent = 'THE GRAND FINALE'
       this.hudPhase.textContent = state.phase === 'finale' && this.archiveOpen ? 'RECORD OPEN' : 'RECORD SEALED'
     } else {
       this.chapterLabel.textContent = `CHAPTER ${chapter?.number ?? 1} / 3 · ${chapter?.year ?? 2005}`
@@ -306,6 +310,8 @@ export class UI {
 
   private renderView(state: GameState): void {
     let content = ''
+    const touring = state.phase === 'finale' && Boolean(this.scene && !this.scene.museumTourReady)
+    this.root.dataset.finaleStage = this.archiveOpen ? 'facts' : touring ? 'tour' : 'prompt'
     const active = getActiveDecision(state)
     const choiceSignature = DECISION_ORDER.map((decision) => state.choices[decision] ?? '-').join('')
     const factorySpec = state.phase === 'factory'
@@ -321,6 +327,7 @@ export class UI {
       state.factoryProgress,
       factorySpec?.key ?? '-',
       this.archiveOpen ? 'archive-open' : 'archive-closed',
+      touring ? 'museum-tour' : 'museum-ready',
       state.started ? 'started' : 'title',
     ].join('|')
 
@@ -347,7 +354,7 @@ export class UI {
         content = renderTransitionScreen(state)
         break
       case 'finale':
-        content = this.archiveOpen ? renderArchiveScreen(state) : renderFinaleIntroScreen()
+        content = this.archiveOpen ? renderArchiveScreen(state) : touring ? renderMuseumTourScreen(state) : renderFinaleIntroScreen(Boolean(this.scene))
         break
       default:
         content = ''
@@ -359,7 +366,7 @@ export class UI {
     if (state.phase === 'finale' && this.archiveOpen) {
       const archive = this.view.querySelector<HTMLElement>('.archive-screen')
       if (archive) archive.scrollTop = 0
-      this.announce('The historical archive is open. Official lifetime hardware figures are displayed with sources.')
+      this.announce('Nintendo’s real consoles are revealed. Sales figures and sources are now displayed.')
     } else if (content) {
       this.announce(this.view.querySelector('h1, h2')?.textContent ?? PHASE_LABELS[state.phase])
     }
@@ -666,7 +673,8 @@ export class UI {
         // Re-enter the factory's idle state so the UI shows the build, the Skip
         // control returns, and reduced-motion is honored by startFactory().
         this.store.dispatch({ type: 'RESTART_SCENE' })
-        this.showToast('Rebuilding the fictional prototype.')
+        // The factory card itself now shows the assembly stage. Avoid a
+        // redundant toast obscuring the moving 3D parts on replay.
         break
       case 'continue-factory':
         this.store.dispatch({ type: 'CONTINUE_TO_FACTORY' })
@@ -676,10 +684,21 @@ export class UI {
         this.store.dispatch({ type: 'COMPLETE_TRANSITION' })
         break
       case 'open-archive':
+        if (this.scene && !this.scene.museumTourReady) {
+          this.scene.skipMuseumTour()
+          break
+        }
         this.archiveOpen = true
         void this.audio.sting('archive')
         this.renderView(this.store.state)
         this.updateHud(this.store.state)
+        break
+      case 'skip-museum':
+        this.scene?.skipMuseumTour()
+        break
+      case 'replay-museum':
+        this.scene?.replayMuseumTour()
+        this.renderView(this.store.state)
         break
       case 'close-archive':
         this.archiveOpen = false
@@ -690,7 +709,10 @@ export class UI {
         this.resetDemo()
         break
       case 'scroll-discussion':
-        this.view.querySelector('.discussion-card')?.scrollIntoView({ behavior: this.reducedMotion ? 'auto' : 'smooth', block: 'start' })
+        // Instant jump. Smooth scrolling is driven by animation frames, which
+        // software WebGL can starve on classroom laptops; the evidence jump
+        // must always land even when the 3D preview is using the frame budget.
+        this.view.querySelector('.discussion-card')?.scrollIntoView({ behavior: 'auto', block: 'start' })
         break
       case 'open-presenter':
         this.openPresenter()
@@ -722,7 +744,7 @@ export class UI {
         if (!this.store.state.presenterMode) return
         this.archiveOpen = false
         this.store.dispatch({ type: 'SHOW_FINALE' })
-        this.showToast('Showing the historical archive only.')
+        this.showToast('Showing the grand finale only.')
         break
       case 'restart-scene':
         this.store.dispatch({ type: 'RESTART_SCENE' })
@@ -843,6 +865,11 @@ export class UI {
       this.skipFactory()
       return
     }
+    if (key === 's' && this.store.state.phase === 'finale' && !this.archiveOpen) {
+      event.preventDefault()
+      this.scene?.skipMuseumTour()
+      return
+    }
 
     if (key === 'r' && !event.altKey && !event.ctrlKey && !event.metaKey) {
       if (event.shiftKey) {
@@ -891,6 +918,10 @@ export class UI {
       return true
     }
     if (state.phase === 'finale' && !this.archiveOpen) {
+      if (this.scene && !this.scene.museumTourReady) {
+        this.scene.skipMuseumTour()
+        return true
+      }
       this.archiveOpen = true
       void this.audio.sting('archive')
       this.renderView(state)
@@ -940,7 +971,7 @@ export class UI {
     this.archiveOpen = false
     this.store.dispatch({ type: 'JUMP_CHAPTER', chapterIndex: index })
     if (index >= 3) {
-      this.showToast('Jumped to the sealed archive.')
+      this.showToast('Jumped to the grand finale.')
     } else if (cleared > 0) {
       this.showToast(`Jumped to Chapter ${index + 1}. Cleared ${cleared} vote${cleared === 1 ? '' : 's'} from this chapter onward.`)
     } else {
@@ -1056,6 +1087,7 @@ export class UI {
   }
 
   dispose(): void {
+    if (this.scene) this.scene.onMuseumReady = null
     this.disposed = true
     this.unsubscribe()
     this.stopTyping()

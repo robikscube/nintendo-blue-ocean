@@ -204,9 +204,9 @@ test('canonical four-vote classroom flow: three factories, sealed history, offic
   expect(await page.evaluate(() => window.__QA_FACTORY_ENTRIES__ ?? 0)).toBe(3)
 
   // Sealed finale intro, then the only place historical facts may appear.
-  await page.getByRole('button', { name: /Open the sealed archive/i }).click()
+  await page.getByRole('button', { name: /See the grand finale/i }).click()
   await waitForPhase(page, 'finale')
-  await expect(page.getByRole('heading', { name: 'The sealed archive' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Nintendo’s turn' })).toBeVisible()
   await expectSealed(page)
   await expectNoHorizontalOverflow(page)
   await page.locator('[data-action="open-archive"]').click()

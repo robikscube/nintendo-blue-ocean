@@ -1,3 +1,26 @@
+/* ------------------------------------------------------------------ */
+/* Self-hosted typography                                              */
+/* Fredoka: display + interface. Itim: dialogue + short flavour copy.  */
+/* Files and OFL licences live in public/assets/fonts/. No CDN load.   */
+/* ------------------------------------------------------------------ */
+
+@font-face {
+  font-family: "Fredoka";
+  src: url("/assets/fonts/fredoka/Fredoka-Variable.ttf") format("truetype");
+  font-weight: 300 700;
+  font-stretch: 75% 125%;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Itim";
+  src: url("/assets/fonts/itim/Itim-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   color-scheme: dark;
   --ink: #17161c;
@@ -13,8 +36,13 @@
   --mint: #76c2b2;
   --line: rgba(232, 214, 184, 0.16);
   --line-strong: rgba(232, 214, 184, 0.32);
-  --serif: Georgia, "Times New Roman", serif;
-  --sans: "Segoe UI Variable Display", "Segoe UI", "Aptos", "Trebuchet MS", sans-serif;
+  /* Fredoka is the single UI/display face; Itim is reserved for dialogue
+     and short narrative flavour copy. Fallbacks stay local-only. */
+  --font-display: "Fredoka", "Trebuchet MS", "Segoe UI", sans-serif;
+  --font-ui: "Fredoka", "Trebuchet MS", "Segoe UI", sans-serif;
+  --font-flavor: "Itim", "Trebuchet MS", "Segoe UI", sans-serif;
+  --serif: var(--font-display);
+  --sans: var(--font-ui);
   font-family: var(--sans);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -456,7 +484,7 @@ h2 {
   margin-bottom: 18px;
   font-family: var(--serif);
   font-size: clamp(38px, 3.8vw, 62px);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 0.99;
   letter-spacing: -0.035em;
   color: var(--cream);
@@ -464,7 +492,7 @@ h2 {
 
 h3 {
   font-family: var(--serif);
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .lead {
@@ -1049,6 +1077,7 @@ h3 {
   color: var(--cream);
   font-family: var(--serif);
   font-size: clamp(24px, 1.8vw, 32px);
+  font-weight: 500;
   line-height: 1.03;
   letter-spacing: -0.025em;
 }
@@ -1338,9 +1367,12 @@ h3 {
   max-width: 650px;
   margin: 0 auto 30px;
   color: #cdc0b0;
-  font-family: var(--serif);
-  font-size: clamp(19px, 1.5vw, 25px);
-  line-height: 1.55;
+  /* Short narrative beat: the handwritten face belongs here, not in
+     dense archive or factory copy. */
+  font-family: var(--font-flavor);
+  font-size: clamp(20px, 1.6vw, 27px);
+  font-weight: 400;
+  line-height: 1.45;
 }
 
 /* ------------------------------------------------------------------ */
@@ -1349,7 +1381,7 @@ h3 {
 /* ------------------------------------------------------------------ */
 
 .dialogue-panel {
-  --dialogue-font: "Trebuchet MS", "Segoe UI Variable Display", "Segoe UI", ui-rounded, system-ui, sans-serif;
+  --dialogue-font: var(--font-flavor);
   --name-tag-fill: #6f7480;
   position: absolute;
   left: 50%;
@@ -1442,8 +1474,8 @@ h3 {
   color: #fff;
   font-family: var(--dialogue-font);
   font-size: clamp(20px, 2.48vw, 32px);
-  font-weight: 800;
-  letter-spacing: 0.005em;
+  font-weight: 400;
+  letter-spacing: 0.015em;
   line-height: 1;
   text-align: center;
   text-shadow:
@@ -1487,8 +1519,8 @@ h3 {
   color: #fffdf4;
   font-family: var(--dialogue-font);
   font-size: clamp(24px, 1.9vw, 31px);
-  font-weight: 600;
-  letter-spacing: -0.015em;
+  font-weight: 400;
+  letter-spacing: 0;
   line-height: 1.3;
   text-align: center;
   text-wrap: balance;
@@ -1832,6 +1864,7 @@ h3 {
   font-family: var(--serif);
   font-size: 26px;
   line-height: 1;
+  font-variant-numeric: tabular-nums;
 }
 
 .history-launch {
@@ -1992,6 +2025,7 @@ h3 {
   font-size: clamp(25px, 2.2vw, 34px);
   font-weight: 400;
   letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
 }
 
 .lifetime-figure span {

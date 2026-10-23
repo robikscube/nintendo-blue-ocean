@@ -8,6 +8,7 @@ import {
   DISCUSSION_QUESTION,
   FINAL_CAVEAT,
   FINALE_INTRO,
+  OPENING_LINES,
   SALES_AS_OF,
   SIMULATED_LABEL,
   getBossLines,
@@ -20,7 +21,9 @@ function allPreFinaleText(): string {
     characters: CHARACTERS,
     chapters: CHAPTERS,
     decisions: DECISIONS,
-    opening: FINALE_INTRO,
+    opening: OPENING_LINES,
+    sealedFinale: FINALE_INTRO,
+    generatedDialogue: collectDialogueLines(),
     caveat: FINAL_CAVEAT,
     discussion: DISCUSSION_QUESTION,
   }
@@ -28,13 +31,26 @@ function allPreFinaleText(): string {
 }
 
 function collectDialogueLines(): DialogueLine[] {
-  const lines: DialogueLine[] = []
-  for (const chapter of CHAPTERS) {
+  const lines: DialogueLine[] = [...OPENING_LINES]
+  for (const [chapterIndex, chapter] of CHAPTERS.entries()) {
     lines.push(...chapter.advisorLines)
     for (const decision of chapter.decisions) {
       for (const option of DECISIONS[decision].options) {
-        lines.push(option.feedback)
+        lines.push(option.feedback, { speaker: 'shell', text: option.boss })
       }
+    }
+    // Presenter jumps and partial checkpoints also have authored fallback lines.
+    lines.push(...getBossLines(chapterIndex, {}))
+  }
+  for (const d1 of ['A', 'B', 'C'] as const) {
+    lines.push(...getFeedbackLines(0, { d1 }), ...getBossLines(0, { d1 }))
+  }
+  for (const d2 of ['A', 'B', 'C'] as const) {
+    lines.push(...getFeedbackLines(1, { d2 }), ...getBossLines(1, { d2 }))
+  }
+  for (const d3 of ['A', 'B', 'C'] as const) {
+    for (const d4 of ['A', 'B', 'C'] as const) {
+      lines.push(...getFeedbackLines(2, { d3, d4 }), ...getBossLines(2, { d3, d4 }))
     }
   }
   return lines
@@ -57,7 +73,8 @@ describe('story contract', () => {
     expect(lines.length).toBeGreaterThan(10)
     for (const line of lines) {
       expect(line.text.trim().length).toBeGreaterThan(10)
-      expect(line.text.split(/\s+/).length).toBeLessThanOrEqual(38)
+      expect(line.text.split(/\s+/).length, line.text).toBeGreaterThanOrEqual(10)
+      expect(line.text.split(/\s+/).length, line.text).toBeLessThanOrEqual(28)
       expect(CHARACTERS[line.speaker]).toBeDefined()
     }
   })

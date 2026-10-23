@@ -1,8 +1,0 @@
-{
-  "extends": "../../blue-ocean-game/tsconfig.json",
-  "compilerOptions": {
-    "typeRoots": ["../../blue-ocean-game/node_modules/@types"],
-    "types": ["node"]
-  },
-  "include": ["p4-import-meta.d.ts", "../../blue-ocean-game/src/scene/boardroom.ts"]
-}

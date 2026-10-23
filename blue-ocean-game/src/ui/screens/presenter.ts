@@ -17,7 +17,7 @@ export function renderPresenterDrawer(state: GameState, opts: PresenterDrawerOpt
   const location = state.phase === 'title'
     ? 'Title screen'
     : state.chapterIndex >= 3
-      ? 'Historical archive'
+      ? 'Grand finale'
       : `Chapter ${chapter?.number ?? 1} · ${state.phase === 'voting' ? 'voting' : state.phase}`
   const dialogueIndex = state.phase === 'opening' || state.phase === 'advisors' || state.phase === 'feedback' || state.phase === 'boss'
     ? state.dialogueIndex
@@ -40,7 +40,7 @@ export function renderPresenterDrawer(state: GameState, opts: PresenterDrawerOpt
         <span class="mini-label">NOW</span>
         <p class="drawer-location">${escapeHtml(location)}</p>
         <div class="drawer-row">
-          <span>Historical archive</span>
+          <span>Nintendo’s real choices</span>
           <strong>${state.phase === 'finale' && opts.archiveOpen ? 'OPEN' : 'SEALED'}</strong>
         </div>
         <div class="drawer-row">
@@ -71,10 +71,10 @@ export function renderPresenterDrawer(state: GameState, opts: PresenterDrawerOpt
           `).join('')}
           <button class="jump-button${state.phase === 'finale' ? ' is-current' : ''}" type="button" data-action="show-finale" ${canJump ? '' : 'disabled'}>
             <span>Finale</span>
-            <strong>Sealed archive</strong>
+            <strong>The big reveal</strong>
           </button>
         </div>
-        <p class="drawer-hint">A jump re-opens that chapter and clears its votes and later ones. Chapters you skip are shown as “Not voted” in the archive.</p>
+        <p class="drawer-hint">A jump re-opens that chapter and clears its votes and later ones. Chapters you skip are shown as “Not voted” in the final comparison.</p>
       </div>
 
       <div class="drawer-section">

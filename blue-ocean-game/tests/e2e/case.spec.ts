@@ -55,7 +55,7 @@ async function finishTransition(page: Page, chapter: number): Promise<void> {
     await page.getByRole('button', { name: /^Continue$/i }).click()
     await waitForPhase(page, 'briefing')
   } else {
-    await page.getByRole('button', { name: /Open the sealed archive/i }).click()
+    await page.getByRole('button', { name: /See the grand finale/i }).click()
     await waitForPhase(page, 'finale')
   }
 }
@@ -136,7 +136,7 @@ test('completes all three chapters, four votes, and reveals only the cited histo
   await expectHistorySealed(page)
   await finishTransition(page, 3)
 
-  await expect(page.getByRole('heading', { name: 'The sealed archive' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Nintendo’s turn' })).toBeVisible()
   await expectHistorySealed(page)
   await page.getByRole('button', { name: /Break the seal/i }).click()
   await expect(page.getByRole('heading', { name: 'The historical record' })).toBeVisible()

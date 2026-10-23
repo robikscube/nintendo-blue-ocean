@@ -3,6 +3,7 @@ import type { ChoiceId, GameState } from '../src/core/types'
 import {
   createInitialState,
   getActiveDecision,
+  getDialogueLines,
   isDialoguePhase,
   transition,
 } from '../src/core/state'
@@ -355,8 +356,9 @@ describe('checkpoint restoration', () => {
       choices: { d1: 'Z', d2: 'B' },
     }
     const restored = normalizeRestoredState(raw)
+    if (!restored) throw new Error('Expected checkpoint to restore')
     expect(restored?.phase).toBe('advisors')
-    expect(restored?.dialogueIndex).toBeLessThan(10)
+    expect(restored.dialogueIndex).toBe(getDialogueLines(restored).length - 1)
     expect(restored?.choices.d1).toBeUndefined()
     expect(restored?.choices.d2).toBe('B')
   })

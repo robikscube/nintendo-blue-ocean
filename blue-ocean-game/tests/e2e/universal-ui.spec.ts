@@ -80,7 +80,13 @@ async function expectNoOverflow(page: Page, label: string): Promise<void> {
 }
 
 async function shot(page: Page, name: string): Promise<void> {
-  await page.screenshot({ path: path.join(SCREENS_DIR, `${name}.png`) })
+  // Finite entrance animations (320–360 ms) can still be at opacity 0 when a
+  // screenshot is taken right after a phase change. Disable animations for the
+  // capture so evidence always shows the settled UI rather than a blank frame.
+  await page.screenshot({
+    path: path.join(SCREENS_DIR, `${name}.png`),
+    animations: 'disabled',
+  })
 }
 
 /**
@@ -111,6 +117,8 @@ async function expectWelcome(page: Page, label: string, takeShot = true): Promis
 
   await expect(page.locator('#title-art')).toHaveCount(1)
   await expect(page.locator('#title-art')).toBeVisible()
+  await expect(page.locator('.title-screen')).toHaveCSS('opacity', '1')
+  await expect(page.locator('#title-art')).toHaveCSS('opacity', '1')
   await page.waitForFunction(() => {
     const image = document.getElementById('title-art') as HTMLImageElement | null
     return Boolean(image && image.complete && image.naturalWidth > 0)
@@ -293,6 +301,9 @@ async function expectVoteScreen(
 ): Promise<ReturnType<Page['locator']>> {
   const screen = page.locator('.voting-screen')
   await expect(screen).toBeVisible()
+  // Visibility alone ignores opacity; wait out screen-enter so the board is
+  // actually legible (and screenshots are not blank frames).
+  await expect(screen).toHaveCSS('opacity', '1')
   const eyebrow = ((await screen.locator('.eyebrow').first().innerText()) ?? '').replace(/\s+/g, ' ')
   expect(eyebrow, 'vote eyebrow has BOARD VOTE').toMatch(/BOARD VOTE/)
   expect(eyebrow, 'vote eyebrow has vote progress').toContain(`VOTE ${voteNumber} OF ${votesInChapter}`)
@@ -304,8 +315,10 @@ async function expectVoteScreen(
   expect(text, 'presenter instruction footer removed').not.toMatch(/Presenter selects/i)
   expect(text, 'no "correct card" lecture').not.toMatch(/no scoring or/i)
   await expect(screen.locator('.choice-card')).toHaveCount(3)
-  expect(text).toContain('Benefit')
-  expect(text).toContain('Trade-off')
+  // Legacy CSS uppercases the visible benefit/trade-off labels, so innerText is
+  // BENEFIT / TRADE-OFF while the authored DOM text stays title case.
+  expect(text.toLowerCase()).toContain('benefit')
+  expect(text.toLowerCase()).toContain('trade-off')
 
   const commit = screen.locator('[data-action="commit-choice"]')
   await expect(commit).toBeVisible()
@@ -321,6 +334,7 @@ async function expectFactory(
 ): Promise<ModelInfo> {
   const screen = page.locator('.factory-screen')
   await expect(screen).toBeVisible()
+  await expect(screen.locator('.factory-card')).toHaveCSS('opacity', '1')
   expect(await page.locator('.factory-banner').count(), 'factory banner removed').toBe(0)
   expect(await screen.locator('.eyebrow').count(), 'factory card eyebrow removed').toBe(0)
   expect(await screen.locator('.prototype-number').count(), 'prototype number removed').toBe(0)
@@ -360,6 +374,9 @@ async function expectFactory(
     await page.keyboard.press('s')
   }
   await waitForFactoryDone(page)
+  // Completion re-renders the card and restarts card-enter (360 ms). Wait for
+  // the new card to settle so the reveal, not a blank entrance frame, is shown.
+  await expect(page.locator('.factory-card')).toHaveCSS('opacity', '1')
   await expect(page.getByRole('heading', { name: expected.title })).toBeVisible()
   await expect(page.getByText('PRIORITIZES', { exact: true })).toBeVisible()
   await expect(page.getByText('TRADE-OFFS', { exact: true })).toBeVisible()
@@ -418,6 +435,7 @@ async function expectTransition(
 ): Promise<void> {
   const screen = page.locator('.transition-screen')
   await expect(screen).toBeVisible()
+  await expect(screen).toHaveCSS('opacity', '1')
   const text = await screen.innerText()
   expect(text, 'sealed footnote removed').not.toContain(SEALED_FOOTNOTE)
   expect(await screen.locator('.sealed-small.single').count(), 'no sealed-small footnote node').toBe(0)
@@ -432,7 +450,7 @@ async function expectTransition(
     // also the archive gate. Record a note instead of failing the two chapter
     // transitions that the Universal contract names explicitly.
     expect(
-      nextText === 'Continue' || nextText === 'Open the sealed archive',
+      nextText === 'Continue' || nextText === 'See the grand finale',
       'third transition label',
     ).toBe(true)
   }
@@ -479,16 +497,32 @@ async function runResponsiveJourney(
   const page = await context.newPage()
   const pageErrors: string[] = []
   const externalRequests: string[] = []
+  const failedRequests: string[] = []
+  // A relative APP_URL ('/' by default) must resolve against the Playwright
+  // baseURL, not the bare host, or every local request would look external.
+  let appOrigin = new URL(APP_URL, 'http://127.0.0.1:5173').origin
   page.on('pageerror', (error) => pageErrors.push(error.message))
   page.on('request', (request) => {
     const url = request.url()
     if (url.startsWith('data:') || url.startsWith('blob:')) return
     if (!url.startsWith('http')) return
-    const origin = new URL(APP_URL, 'http://127.0.0.1').origin
-    if (!url.startsWith(origin)) externalRequests.push(url)
+    if (!url.startsWith(appOrigin)) externalRequests.push(url)
+  })
+  page.on('requestfailed', (request) => {
+    // Media range loads are routinely aborted (net::ERR_ABORTED) when the
+    // looping track changes; that is not a failed local resource.
+    if (request.url().startsWith(appOrigin) && request.failure()?.errorText !== 'net::ERR_ABORTED') {
+      failedRequests.push(`${request.failure()?.errorText ?? 'failed'} ${request.url()}`)
+    }
+  })
+  page.on('response', (response) => {
+    if (response.url().startsWith(appOrigin) && response.status() >= 400) {
+      failedRequests.push(`${response.status()} ${response.url()}`)
+    }
   })
 
   await openGame(page)
+  appOrigin = await page.evaluate(() => window.location.origin)
   await expectWelcome(page, label, true)
   const start = page.locator('[data-action="start"]')
   await start.evaluate((element) => (element as HTMLElement).focus())
@@ -576,13 +610,16 @@ async function runResponsiveJourney(
 
   // Finale and archive at this size.
   await expectSealed(page)
-  await expect(page.getByRole('heading', { name: 'The sealed archive' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Nintendo’s turn' })).toBeVisible()
+  await expect(page.locator('.finale-intro')).toHaveCSS('opacity', '1')
   await qaClick(page, '[data-action="open-archive"]')
   await expect(page.getByRole('heading', { name: 'The historical record' })).toBeVisible()
+  await expect(page.locator('.archive-screen')).toHaveCSS('opacity', '1')
   await expectNoOverflow(page, `${label} archive`)
   if (label === '1366x768') await shot(page, `archive-${label}`)
 
   expect(externalRequests, `external requests at ${label}`).toEqual([])
+  expect(failedRequests, `failed local requests at ${label}`).toEqual([])
   expect(pageErrors, `page errors at ${label}`).toEqual([])
   await context.close()
 }
@@ -661,7 +698,11 @@ test.describe('animated canonical journey', () => {
       if (!url.startsWith(appOrigin)) externalRequests.push(url)
     })
     page.on('requestfailed', (request) => {
-      if (request.url().startsWith(appOrigin)) failedRequests.push(request.url())
+      // A looping music track cancels in-flight byte-range reads with
+      // net::ERR_ABORTED; those are expected and not broken local assets.
+      if (request.url().startsWith(appOrigin) && request.failure()?.errorText !== 'net::ERR_ABORTED') {
+        failedRequests.push(`${request.failure()?.errorText ?? 'failed'} ${request.url()}`)
+      }
     })
     page.on('response', (response) => {
       if (response.url().startsWith(appOrigin) && response.status() >= 400) {
@@ -671,11 +712,12 @@ test.describe('animated canonical journey', () => {
 
     await page.setViewportSize({ width: 1920, height: 1080 })
     await openGame(page)
+    // Audio starts locked until the first gesture. This must be checked before
+    // expectWelcome(), which clicks the mute control and therefore unlocks it.
+    expect(await page.evaluate(() => (window as any).__GAME__?.audio.getSpeechDebug() ?? null)).toBeNull()
     await expectWelcome(page, '1920x1080')
     await expectSealed(page)
 
-    // Audio starts locked until the first gesture.
-    expect(await page.evaluate(() => (window as any).__GAME__?.audio.getSpeechDebug() ?? null)).toBeNull()
     await qaClick(page, '[data-action="start"]')
     await waitForPhase(page, 'opening')
     await expect.poll(async () => page.evaluate(() => (window as any).__GAME__?.audio.getSpeechDebug() !== null)).toBe(true)
@@ -795,11 +837,13 @@ test.describe('animated canonical journey', () => {
 
     // ---------------- Finale and archive ----------------
     await expectSealed(page)
-    await expect(page.getByRole('heading', { name: 'The sealed archive' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'Nintendo’s turn' })).toBeVisible()
+    await expect(page.locator('.finale-intro')).toHaveCSS('opacity', '1')
     await expectNoOverflow(page, '1920 sealed finale')
     await shot(page, 'finale-sealed-1920x1080')
     await qaClick(page, '[data-action="open-archive"]')
     await expect(page.getByRole('heading', { name: 'The historical record' })).toBeVisible()
+    await expect(page.locator('.archive-screen')).toHaveCSS('opacity', '1')
     await expect(page.locator('#seal-indicator')).toHaveText('HISTORICAL RECORD OPEN')
     await expectNoOverflow(page, '1920 archive')
     await shot(page, 'archive-1920x1080')
@@ -901,7 +945,9 @@ test('presenter gear, focus trap, inert background and reset at 1366x768', async
   expect(await page.locator('#view').evaluate((element) => element.hasAttribute('inert'))).toBe(true)
   expect(await page.locator('#scene').evaluate((element) => element.hasAttribute('inert'))).toBe(true)
 
-  // Focus starts in the drawer and Tab cycles inside it.
+  // Focus starts in the drawer and Tab cycles inside the modal layer. The
+  // layer includes the full-screen scrim close button (a real focus target by
+  // design), so the trap boundary is #presenter-layer, not the drawer alone.
   await expect
     .poll(async () =>
       page.evaluate(() => {
@@ -916,11 +962,17 @@ test('presenter gear, focus trap, inert background and reset at 1366x768', async
     await page.keyboard.press('Tab')
     const inside = await page.evaluate(() => {
       const active = document.activeElement
-      const drawerElement = document.querySelector('.presenter-drawer')
-      return Boolean(active && drawerElement && drawerElement.contains(active))
+      const layer = document.getElementById('presenter-layer')
+      return Boolean(active && layer && layer.contains(active))
     })
     expect(inside, `focus trapped after Tab ${index + 1}`).toBe(true)
   }
+  // The inert background must never receive focus while the modal is open.
+  const focusInBackground = await page.evaluate(() => {
+    const active = document.activeElement
+    return Boolean(active && (active.closest('#hud') || active.closest('#view') || active.id === 'scene'))
+  })
+  expect(focusInBackground, 'background focus blocked by inert').toBe(false)
 
   // Restart and reset are reachable at 1366x768.
   const reset = page.locator('[data-action="reset-demo"]')
@@ -952,6 +1004,13 @@ test('presenter gear, focus trap, inert background and reset at 1366x768', async
   await expect
     .poll(async () => page.evaluate(() => document.activeElement?.id ?? ''))
     .toBe('presenter-button')
+  // Closing must release the background so the title remains operable.
+  for (const id of ['hud', 'view', 'scene']) {
+    expect(
+      await page.locator(`#${id}`).evaluate((element) => element.hasAttribute('inert')),
+      `${id} inert released after close`,
+    ).toBe(false)
+  }
 })
 
 // ---------------------------------------------------------------------------
@@ -963,10 +1022,11 @@ test('static preview smoke is local-only and reaches voting', async ({ page }) =
   await page.setViewportSize({ width: 1366, height: 768 })
   const externalRequests: string[] = []
   const pageErrors: string[] = []
+  const appOrigin = new URL(APP_URL, 'http://127.0.0.1:5173').origin
   page.on('request', (request) => {
     const url = request.url()
     if (url.startsWith('data:') || url.startsWith('blob:') || !url.startsWith('http')) return
-    if (!url.startsWith(new URL(APP_URL).origin)) externalRequests.push(url)
+    if (!url.startsWith(appOrigin)) externalRequests.push(url)
   })
   page.on('pageerror', (error) => pageErrors.push(error.message))
   await openGame(page)

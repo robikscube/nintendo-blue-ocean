@@ -57,7 +57,7 @@ describe('procedural voice profiles', () => {
       expect(profile.formantQ).toBeGreaterThanOrEqual(6)
       expect(profile.formantQ).toBeLessThanOrEqual(12)
       expect(profile.gain).toBeGreaterThan(0)
-      // Tuned to the 1.5x dialogue pace without becoming a click.
+      // Tuned to the 2x dialogue pace without becoming a click.
       expect(profile.syllableMs).toBeGreaterThanOrEqual(60)
       expect(profile.syllableMs).toBeLessThanOrEqual(100)
     }

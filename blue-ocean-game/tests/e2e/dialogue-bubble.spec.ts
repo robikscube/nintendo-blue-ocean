@@ -1,4 +1,5 @@
 import { expect, test, type Page } from '@playwright/test'
+import { CHAPTERS } from '../../src/core/story'
 import type { GameState } from '../../src/core/types'
 
 const SPEAKER_NAMES: Record<string, string> = {
@@ -204,8 +205,8 @@ test.describe('approved dialogue bubble', () => {
     // Chapter 1 advisors exercise every remaining cast tag.
     await page.getByRole('button', { name: /Convene the board/i }).click()
     await waitForPhase(page, 'advisors')
-    expectApprovedBubble(await readBubble(page), 'mori')
-    for (const speaker of ['pip', 'grumble', 'pip', 'grumble', 'bolt', 'mori']) {
+    expectApprovedBubble(await readBubble(page), CHAPTERS[0]!.advisorLines[0]!.speaker)
+    for (const { speaker } of CHAPTERS[0]!.advisorLines.slice(1)) {
       await advanceDialogue(page)
       expectApprovedBubble(await readBubble(page), speaker)
     }
@@ -262,7 +263,7 @@ test.describe('approved dialogue bubble', () => {
     // Chapter 1: 2005, one vote.
     await page.getByRole('button', { name: /Convene the board/i }).click()
     await waitForPhase(page, 'advisors')
-    expectApprovedBubble(await readBubble(page), 'mori')
+    expectApprovedBubble(await readBubble(page), CHAPTERS[0]!.advisorLines[0]!.speaker)
     await drainDialogueWithKeyboard(page)
     await waitForPhase(page, 'voting')
     await page.locator('.choice-card').nth(1).click()
@@ -328,7 +329,7 @@ test.describe('approved dialogue bubble', () => {
     await drainDialogueWithKeyboard(page)
     await waitForPhase(page, 'transition')
     await expectHiddenBubbleDoesNotIntercept(page)
-    await page.getByRole('button', { name: /Open the sealed archive/i }).click()
+    await page.getByRole('button', { name: /See the grand finale/i }).click()
     await waitForPhase(page, 'finale')
     await expectHiddenBubbleDoesNotIntercept(page)
     await page.locator('[data-action="open-archive"]').click()
@@ -370,18 +371,23 @@ for (const viewport of [
 
     test('stays bottom-anchored and fits the longest name and line', async ({ page }) => {
       test.setTimeout(150_000)
+      const sample = CHAPTERS.flatMap((chapter, chapterIndex) =>
+        chapter.advisorLines.map((line, lineIndex) => ({ ...line, chapterIndex, lineIndex })),
+      ).filter((line) => line.speaker === 'pip').sort((a, b) => b.text.length - a.text.length)[0]
+      if (!sample) throw new Error('No Slyvester line found for bubble layout check')
       await startGame(page)
-      await page.evaluate(() => {
+      await page.evaluate(({ chapterIndex, lineIndex }) => {
         const store = window.__GAME__?.store
         if (!store) throw new Error('store missing')
         while (store.state.phase === 'opening') store.dispatch({ type: 'ADVANCE_DIALOGUE' })
+        store.dispatch({ type: 'JUMP_CHAPTER', chapterIndex })
         store.dispatch({ type: 'BEGIN_CHAPTER' })
-        store.dispatch({ type: 'ADVANCE_DIALOGUE' })
-      })
+        for (let i = 0; i < lineIndex; i += 1) store.dispatch({ type: 'ADVANCE_DIALOGUE' })
+      }, sample)
       await waitForPhase(page, 'advisors')
       const bubble = await readBubble(page)
       expectApprovedBubble(bubble, 'pip')
-      expect(bubble.text.length).toBe(154)
+      expect(bubble.text).toBe(sample.text)
       expect(bubble.fontSize).toBeGreaterThanOrEqual(24)
       expect(bubble.nameFontSize).toBeGreaterThanOrEqual(24)
       expect(bubble.textInsideCopy).toBe(true)

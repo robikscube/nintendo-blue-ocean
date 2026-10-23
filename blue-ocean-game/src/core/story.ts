@@ -24,7 +24,7 @@ export const CHARACTERS: Record<CharacterId, CharacterProfile> = {
     role: 'Consumer Insight',
     color: '#b88967',
     accent: '#f2d4b4',
-    detail: 'Watches who is missing from the table.',
+    detail: 'Keeps a notebook, stays up late, and notices when someone goes quiet.',
     voice: { wave: 'triangle', base: 310, range: 75, pace: 0.95 },
   },
   pip: {
@@ -34,7 +34,7 @@ export const CHARACTERS: Record<CharacterId, CharacterProfile> = {
     role: 'Marketing',
     color: '#d9774e',
     accent: '#ffd1a7',
-    detail: 'Sells the feeling before the spec sheet.',
+    detail: 'Gets excited, talks too fast, and usually has another idea ready.',
     voice: { wave: 'triangle', base: 440, range: 115, pace: 1.15 },
   },
   bolt: {
@@ -44,7 +44,7 @@ export const CHARACTERS: Record<CharacterId, CharacterProfile> = {
     role: 'Engineering',
     color: '#7c5840',
     accent: '#e4b77a',
-    detail: 'Builds it, then tells you what will break.',
+    detail: 'Loves making things and gets rather attached to the first version.',
     voice: { wave: 'sawtooth', base: 205, range: 55, pace: 1.05 },
   },
   grumble: {
@@ -54,7 +54,7 @@ export const CHARACTERS: Record<CharacterId, CharacterProfile> = {
     role: 'Finance',
     color: '#63504b',
     accent: '#c9ad94',
-    detail: 'Counts the cost of every applause line.',
+    detail: 'Would rather be napping, but stays to make sure everyone is looked after.',
     voice: { wave: 'sine', base: 128, range: 33, pace: 0.78 },
   },
   shell: {
@@ -64,7 +64,7 @@ export const CHARACTERS: Record<CharacterId, CharacterProfile> = {
     role: 'Big Boss',
     color: '#58765c',
     accent: '#d9c27d',
-    detail: 'Keeper of the sealed archive.',
+    detail: 'Takes his time over tea and lets the room argue before he steps in.',
     voice: { wave: 'sine', base: 162, range: 36, pace: 0.65 },
   },
   narrator: {
@@ -82,27 +82,27 @@ export const CHARACTERS: Record<CharacterId, CharacterProfile> = {
 export const OPENING_LINES: readonly DialogueLine[] = [
   {
     speaker: 'narrator',
-    text: 'This is a fictional boardroom with five original animal executives and one sealed archive. The products are real; the meeting is a teaching story.',
+    text: 'These animal meetings are fictional. Your votes will build imaginary consoles; at the end, you’ll see what Nintendo really made.',
     mood: 'neutral',
   },
   {
     speaker: 'shell',
-    text: 'Welcome to the board. Oh, good, you’re all here. Three launches, four votes, and one archive with a very stubborn lock. I have time. The clock does not.',
+    text: 'Come in, come in. We could use a few more opinions before we decide what sort of game console to build.',
     mood: 'pleased',
   },
   {
     speaker: 'mori',
-    text: 'I was up late again. I kept thinking about the people who never pick up a controller. Could we start with them?',
+    text: 'Slyvester, your tail’s on the spare chair. Our guests need somewhere to sit.',
     mood: 'thoughtful',
   },
   {
     speaker: 'pip',
-    text: 'Oh! I have a poster for them. Is that weird? That’s weird. I’ll hold it.',
+    text: 'Oh! Sorry, make yourselves comfortable. I’ll try to leave some room for your ideas too.',
     mood: 'pleased',
   },
   {
     speaker: 'shell',
-    text: 'Hold it until after the vote, Slyvester. Your prototypes are make-believe. History stays under seal until the last page. Shall we begin?',
+    text: 'We’ll visit three different years and take four votes. At the grand finale, we’ll show you what Nintendo really chose.',
     mood: 'neutral',
   },
 ]
@@ -115,58 +115,58 @@ const D1_OPTIONS = [
     title: 'The Power Race',
     shortTitle: 'Power Race',
     detail:
-      'Build the most capable machine on the shelf: advanced graphics, media features, and a familiar two-handed controller.',
-    benefit: 'A clear appeal to established enthusiasts and big-budget game partners.',
-    tradeoff: 'A costly head-to-head fight on ground where rivals already set the pace.',
+      'Build a powerful home console with impressive graphics, media features and familiar controls.',
+    benefit: 'Gives keen players and makers of demanding games a reason to look at our console.',
+    tradeoff: 'Expensive parts put us in direct competition with well-funded rivals.',
     conceptTitle: 'The Power Tower',
     conceptDescription:
-      'A wide, vented console built for horsepower, paired with a familiar controller for the committed player.',
+      'A wide console with cooling vents and a familiar two-handed controller, designed for demanding games.',
     prototypeVariant: 'power-tower',
     feedback: {
       speaker: 'grumble',
-      text: 'A bigger box. More vents. A controller shaped like the last one. Enthusiasts will nod. My budget just fainted.',
+      text: 'That’s a serious cooling fan. I can see why keen players would want this one; I’d like to see the parts bill too.',
       mood: 'concerned',
     },
-    boss: 'Slyvester can sell the box. Pawson has to pay for the vents. A faster machine may win the shelf. Will it win a place at a family’s table?',
+    boss: 'We’d be asking people to compare us with other powerful consoles. Which games would make them choose ours?',
   }),
   choice({
     id: 'B',
     title: 'Open the Living Room',
     shortTitle: 'Living Room',
     detail:
-      'Put approachable controls and active family play at the center of the system.',
-    benefit: 'Invites households and lapsed players into the same room.',
-    tradeoff: 'Core players may shrug; gestures are difficult to make effortless.',
+      'Build around simple motion controls and games a family can learn together.',
+    benefit: 'Could help beginners and people who stopped playing feel comfortable joining in.',
+    tradeoff: 'Gestures must work reliably, and keen players will still want games of their own.',
     conceptTitle: 'The Hearth Box',
     conceptDescription:
-      'A small, friendly console and a gesture wand designed for a first minute of play — not a manual.',
+      'A small home console with a motion controller for familiar actions such as swinging or bowling.',
     prototypeVariant: 'social-box',
     feedback: {
       speaker: 'mori',
-      text: 'A room you understand in five minutes. I like that. The family has to feel play before anyone reads a manual.',
+      text: 'I can imagine handing Dad that controller. This time I’ll let him try a swing before I start explaining it.',
       mood: 'pleased',
     },
-    boss: 'You’re inviting a new room to play. Hootley, keep an eye on the parent by the door. Can the first minute be fun before the manual?',
+    boss: 'Let’s invite beginners to try it before we promise anything. We’ll also need games for people who already enjoy ours.',
   }),
   choice({
     id: 'C',
     title: 'Play Anywhere',
     shortTitle: 'Anywhere',
     detail:
-      'Merge portable and home play now, with one screen that travels and can connect to a TV.',
-    benefit: 'A single library that could follow the player between the couch and the road.',
+      'Build one machine with its own screen, portable games and a connection to the TV.',
+    benefit: 'Players could continue the same games at home and away.',
     tradeoff:
-      '2005-era batteries, displays, and processors make this a speculative, expensive bet — the right idea may be a decade early.',
+      'With 2005 parts, weight, heat, battery life and price make this an uncertain experiment.',
     conceptTitle: 'The Pocket Dock',
     conceptDescription:
-      'A chunky handheld with a tiny dock: a bold early attempt to make one library follow the player.',
+      'A chunky handheld and TV dock, imagining what combined home and portable play might look like in 2005.',
     prototypeVariant: 'early-handheld',
     feedback: {
       speaker: 'bolt',
-      text: 'One library in one hand. I love it. In 2005, the battery and the heat send you the bill before the fun starts.',
+      text: 'I’d love to take this home. Before anyone orders it, though, I need a version that won’t get hot in your paws.',
       mood: 'concerned',
     },
-    boss: 'Damian, you’d carry the living room in one hand. Is the technology ready, or just early? I have time. The battery may not.',
+    boss: 'Taking your games along sounds useful. What would you give up to make this affordable with the parts available to us now?',
   }),
 ] as const satisfies readonly DecisionOption[]
 
@@ -176,57 +176,57 @@ const D2_OPTIONS = [
     title: 'Join the HD Race',
     shortTitle: 'HD Race',
     detail:
-      'Raise the technical specifications and court dedicated console enthusiasts with premium games.',
-    benefit: 'Meets premium-console expectations and speaks to the core audience.',
-    tradeoff: 'Costly direct competition and less room for a distinctive story.',
+      'Build a more powerful home console with HD graphics and demanding adventure and action games.',
+    benefit: 'Could attract players who buy other consoles for their graphics and games.',
+    tradeoff: 'Costs more to build and needs strong games to stand out against rivals.',
     conceptTitle: 'The Benchmark Box',
     conceptDescription:
-      'A tall, serious chassis with high-end components and a controller built for conventional blockbusters.',
+      'A tall home console with powerful parts and a familiar controller for large, detailed games.',
     prototypeVariant: 'hd-console',
     feedback: {
       speaker: 'pip',
-      text: 'The HD race is easy to explain. It’s also a race where the other runners know the track. I can sell it. I can’t make us faster.',
+      text: 'I’d put a big adventure on that screen. Lovely to look at, but we’ll need games people can’t already get elsewhere.',
       mood: 'thoughtful',
     },
-    boss: 'A premium machine speaks to players who already know the language. Slyvester can sell that. Can it give the rest of the house a reason to listen?',
+    boss: 'Those players have plenty to choose from already. What would persuade them to buy our machine as well?',
   }),
   choice({
     id: 'B',
     title: 'Reinvent the Second Screen',
     shortTitle: 'Second Screen',
     detail:
-      'Make a tablet-like controller the heart of shared living-room play, with off-TV use near the console.',
-    benefit: 'Creates asymmetric play and lets the TV be shared or freed.',
+      'Add a screen to the controller for private views during shared games and play near the console without the TV.',
+    benefit: 'Players can see different information, or someone else can use the TV.',
     tradeoff: 'More hardware to charge and explain; off-TV play stays tied to the base console.',
     conceptTitle: 'The Together Screen',
     conceptDescription:
-      'A base console paired with an oversized touch controller. The extra screen is the headline, not an accessory.',
+      'A new home console and a large touch-screen controller that receives its game picture from the nearby console.',
     prototypeVariant: 'second-screen',
     feedback: {
       speaker: 'bolt',
-      text: 'The second screen? I can build it. Making a whole family understand it at a glance is the hard part. Otherwise it’s an expensive coaster.',
+      text: 'There’s room for a secret map on that screen. Now I need a game that makes you want to use it.',
       mood: 'thoughtful',
     },
-    boss: 'The extra screen is memorable. Pawson will remember the chargers. Will a family remember why they needed it?',
+    boss: 'Before we show this off, let’s try explaining it to someone who missed the meeting. Would they understand why they’d need a new console?',
   }),
   choice({
     id: 'C',
     title: 'Go Fully Portable',
     shortTitle: 'Portable',
     detail:
-      'Combine handheld portability with a broader game library and leave the stationary box behind.',
-    benefit: 'Offers mobility and convenience for every play session.',
-    tradeoff: 'Cost, battery, graphics, and software portfolio complications arrive together.',
+      'Build a standalone handheld for bigger games, with no home console or TV connection.',
+    benefit: 'Players can take the whole game with them, beyond the range of a home console.',
+    tradeoff: 'Must justify its price beside phones while balancing battery life, graphics and games.',
     conceptTitle: 'The Carry Console',
     conceptDescription:
-      'A single handheld with a large screen and console ambitions, designed to go everywhere by itself.',
+      'A large-screen handheld that runs its games by itself, without a box connected to the TV.',
     prototypeVariant: 'portable',
     feedback: {
       speaker: 'grumble',
-      text: 'One portable library. Nice. Paying for premium expectations inside that shell is where the arithmetic starts growling.',
+      text: 'I’d take that on a long journey. It needs enough battery to last, and games worth paying for beside the ones on my phone.',
       mood: 'concerned',
     },
-    boss: 'You chose freedom over the living room. Is that a new market, or a smaller one with better scenery? Damian, can it fit in a coat pocket?',
+    boss: 'Let’s give it to someone who plays on their phone. What would make them want to carry this too?',
   }),
 ] as const satisfies readonly DecisionOption[]
 
@@ -236,52 +236,52 @@ const D3_OPTIONS = [
     title: 'TV-First',
     shortTitle: 'TV-First',
     detail: 'Design a home console around the living-room screen.',
-    benefit: 'Focused design and sustained living-room performance.',
+    benefit: 'Room for powerful parts, comfortable controls and a big shared picture.',
     tradeoff: 'Tethered to a television and a room.',
     conceptTitle: 'The Living Room Core',
-    conceptDescription: 'A focused home machine with a fixed connection to the biggest screen in the house.',
+    conceptDescription: 'A home console that connects to the television and stays there.',
     prototypeVariant: 'tv',
     feedback: {
       speaker: 'pip',
-      text: 'A home-first machine can be sharp. It also asks the whole family to come to it. That’s a lot of walking.',
+      text: 'I could get everyone round the TV for this. We’d need to make that evening tempting enough to leave their other screens alone.',
       mood: 'thoughtful',
     },
-    boss: 'A home console can be the best seat in the house. What happens when the house empties and everyone wants to take the game along?',
+    boss: 'We’ve chosen the television, so let’s make good use of it. Which games would you want everyone gathered around?',
   }),
   choice({
     id: 'B',
     title: 'Handheld-First',
     shortTitle: 'Handheld',
     detail: 'Design one portable system with no dock or home-console mode.',
-    benefit: 'Convenience, travel use, and one screen that is always with you.',
+    benefit: 'Easy to carry, without paying for a TV dock you might never use.',
     tradeoff: 'Gives up the effortless big-screen experience.',
     conceptTitle: 'The Pocket Screen',
-    conceptDescription: 'A self-contained handheld that asks the player to bring the screen, not find one.',
+    conceptDescription: 'A standalone handheld with its own screen and no TV connection.',
     prototypeVariant: 'handheld',
     feedback: {
       speaker: 'mori',
-      text: 'Portability meets people where they are. It also leaves the shared room to other screens. I wonder which one gets lonely.',
+      text: 'That would fit my train journey nicely. I’d miss putting the picture on the television when I got home, though.',
       mood: 'thoughtful',
     },
-    boss: 'One screen, always with you. A clean promise. Who gets left out when everyone plays alone, Hootley?',
+    boss: 'We can leave out the TV dock and concentrate on carrying it. How comfortable would it be through a long journey?',
   }),
   choice({
     id: 'C',
     title: 'Hybrid',
     shortTitle: 'Hybrid',
     detail: 'Design one system that docks to a TV and travels as a handheld.',
-    benefit: 'One library and one identity across both modes of play.',
-    tradeoff: 'Performance, battery, and form-factor compromises are unavoidable.',
+    benefit: 'Continue the same games on the television and on the go.',
+    tradeoff: 'Portable parts limit power; the screen, battery and dock add cost.',
     conceptTitle: 'The Take-Anywhere Dock',
     conceptDescription:
-      'One screen that lives in a dock at home and leaves with the player, carrying the same library between modes.',
+      'A handheld that runs the game itself, with a dock for putting the picture on the television.',
     prototypeVariant: 'hybrid',
     feedback: {
       speaker: 'bolt',
-      text: 'Two places, one library. I can build that. The handoff has to feel invisible, or every dock becomes a chore.',
+      text: 'Right, the game runs in the handheld and the dock connects it to the TV. I’ll test switching between them without restarting.',
       mood: 'pleased',
     },
-    boss: 'You’ve asked one device to live in two places. Will the experience travel as smoothly as the hardware? Damian, no spreadsheets.',
+    boss: 'Try it both ways before we order the parts. It needs to feel comfortable in your paws and look good on the television.',
   }),
 ] as const satisfies readonly DecisionOption[]
 
@@ -290,79 +290,79 @@ const D4_OPTIONS = [
     id: 'A',
     title: 'Maximum Performance',
     shortTitle: 'Performance',
-    detail: 'Prioritize advanced graphics, high-end features, and conventional benchmarks.',
-    benefit: 'A stronger conventional performance story.',
-    tradeoff: 'Cost, energy, and size pressure — especially severe in portable modes.',
+    detail: 'Spend more of the design effort on powerful parts and impressive graphics.',
+    benefit: 'Supports richer pictures and more demanding games.',
+    tradeoff: 'More heat, cost and power use, especially difficult in a handheld.',
     conceptTitle: 'Performance Edition',
-    conceptDescription: 'A chunky, high-spec controller and power module signal raw capability first.',
+    conceptDescription: 'A chunky controller and extra power module represent the focus on demanding games.',
     accessoryVariant: 'performance',
     feedback: {
       speaker: 'grumble',
-      text: 'Performance gives the enthusiasts a number to admire. It also puts every extra watt on someone’s bill.',
+      text: 'I’d enjoy a better-looking game myself. We’ll have to decide how much more someone would pay for the parts that run it.',
       mood: 'concerned',
     },
-    boss: 'The enthusiasts will admire the number. Will a newcomer pick up the controller? Slyvester, make that the poster.',
+    boss: 'Ask the game makers what they’d do with that extra power. We should know what people get for the extra cost.',
   }),
   choice({
     id: 'B',
     title: 'Instant Shared Play',
     shortTitle: 'Shared Play',
-    detail: 'Prioritize split controllers, local multiplayer, and flexible play modes.',
-    benefit: 'Low-friction social participation: a spectator can become a player in seconds.',
-    tradeoff: 'Controller durability, added complexity, and tighter design constraints.',
+    detail: 'Build detachable controls so two people can play together without a second full controller.',
+    benefit: 'A friend can join a suitable game using controls already in the box.',
+    tradeoff: 'Small controls must be comfortable and sturdy, with more loose pieces to manage.',
     conceptTitle: 'Shared Play Edition',
     conceptDescription:
-      'Two compact side controllers detach from the system, turning one screen into an instant two-player setup.',
+      'Two small controls separate for two-player games and come together for playing alone.',
     accessoryVariant: 'split-controls',
     feedback: {
       speaker: 'pip',
-      text: 'Two controllers from one. A spectator becomes a player before the commercial ends. That’s the demo. That’s the whole commercial.',
+      text: 'I’m keeping one control for Pawson. He’s watched enough of our demonstrations; I want a game he can join this time.',
       mood: 'pleased',
     },
-    boss: 'Two controllers from one is a generous invitation. Will the pieces still feel simple after a hundred family game nights? Pawson, bring snacks.',
+    boss: 'Let’s try the little controls with different paws. Sharing them only helps if both people can comfortably play.',
   }),
   choice({
     id: 'C',
     title: 'Motion-First Revival',
     shortTitle: 'Motion',
-    detail: 'Maximize gesture-based group play as the defining interaction.',
-    benefit: 'Distinctive, accessible physical play that can energize a room.',
-    tradeoff: 'May narrow the audience and pull focus from a broad core library.',
+    detail: 'Make physical actions such as swinging and aiming the main way to play.',
+    benefit: 'Familiar movements can help people join active games without learning many buttons.',
+    tradeoff: 'Needs space and reliable tracking, and may leave less attention for other kinds of games.',
     conceptTitle: 'Motion Edition',
-    conceptDescription: 'A gesture wand and spacious motion play put bodies, not buttons, at the center.',
+    conceptDescription: 'A motion controller for games played through swings, pointing and other physical actions.',
     accessoryVariant: 'motion',
     feedback: {
       speaker: 'bolt',
-      text: 'Motion can fill a room with laughter. It can also make the controller feel like a school fitness test.',
+      text: 'I’ll test small movements as well as big swings. You shouldn’t need my enthusiasm for exercise to enjoy one of our games.',
       mood: 'thoughtful',
     },
-    boss: 'Motion can fill a room with laughter. Can it also keep the players who want a quiet evening? Pawson is already hiding.',
+    boss: 'We’ll need space to demonstrate those games safely. What would we offer someone who wants to stay in their chair?',
   }),
 ] as const satisfies readonly DecisionOption[]
 
 export const DECISIONS: Record<DecisionId, Decision> = {
   d1: {
     id: 'd1',
-    prompt: 'Where should the next platform compete?',
-    context: 'Each direction trades a different kind of reach for a different kind of risk.',
+    prompt: 'What kind of console should we build?',
+    context: 'Choose a direction for 2005. Think about who would want it and what it would take to build.',
     options: D1_OPTIONS,
   },
   d2: {
     id: 'd2',
-    prompt: 'What should the successor emphasize?',
-    context: 'A distinctive feature is not yet a value proposition. The household has to understand it.',
+    prompt: 'What would make the next console worth buying?',
+    context: 'Choose a direction for 2011. People already have games they enjoy; give them a reason to try ours.',
     options: D2_OPTIONS,
   },
   d3: {
     id: 'd3',
     prompt: 'Where does gaming happen?',
-    context: 'First vote of two. This choice sets the chassis and the system’s relationship to place.',
+    context: 'First vote of two: choose a TV console, a handheld, or one machine that does both.',
     options: D3_OPTIONS,
   },
   d4: {
     id: 'd4',
-    prompt: 'What should design resources prioritize?',
-    context: 'Second vote of two. This choice sets the controller and the social invitation.',
+    prompt: 'What should we spend the most time getting right?',
+    context: 'Second vote of two: choose the main focus for the machine you just picked.',
     options: D4_OPTIONS,
   },
 }
@@ -374,58 +374,92 @@ export const CHAPTERS: readonly Chapter[] = [
     year: 2005,
     eyebrow: '2005 · THE LIVING ROOM',
     title: 'The Console Wars',
-    lead: 'The next home console must compete in a market obsessed with more power.',
+    lead: 'Other consoles promise better graphics. Nintendo needs a reason for people to choose its next machine.',
     brief:
-      'Rival machines are racing toward richer graphics, bigger media features, and the same devoted players. Nintendo’s previous home system reached fewer buyers, while many households still find controllers and game conventions intimidating.',
+      'It is 2005. Nintendo’s previous home console has struggled against its rivals. Better graphics could attract keen players, but many people still find games difficult to get into. Should the next machine compete for existing players, welcome beginners, or try to combine home and portable play?',
     watchFor: [
-      'The benchmark: richer graphics, processing muscle, premium games.',
-      'Who is not at the table? Families and lapsed players who see games as somebody else’s hobby.',
-      'The constraint: a head-on spending race favors the market leader.',
-      'The Blue Ocean lens: who is a noncustomer, and what could be eliminated, reduced, raised, or created?',
+      'Better graphics matter to many players, but powerful parts cost money.',
+      'Some people stopped playing; others have never felt comfortable picking up a controller.',
+      'A portable system that also connects to a TV would stretch the technology available in 2005.',
     ],
     decisions: ['d1'],
     advisorLines: [
       {
-        speaker: 'mori',
-        text: 'I visited three families who don’t own a console. Two shrugged. One asked, ‘Could my dad play too?’ I wrote that down.',
-        mood: 'thoughtful',
-      },
-      {
-        speaker: 'pip',
-        text: 'Oh! Picture the commercial. Grandma bowls, Dad cheers, nobody asks about polygons. I can see the poster already. Retailers will ask what’s inside, though.',
-        mood: 'pleased',
-      },
-      {
-        speaker: 'grumble',
-        text: 'Cute poster, Slyvester. Now show me the bill for motion sensors and the six-word slogan you call a forecast.',
-        mood: 'concerned',
-      },
-      {
-        speaker: 'pip',
-        text: 'Retailers don’t buy posters, Pawson. They buy feelings. Then they buy lunch.',
-        mood: 'pleased',
-      },
-      {
-        speaker: 'grumble',
-        text: 'I’m not buying either. Motion sensors aren’t free, and neither is my lunch.',
+        speaker: 'shell',
+        text: 'All right. Our last console didn’t sell enough, so what are we doing differently with the next one?',
         mood: 'concerned',
       },
       {
         speaker: 'bolt',
-        text: 'I can build a wand a kid can wave. Probably. The trick is making every wild swing count without hitting Pawson’s coffee.',
+        text: 'Better graphics, for a start. I’m tired of seeing our games look worse next to everyone else’s.',
         mood: 'pleased',
       },
       {
         speaker: 'mori',
-        text: 'Who’s missing from the room? The parent who slips out when the console turns on. I keep thinking about her.',
+        text: 'I’d like that too. But my dad hands me back the controller because he can’t work out which button to press.',
+        mood: 'thoughtful',
+      },
+      {
+        speaker: 'bolt',
+        text: 'Well, nobody knows the buttons at first. Did you give him a chance, or start explaining everything?',
+        mood: 'thoughtful',
+      },
+      {
+        speaker: 'mori',
+        text: 'I may have explained rather a lot. He likes bowling, though, and he’s never needed my help with that.',
+        mood: 'thoughtful',
+      },
+      {
+        speaker: 'pip',
+        text: 'Then let him bowl! Could he swing the controller like he’s throwing a ball, instead of remembering all those buttons?',
+        mood: 'pleased',
+      },
+      {
+        speaker: 'bolt',
+        text: 'With a motion sensor, yes. I’d need to test gentle swings as well as whatever you’re doing with your paws.',
+        mood: 'pleased',
+      },
+      {
+        speaker: 'grumble',
+        text: 'Test it away from my tea, please. If we skip the most expensive graphics parts, we might afford to try those controls.',
+        mood: 'concerned',
+      },
+      {
+        speaker: 'pip',
+        text: 'Hold on, though. I still want the big adventure games, and I don’t want to spend every evening waving my arms.',
+        mood: 'thoughtful',
+      },
+      {
+        speaker: 'mori',
+        text: 'Neither do I. We could make the first game easier to join without making every game the same.',
+        mood: 'thoughtful',
+      },
+      {
+        speaker: 'bolt',
+        text: 'Or put a screen in the machine itself. Carry your adventure outside, then plug it into the TV when you get home.',
+        mood: 'pleased',
+      },
+      {
+        speaker: 'grumble',
+        text: 'Outside sounds lovely. How heavy is this thing once you’ve fitted a screen and enough battery to keep it running?',
+        mood: 'concerned',
+      },
+      {
+        speaker: 'bolt',
+        text: 'With the parts we have in 2005, fairly heavy. I could make a simpler version, but the games would have to look simpler too.',
+        mood: 'thoughtful',
+      },
+      {
+        speaker: 'shell',
+        text: 'Let’s hear from our guests, then. Better graphics, easier family play, or a machine you can carry: which would you build?',
         mood: 'thoughtful',
       },
     ],
-    bossClosing: 'No peeking. Keep your reasoning warm. History can answer for itself.',
+    bossClosing: 'I’ve written down your choice, including the awkward bits. Let’s see what the next meeting has waiting for us.',
     transition: {
-      eyebrow: 'A FEW YEARS LATER',
-      title: 'The room changes',
-      text: 'The next system brought a different kind of household into the conversation. A few years later, new alternatives began competing for that attention.',
+      eyebrow: '2011 · THE NEXT CHALLENGE',
+      title: 'A few years later',
+      text: 'In the real world, Nintendo brought more families into gaming. By 2011, those players could also find easy-to-play games on phones and rival consoles. Nintendo needed to give them a reason to buy its next machine.',
       nextLabel: 'Continue to Chapter 2 · 2011',
     },
   },
@@ -436,57 +470,97 @@ export const CHAPTERS: readonly Chapter[] = [
     eyebrow: '2011 · SUCCESS CREATES A NEW PROBLEM',
     title: 'The Follow-Up Problem',
     lead:
-      'In the real timeline, a distinctive interactive system reached beyond the core. Momentum is now contested.',
+      'Nintendo reached more households. What would persuade them to buy another console?',
     brief:
-      'Smartphones and tablets have changed what a screen can be and where attention goes. The follow-up must make a new value case — without assuming that last time’s magic will repeat.',
+      'It is 2011 in Nintendo’s real timeline. Its family-friendly approach has attracted people who rarely played before, but rivals now offer motion controls too. Phones and tablets offer quick, inexpensive games. The next console needs to give people something worth buying again.',
     watchFor: [
-      'The risk: a feature can be distinctive and still be hard to explain.',
-      'The value test: does the extra screen solve a customer problem, or add a chore?',
-      'The pressure: premium hardware raises both cost and expectations.',
+      'People already have games and devices they enjoy.',
+      'A screen in the controller could free the TV or give players different views of a game.',
+      'The games must show why a new machine is worth buying.',
     ],
     decisions: ['d2'],
     advisorLines: [
       {
+        speaker: 'shell',
+        text: 'Nintendo’s last launch brought more families in. Now they have other ways to play, so we can’t count on them buying another console.',
+        mood: 'thoughtful',
+      },
+      {
         speaker: 'pip',
-        text: 'Okay, hear me out. Phones own the pocket and the spare minute. We need a living-room trick a glowing rectangle can’t do.',
+        text: 'My sister used to ask me to bring games over. Yesterday she showed me one on her phone, then went straight back to it.',
+        mood: 'concerned',
+      },
+      {
+        speaker: 'grumble',
+        text: 'I’ve got one of those. Good for five minutes while the kettle boils, and I didn’t need to buy another machine.',
+        mood: 'neutral',
+      },
+      {
+        speaker: 'bolt',
+        text: 'I’ve been sketching a controller with its own screen. You could hide your cards there while everyone else watches the TV.',
+        mood: 'pleased',
+      },
+      {
+        speaker: 'mori',
+        text: 'Could I keep playing on that little screen when Dad wants the television? We still haven’t agreed whose turn it is.',
+        mood: 'thoughtful',
+      },
+      {
+        speaker: 'bolt',
+        text: 'Yes, if you stay near the console. That box runs the game and sends the picture to the controller.',
+        mood: 'thoughtful',
+      },
+      {
+        speaker: 'pip',
+        text: 'Wait, so I can take the screen to the sofa, but not on the bus? I’d have to make that very clear.',
         mood: 'thoughtful',
       },
       {
         speaker: 'grumble',
-        text: 'I like the poster, Slyvester. I don’t like the bill for two screens, two chargers, and one house already buried in cables. I brought a snack.',
-        mood: 'concerned',
-      },
-      {
-        speaker: 'pip',
-        text: 'A snack? Pawson, we’re launching a console, not a picnic.',
-        mood: 'pleased',
-      },
-      {
-        speaker: 'grumble',
-        text: 'You bring the console. I’ll bring the picnic. Mine has a budget.',
+        text: 'And explain why I need a whole new console. From that drawing, I might think you’re selling me another controller.',
         mood: 'concerned',
       },
       {
         speaker: 'bolt',
-        text: 'Second screen in the controller? I can build that. Battery, latency, and price all want the same seat. Somebody’s getting shoved.',
-        mood: 'thoughtful',
+        text: 'I’d rather let you try a game. You could plan an ambush on your screen without Slyvester peeking at it.',
+        mood: 'pleased',
+      },
+      {
+        speaker: 'pip',
+        text: 'I would never peek. Fine, I would, and now I want to try it; we’d need games like that ready when it launches.',
+        mood: 'pleased',
       },
       {
         speaker: 'mori',
-        text: 'One mother told me she loved playing together. Then she hid the second screen in a drawer. Did anyone ask her why?',
+        text: 'And something for the people who were happy with their old games. They may not want to learn all over again.',
         mood: 'thoughtful',
       },
       {
         speaker: 'pip',
-        text: 'Premium is the language retailers speak. Skipping it is a gamble. I hate that I’m the one saying this.',
+        text: 'We could go after people who want bigger adventures instead. Give them the sharper picture and games they’re buying other consoles for.',
+        mood: 'thoughtful',
+      },
+      {
+        speaker: 'grumble',
+        text: 'There are buyers for that. We’d have to pay for the powerful parts and persuade game makers to support us.',
+        mood: 'thoughtful',
+      },
+      {
+        speaker: 'bolt',
+        text: 'Or build a proper handheld that runs its games by itself. We’d lose the TV, and have to watch battery life and price.',
+        mood: 'thoughtful',
+      },
+      {
+        speaker: 'shell',
+        text: 'Let’s put all three to a vote. Which would give someone a reason to put their phone down and pick up our games?',
         mood: 'thoughtful',
       },
     ],
-    bossClosing: 'Still sealed. Four votes must be in before we compare our room with the company’s road.',
+    bossClosing: 'Keep that concern beside your choice in the notes. We have one more meeting before we reveal Nintendo’s real decisions.',
     transition: {
-      eyebrow: 'THE NEXT RECKONING',
-      title: 'A category up for grabs',
-      text: 'The real successor struggled to sustain the earlier system’s momentum. Nintendo now faced another chance to reconsider the entire category.',
+      eyebrow: '2016 · TIME TO TRY AGAIN',
+      title: 'A few years later',
+      text: 'Nintendo’s real follow-up console struggled to sell. By 2016, it was time to try again. Would people want their next console to stay by the TV, go everywhere with them, or do both?',
       nextLabel: 'Continue to Chapter 3 · 2016',
     },
   },
@@ -496,63 +570,103 @@ export const CHAPTERS: readonly Chapter[] = [
     year: 2016,
     eyebrow: '2016 · REDEFINE THE PLATFORM',
     title: 'The Category Is Up for Grabs',
-    lead: 'A recent successor underperformed. The next launch needs a value proposition that spans where and how games are played.',
+    lead: 'The real successor struggled. Where should people play next, and what should the new machine do best?',
     brief:
-      'Smartphones normalized constant access. Households still gather, but attention is scattered across devices. The next system cannot simply add another box; it must make a coherent promise about time, place, and people.',
+      'It is 2016. Nintendo needs to recover after a disappointing home console. People play on televisions, handhelds and phones. You will decide where the next system belongs, then choose whether better graphics, easy shared play or motion controls deserve the most attention.',
     watchFor: [
-      'Two connected votes: one for where play happens, one for how people join.',
-      'One factory sequence will combine both choices into a single concept.',
-      'No combination is a forecast. The archive will compare reasoning, not score it.',
+      'Vote first for a TV console, a handheld, or a system that does both.',
+      'Then choose between stronger graphics, detachable controls for sharing, and motion controls.',
+      'Both votes go into one prototype. Every combination has something to work out.',
     ],
     decisions: ['d3', 'd4'],
     advisorLines: [
       {
+        speaker: 'shell',
+        text: 'A fresh pot of tea, and a difficult meeting. Nintendo’s real successor struggled, so we need to reconsider what we’re building.',
+        mood: 'concerned',
+      },
+      {
         speaker: 'mori',
-        text: 'I asked people where they play. A train. A lunch break. A friend’s kitchen table. Nobody said the living room.',
-        mood: 'thoughtful',
-      },
-      {
-        speaker: 'bolt',
-        text: 'I can build a dock, a battery, and detachable controls. Each one steals space from the other two, which is the fun part and the problem.',
-        mood: 'concerned',
-      },
-      {
-        speaker: 'pip',
-        text: 'One screen, two players, no setup. That’s six words, and I want it on every wall.',
-        mood: 'pleased',
-      },
-      {
-        speaker: 'grumble',
-        text: 'Slyvester’s poster is six words. The invoice has more pages. Show me what a customer gets for every extra gram.',
-        mood: 'concerned',
-      },
-      {
-        speaker: 'pip',
-        text: 'A gram of what? It’s a controller, not a sandwich.',
-        mood: 'pleased',
-      },
-      {
-        speaker: 'grumble',
-        text: 'Everything is a sandwich if you’re hungry enough. My point stands.',
-        mood: 'concerned',
-      },
-      {
-        speaker: 'bolt',
-        text: 'I can make it lighter. I can make it cheaper. I can’t make it lighter, cheaper, and cool. Pick two.',
+        text: 'I hardly touched my home games this week. By the time I got back, I wanted to sleep; I was wide awake on the train.',
         mood: 'thoughtful',
       },
       {
         speaker: 'grumble',
-        text: 'Performance still sells. Ignoring it leaves money on the table, and I dislike leaving money anywhere.',
+        text: 'I still like the television. Big picture, comfortable chair, and nothing running out of battery halfway through my evening.',
+        mood: 'neutral',
+      },
+      {
+        speaker: 'bolt',
+        text: 'A home console gives me room for powerful parts and cooling. A handheld fits Hootley’s train journey, but it has to stay light.',
+        mood: 'thoughtful',
+      },
+      {
+        speaker: 'pip',
+        text: 'Could we do both? Put the game in the handheld, then connect it to the TV when Pawson gets comfortable.',
+        mood: 'pleased',
+      },
+      {
+        speaker: 'bolt',
+        text: 'With a dock, yes. The whole game runs in the handheld, so even on the TV we’d be working with portable parts.',
+        mood: 'thoughtful',
+      },
+      {
+        speaker: 'mori',
+        text: 'I could keep playing the same game on the train, then. I’d like that, though Pawson might prefer a machine built for his TV.',
+        mood: 'thoughtful',
+      },
+      {
+        speaker: 'grumble',
+        text: 'Then let’s price a plain handheld too. Someone who only plays on the train shouldn’t have to pay for my TV habits.',
+        mood: 'thoughtful',
+      },
+      {
+        speaker: 'shell',
+        text: 'We’ll vote on those three shapes first. Before you decide, let’s talk about the controls and games we’d put with them.',
+        mood: 'neutral',
+      },
+      {
+        speaker: 'pip',
+        text: 'I want two controls that clip together. Pull them apart, hand one to a friend, and you can play something together.',
+        mood: 'pleased',
+      },
+      {
+        speaker: 'grumble',
+        text: 'Make them big enough for my paws. I’d rather buy a comfortable controller than spend the evening dropping a clever little one.',
         mood: 'concerned',
+      },
+      {
+        speaker: 'bolt',
+        text: 'I’ll test the grip. We could spend more on graphics instead, though better pictures need more power, especially in a handheld.',
+        mood: 'thoughtful',
+      },
+      {
+        speaker: 'mori',
+        text: 'I’d keep motion controls in the discussion too. Dad would join a bowling game before he’d join one of your racing games.',
+        mood: 'thoughtful',
+      },
+      {
+        speaker: 'grumble',
+        text: 'I’d join him. But some evenings I want to sit down and play without moving anything except my thumbs.',
+        mood: 'neutral',
+      },
+      {
+        speaker: 'pip',
+        text: 'So would I, and we’ll need games worth coming back for. I can only make everyone admire the controllers for so long.',
+        mood: 'thoughtful',
+      },
+      {
+        speaker: 'shell',
+        text: 'Very well, two votes. Choose where you’d like to play, then what you’d most want us to spend our time getting right.',
+        mood: 'neutral',
       },
     ],
-    bossClosing: 'The archive has waited long enough. Let’s set your reasoning beside the record.',
+    bossClosing: 'Thank you for staying through all three meetings. Pawson, pass the biscuits while we get Nintendo’s real consoles ready to show everyone.',
     transition: {
-      eyebrow: 'THE ARCHIVE IS READY',
-      title: 'The room goes quiet',
-      text: 'Your four votes are recorded. Three fictional prototypes exist on the line. The historical record has waited long enough.',
-      nextLabel: 'Open the sealed archive',
+      eyebrow: 'YOUR CHOICES ARE IN',
+      title: 'The grand finale',
+      text: 'You’ve made your choices and built three imaginary consoles. Now let’s see what Nintendo actually made, how well each console sold, and how your ideas compare.',
+      nextLabel: 'See the grand finale',
     },
   },
 ]
@@ -571,48 +685,48 @@ export function getDecisionLabel(decisionId: DecisionId, choiceId: ChoiceId | un
 
 const COHERENCE_LINES: Record<string, DialogueLine> = {
   'tv:performance': {
-    speaker: 'grumble',
-    text: 'Slyvester, that’s your poster again. Big numbers, family in the front room, no room for the family that doesn’t fit.',
+    speaker: 'bolt',
+    text: 'With a wall socket and room for cooling, I can use those powerful parts properly. Getting games made for them is the next job.',
     mood: 'thoughtful',
   },
   'tv:split-controls': {
-    speaker: 'pip',
-    text: 'One screen, two controllers, a friend joining before the commercial ends. Please use sturdy hinges. I know a beaver.',
+    speaker: 'grumble',
+    text: 'All right, I’ll try a round with you. We’ve got the big screen for sharing, though we’ll still need everyone in the same room.',
     mood: 'pleased',
   },
   'tv:motion': {
-    speaker: 'bolt',
-    text: 'A gesture-first home machine gets the whole room moving. Every game then answers to one unusual controller. Bring ice for the wrists.',
+    speaker: 'mori',
+    text: 'Dad could follow a bowling game on the television. We’d have to move his little table before he started swinging, though.',
     mood: 'concerned',
   },
   'handheld:performance': {
     speaker: 'bolt',
-    text: 'Top performance in a handheld fights battery, heat, and your hand. You can win the spec sheet and lose the commute.',
+    text: 'Detailed games on a little screen sound good. Keeping them running without a hot case or a short-lived battery will take some work.',
     mood: 'concerned',
   },
   'handheld:split-controls': {
     speaker: 'mori',
-    text: 'A portable with two detachable controls invites a friend to join anywhere. It also asks everyone to keep track of more pieces. I’d lose one in a week.',
+    text: 'I’d bring this to a friend’s house. We’d have two controls already, but we’d need a game we could both follow on that small screen.',
     mood: 'thoughtful',
   },
   'handheld:motion': {
     speaker: 'pip',
-    text: 'A gesture handheld turns one player into a tiny stage. Cute. The reason to carry it has to be louder than the wiggle.',
+    text: 'I’ll put the screen down before I swing. We’ll need somewhere steady to set it and enough room to move.',
     mood: 'thoughtful',
   },
   'hybrid:performance': {
-    speaker: 'grumble',
-    text: 'You’ve got a dock, a screen, a battery, and a high-end chip all asking for the same space. Four mouths at one table. Slyvester, where’s the price story?',
+    speaker: 'bolt',
+    text: 'The dock lets those detailed games use the TV. It won’t make the chip smaller, so I still need to solve heat and battery life.',
     mood: 'concerned',
   },
   'hybrid:split-controls': {
-    speaker: 'mori',
-    text: 'The screen says two places. The controllers say bring a friend. Everything points the same way. Keep that one.',
+    speaker: 'grumble',
+    text: 'I can join you here or take a game along. Sharing that little screen away from home will be a tighter squeeze.',
     mood: 'pleased',
   },
   'hybrid:motion': {
-    speaker: 'bolt',
-    text: 'The hybrid promise is already a mouthful. Making motion the centre adds spectacle and one more thing to explain before play.',
+    speaker: 'mori',
+    text: 'We could bowl on the TV and take other games along. I’d want seated controls too, for places where there’s no room to swing.',
     mood: 'concerned',
   },
 }
@@ -665,21 +779,16 @@ export function getBossLines(
     if (lines.length === 0) {
       lines.push({
         speaker: 'shell',
-        text: 'Two votes, one machine, one bet about how play fits into a life.',
+        text: 'We’ll need to choose where this machine gets played and what its controls should do before we can try building it.',
         mood: 'thoughtful',
       })
     }
-    lines.push({
-      speaker: 'shell',
-      text: 'The parts have to agree on one promise. Otherwise you’ve built a heavier box.',
-      mood: 'neutral',
-    })
     lines.push({ speaker: 'shell', text: chapter.bossClosing, mood: 'neutral' })
     return lines
   }
   const decisionId: DecisionId = chapterIndex === 0 ? 'd1' : 'd2'
   const option = getOption(decisionId, choices[decisionId])
-  substantive = option?.boss ?? 'You’ve picked a direction. Now make it a promise a family can repeat at breakfast.'
+  substantive = option?.boss ?? 'Let’s choose a design before we send anything to the factory. I’d rather keep the parts we haven’t agreed on yet.'
   return [
     { speaker: 'shell', text: substantive, mood: 'thoughtful' },
     { speaker: 'shell', text: chapter.bossClosing, mood: 'neutral' },
@@ -687,12 +796,10 @@ export function getBossLines(
 }
 
 export const FINALE_INTRO = {
-  eyebrow: 'FINAL REPORT · THE SEALED ARCHIVE',
-  title: 'The sealed archive',
+  eyebrow: 'THE GRAND FINALE',
+  title: 'Nintendo’s turn',
   lead:
-    'Your votes shaped fictional prototypes. They did not change what happened. Behind this seal: the actual platforms Nintendo released, with their official lifetime figures.',
-  note:
-    'Commercial scale is not proof that one strategy caused success. Use a Blue Ocean lens: what was eliminated, reduced, raised, or created — and who was a noncustomer before the move?',
+    'You’ve made your choices. Let’s meet the three real consoles and find out how they did.',
 }
 
 export const ACTUAL_HISTORY: readonly HistoricalProduct[] = [
@@ -777,51 +884,51 @@ export const DISCUSSION_FOLLOWUP =
 
 export const PROTOTYPE_PRIORITIES: Record<string, { priorities: string; risks: string }> = {
   'power-tower': {
-    priorities: 'Raw capability, media presence, and a familiar premium-controller promise.',
-    risks: 'High cost, crowded competition, and little direct invitation to nonplayers.',
+    priorities: 'Detailed graphics, media features and familiar controls for demanding games.',
+    risks: 'Expensive parts, strong rivals and controls that may still put beginners off.',
   },
   'social-box': {
-    priorities: 'Approachable gesture play and a machine a whole household can understand quickly.',
-    risks: 'Motion execution, core-audience skepticism, and the need for a perfect first minute.',
+    priorities: 'Simple physical actions and games that help a family start playing together.',
+    risks: 'Unreliable gestures could frustrate beginners; keen players still need games they enjoy.',
   },
   'early-handheld': {
-    priorities: 'One library that travels and a TV connection for shared play.',
-    risks: '2005-era batteries, heat, screen cost, and a software library stretched across two modes.',
+    priorities: 'The same games at home and away, with a screen and a TV connection.',
+    risks: 'The weight, heat, battery life and cost of trying this with 2005 parts.',
   },
   'hd-console': {
-    priorities: 'Premium performance and the expectations of dedicated console players.',
-    risks: 'Expensive direct competition and a less distinctive reason to choose the system.',
+    priorities: 'HD graphics and demanding games for people who already enjoy consoles.',
+    risks: 'Expensive parts and a need for games that stand out against rival consoles.',
   },
   'second-screen': {
-    priorities: 'Asymmetric living-room play and freeing the television without leaving the console.',
-    risks: 'Cost, latency, charging, and a value proposition that must be explained in one glance.',
+    priorities: 'Private game information on the controller and play without using the television.',
+    risks: 'An extra screen to pay for and charge, limited range, and games that must justify buying a new console.',
   },
   portable: {
-    priorities: 'Mobility, one library, and a screen that is always at hand.',
-    risks: 'Battery, performance, price, and the loss of effortless shared-screen play.',
+    priorities: 'A standalone handheld that runs its games wherever the player takes it.',
+    risks: 'Battery life, graphics and price, with phones competing for the same spare time.',
   },
   tv: {
-    priorities: 'Focused home performance and the largest screen in the house.',
-    risks: 'Tethered to a TV and a room, leaving portable play to other devices.',
+    priorities: 'A big television picture, with room for cooling and powerful parts.',
+    risks: 'The game stays at home, and someone else may want the television.',
   },
   handheld: {
-    priorities: 'A single portable screen, convenience, and one library on the move.',
-    risks: 'Giving up the big-screen moment and squeezing capability into a handheld.',
+    priorities: 'Games to carry, without a TV dock to pay for or pack.',
+    risks: 'A smaller picture, no TV connection, and limits on battery life and power.',
   },
   hybrid: {
-    priorities: 'One identity and one library across TV and handheld modes.',
-    risks: 'Battery, thermals, performance, size, and making the transition feel invisible.',
+    priorities: 'Continue the same game on the television and in your hands.',
+    risks: 'Portable parts limit power; the screen, battery and dock add weight or cost.',
   },
   performance: {
-    priorities: 'Benchmark performance, advanced features, and a premium technical story.',
-    risks: 'Cost, energy use, size, and a pitch aimed mainly at already-convinced players.',
+    priorities: 'Powerful parts for richer pictures and demanding games.',
+    risks: 'More heat, cost and power use, with less room for a battery in portable designs.',
   },
   'split-controls': {
-    priorities: 'Low-friction local multiplayer and a spectator-to-player moment measured in seconds.',
-    risks: 'Durability, extra pieces to manage, and controller complexity.',
+    priorities: 'Controls already in the box that two people can share in suitable games.',
+    risks: 'Small grips, loose pieces to keep track of, and parts that must survive repeated use.',
   },
   motion: {
-    priorities: 'Physical, demonstrative group play and an immediately visible invitation.',
-    risks: 'A narrower audience, calibration frustration, and less focus on a broad core library.',
+    priorities: 'Familiar physical actions that help people join active games.',
+    risks: 'Space to move, reliable tracking, and enough games for people who prefer seated play.',
   },
 }

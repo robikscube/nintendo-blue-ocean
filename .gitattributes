@@ -16,11 +16,14 @@
 *.docx binary
 *.woff binary
 *.woff2 binary
+*.ttf binary
+
+# Preserve the upstream font license files byte-for-byte.
+blue-ocean-game/public/assets/fonts/**/OFL.txt whitespace=-blank-at-eol
 
 # Windows launchers keep CRLF
 *.ps1 text eol=crlf
 *.cmd text eol=crlf
 *.bat text eol=crlf
 
-# Build output: generated, but intentionally committed for the Pages fallback
-blue-ocean-game/dist-pages/** linguist-generated=true
+# Production output is built by CI; local output is excluded by .gitignore.
