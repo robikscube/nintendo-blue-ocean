@@ -1,5 +1,5 @@
 import { expect, test, type Page } from '@playwright/test'
-import { CHAPTERS } from '../../src/core/story'
+import { CHAPTERS, OPENING_LINES } from '../../src/core/story'
 import type { GameState } from '../../src/core/types'
 
 const SPEAKER_NAMES: Record<string, string> = {
@@ -179,12 +179,11 @@ test.describe('approved dialogue bubble', () => {
     expect(opening.text.length).toBeGreaterThan(0)
     await expect(page.locator('.name-live')).toContainText('Boardroom')
 
-    await advanceDialogue(page)
-    expectApprovedBubble(await readBubble(page), 'shell')
-    await advanceDialogue(page)
-    expectApprovedBubble(await readBubble(page), 'mori')
-    await advanceDialogue(page)
-    expectApprovedBubble(await readBubble(page), 'pip')
+    const foxIndex = OPENING_LINES.findIndex(line => line.speaker === 'pip')
+    for (const line of OPENING_LINES.slice(1, foxIndex+1)) {
+      await advanceDialogue(page)
+      expectApprovedBubble(await readBubble(page), line.speaker)
+    }
 
     // The modal presenter drawer must paint above the bubble and close cleanly.
     await page.keyboard.press('p')
@@ -352,7 +351,7 @@ test.describe('approved dialogue bubble', () => {
     await waitForPhase(page, 'opening')
     const restored = await getState(page)
     expect(restored.dialogueIndex).toBe(2)
-    expectApprovedBubble(await readBubble(page), 'mori')
+    expectApprovedBubble(await readBubble(page), OPENING_LINES[restored.dialogueIndex]!.speaker)
 
     page.once('dialog', (dialog) => dialog.accept())
     await page.keyboard.press('Shift+R')

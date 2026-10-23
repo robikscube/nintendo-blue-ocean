@@ -11,6 +11,8 @@ export function isWorkingFile(path) {
     || /^(?:\.claude|\.codex|\.agents|_archive|output|logs|previews|character-reference-images|monitoring|tools)\//.test(path)
     || /^blue-ocean-game\/dist[^/]*\//.test(path)
     || /^blue-ocean-game\/scripts\/(?!check-repository-files\.mjs$)/.test(path)
+    || /^(?:blue-ocean-game\/)?(?:work|outputs|scratch|tmp)\//.test(path)
+    || /^blue-ocean-game\/playwright\.(?:stationary\.config\.ts|local\..+)$/.test(path)
     || /^run-[^/]*\.ps1$/.test(path)
     || /^[^/]*\.docx$/i.test(path)
     || path === 'SKILL_DEPENDENCIES.txt'

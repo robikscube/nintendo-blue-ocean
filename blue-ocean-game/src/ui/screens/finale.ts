@@ -2,7 +2,6 @@ import type { GameState } from '../../core/types'
 import {
   ACTUAL_HISTORY,
   DECISION_ORDER,
-  DISCUSSION_FOLLOWUP,
   DISCUSSION_QUESTION,
   FINAL_CAVEAT,
   FINALE_INTRO,
@@ -56,7 +55,6 @@ export function renderArchiveScreen(state: GameState): string {
         <div>
           <span class="eyebrow">FINAL REPORT · HISTORY VS. HYPOTHESIS</span>
           <h2 id="archive-heading">The historical record</h2>
-          <p class="lead">Three real platforms, set beside the board’s fictional choices. No grade: compare the reasoning, then interrogate the outcome.</p>
         </div>
         <div class="archive-stamp">
           <span>OFFICIAL FIGURES</span>
@@ -118,6 +116,14 @@ export function renderArchiveScreen(state: GameState): string {
         }).join('')}
       </div>
 
+      <section class="discussion-card" aria-labelledby="discussion-heading">
+        <h3 id="discussion-heading">${escapeHtml(DISCUSSION_QUESTION)}</h3>
+        <div class="discussion-actions">
+          <button class="primary-button" type="button" data-action="reset-from-archive">Run the case again</button>
+          <button class="secondary-button" type="button" data-action="close-archive">Back to the finale</button>
+        </div>
+      </section>
+
       <section class="evidence-panel" aria-labelledby="evidence-heading">
         <div>
           <span class="mini-label">READ THE EVIDENCE CAREFULLY</span>
@@ -131,17 +137,6 @@ export function renderArchiveScreen(state: GameState): string {
           <p class="source-date">${escapeHtml(SALES_SOURCE.asOf)} for the three lifetime hardware totals. Figures are official Nintendo IR values.</p>
           <p class="source-date">${escapeHtml(SOURCE_NOTE)}</p>
           <p class="source-date">Music: <a href="${escapeHtml(MUSIC_CREDIT.sourceUrl)}" target="_blank" rel="noopener noreferrer">${musicCreditTitles()} by ${escapeHtml(MUSIC_CREDIT.artist)}</a> from <em>${escapeHtml(MUSIC_CREDIT.album)}</em>, used under <a href="${escapeHtml(MUSIC_CREDIT.licenseUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(MUSIC_CREDIT.license)}</a> (looped, attenuated under dialogue).</p>
-        </div>
-      </section>
-
-      <section class="discussion-card" aria-labelledby="discussion-heading">
-        <span class="eyebrow">DISCUSSION · 15–20 SECONDS</span>
-        <h3 id="discussion-heading">${escapeHtml(DISCUSSION_QUESTION)}</h3>
-        <p class="discussion-followup">${escapeHtml(DISCUSSION_FOLLOWUP)}</p>
-        <p>Ask the room before revealing your own view. The exhibit is designed to leave the argument open.</p>
-        <div class="discussion-actions">
-          <button class="primary-button" type="button" data-action="reset-from-archive">Run the case again</button>
-          <button class="secondary-button" type="button" data-action="close-archive">Back to the finale</button>
         </div>
       </section>
     </section>

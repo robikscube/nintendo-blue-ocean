@@ -26,6 +26,7 @@ import {
 import { getVoiceProfile } from '../audio/voice-profiles'
 import { renderTitleScreen } from './screens/title'
 import { renderDialoguePanel } from './screens/dialogue-panel'
+import { StationaryText } from './stationary-text'
 import { renderBriefingScreen } from './screens/briefing'
 import { renderVotingScreen } from './screens/voting'
 import { renderFactoryScreen } from './screens/factory'
@@ -83,6 +84,7 @@ export class UI {
   private readonly view: HTMLElement
   private readonly dialoguePanel: HTMLElement
   private readonly dialogueText: HTMLElement
+  private readonly stationaryText: StationaryText
   private readonly dialogueAccessible: HTMLElement
   private readonly speakerName: HTMLElement
   private readonly muteButton: HTMLButtonElement
@@ -105,6 +107,7 @@ export class UI {
   private revealDeadline: number | null = null
   private typing = false
   private fullLine = ''
+  private dialogueSpeaker = ''
   private lastDialogueAdvance = 0
   private dialogueLeaving = false
   private dialogueLeaveTimer: number | null = null
@@ -133,6 +136,7 @@ export class UI {
     this.view = byId('view')
     this.dialoguePanel = byId('dialogue-panel')
     this.dialogueText = byId('dialogue-text')
+    this.stationaryText = new StationaryText(this.dialogueText)
     this.dialogueAccessible = byId('dialogue-accessible')
     this.speakerName = byId('speaker-name')
     // Validate the stable P1/P2 contract node exists even though pointer
@@ -396,13 +400,14 @@ export class UI {
   private startLine(line: DialogueLine): void {
     this.stopTyping()
     this.fullLine = line.text
-    this.dialogueText.textContent = ''
-    this.dialogueAccessible.textContent = `${CHARACTERS[line.speaker].name}: ${line.text}`
+    this.stationaryText.setText(line.text)
+    this.dialogueSpeaker = CHARACTERS[line.speaker].name
+    this.dialogueAccessible.textContent = ''
     this.dialoguePanel.classList.remove('is-complete')
     this.lastDialogueAdvance = 0
 
     // Narrator lines and reduced-motion viewers get the complete line at once.
-    if (this.reducedMotion || line.speaker === 'narrator' || line.text.length === 0) {
+    if (this.reducedMotion || !this.stationaryText.canAnimate || line.speaker === 'narrator' || line.text.length === 0) {
       this.completeLine()
       return
     }
@@ -421,6 +426,7 @@ export class UI {
     this.audio.beginSpeech(line.speaker)
 
     let shown = 0
+    let visibleEnd = 0
     let nextSyllable = 0
     const startedAt = performance.now()
     const revealDuration = timeline.totalDurationMs
@@ -432,7 +438,8 @@ export class UI {
       const nextShown = revealedCharacterCount(timeline, elapsed)
       if (nextShown !== shown) {
         shown = nextShown
-        this.dialogueText.textContent = this.fullLine.slice(0, shown)
+        visibleEnd = this.stationaryText.reveal(shown)
+        this.dialogueAccessible.textContent = `${this.dialogueSpeaker}: ${this.fullLine.slice(0, visibleEnd)}`
       }
 
       // One note per vowel-cluster onset. If a throttled frame skips ahead,
@@ -440,7 +447,8 @@ export class UI {
       while (nextSyllable < audibleSyllables.length) {
         const syllable = audibleSyllables[nextSyllable]
         if (!syllable || syllable.atMs > elapsed) break
-        if (shown > syllable.charIndex) this.audio.triggerSpeech(syllable)
+        if (visibleEnd <= syllable.charIndex) break
+        this.audio.triggerSpeech(syllable)
         nextSyllable += 1
       }
 
@@ -464,7 +472,8 @@ export class UI {
     const wasTyping = this.typing
     this.clearRevealTimers()
     this.typing = false
-    this.dialogueText.textContent = this.fullLine
+    this.stationaryText.reveal(this.fullLine.length)
+    this.dialogueAccessible.textContent = `${this.dialogueSpeaker}: ${this.fullLine}`
     this.dialoguePanel.classList.remove('is-typing')
     this.dialoguePanel.classList.add('is-complete')
     this.dialoguePanel.setAttribute('aria-busy', 'false')
@@ -1089,6 +1098,7 @@ export class UI {
   dispose(): void {
     if (this.scene) this.scene.onMuseumReady = null
     this.disposed = true
+    this.stationaryText.dispose()
     this.unsubscribe()
     this.stopTyping()
     if (this.dialogueLeaveTimer !== null) window.clearTimeout(this.dialogueLeaveTimer)

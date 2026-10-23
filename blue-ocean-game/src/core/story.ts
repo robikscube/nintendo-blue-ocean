@@ -82,7 +82,12 @@ export const CHARACTERS: Record<CharacterId, CharacterProfile> = {
 export const OPENING_LINES: readonly DialogueLine[] = [
   {
     speaker: 'narrator',
-    text: 'These animal meetings are fictional. Your votes will build imaginary consoles; at the end, you’ll see what Nintendo really made.',
+    text: 'Step into the Nintendo boardroom! The gaming world is changing, and the next big idea is yours to shape.',
+    mood: 'neutral',
+  },
+  {
+    speaker: 'narrator',
+    text: 'Think differently, make bold choices, and chart your own path to a blue ocean!',
     mood: 'neutral',
   },
   {
@@ -446,7 +451,7 @@ export const CHAPTERS: readonly Chapter[] = [
       },
       {
         speaker: 'bolt',
-        text: 'With the parts we have in 2005, fairly heavy. I could make a simpler version, but the games would have to look simpler too.',
+        text: 'With the parts we have now? Fairly heavy. I could make a simpler version, but the games would have to look simpler too.',
         mood: 'thoughtful',
       },
       {

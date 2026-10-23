@@ -1,4 +1,6 @@
 import { expect, test, type Page } from '@playwright/test'
+import { OPENING_LINES } from '../../src/core/story'
+const firstTypedIndex = OPENING_LINES.findIndex(line => line.speaker !== 'narrator')
 
 test.use({ reducedMotion: 'no-preference' })
 
@@ -20,8 +22,8 @@ test('procedural speech follows the speaker, unlocks on gesture, and stops clean
   // The first opening line is narrator-only. Move to Shelldon's typed line.
   // The wait, state read, and click all happen in one browser task. That keeps
   // the short 600 ms line from finishing between Playwright round-trips.
-  const skipped = await page.evaluate(async () => {
-    window.__GAME__?.store.dispatch({ type: 'ADVANCE_DIALOGUE' })
+  const skipped = await page.evaluate(async (firstTypedIndex) => {
+    for (let i=0;i<firstTypedIndex;i++) window.__GAME__?.store.dispatch({ type: 'ADVANCE_DIALOGUE' })
     const panel = document.getElementById('dialogue-panel')
     if (!panel) throw new Error('Dialogue panel missing')
     const deadline = performance.now() + 2000
@@ -33,7 +35,7 @@ test('procedural speech follows the speaker, unlocks on gesture, and stops clean
     panel.click()
     const after = window.__GAME__?.audio.getSpeechDebug() ?? null
     return { before, after, typing }
-  })
+  }, firstTypedIndex)
 
   expect(skipped.typing).toBe(true)
   expect(skipped.before?.contextState).toBe('running')

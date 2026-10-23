@@ -42,6 +42,18 @@ agent-reports/
 *.orig
 *.rej
 
+# Local task helpers and scratch artifacts; retain maintained source/tests
+/work/
+/outputs/
+/scratch/
+/tmp/
+/blue-ocean-game/work/
+/blue-ocean-game/outputs/
+/blue-ocean-game/scratch/
+/blue-ocean-game/tmp/
+/blue-ocean-game/playwright.stationary.config.ts
+/blue-ocean-game/playwright.local.*
+
 # Environment and editor/OS files
 .env
 .env.*

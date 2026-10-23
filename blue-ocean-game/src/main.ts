@@ -46,6 +46,9 @@ try {
   document.documentElement.classList.add('no-webgl')
 }
 
+// Settle the self-hosted dialogue face before any dialogue can become visible.
+// A failed font request uses the local fallback without blocking story mode.
+await document.fonts.load('400 16px "Itim"').catch(() => undefined)
 const ui = new UI({ store, scene, audio, root })
 const version = '0.1.0'
 

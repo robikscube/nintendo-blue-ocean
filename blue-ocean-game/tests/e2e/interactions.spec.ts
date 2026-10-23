@@ -1,6 +1,7 @@
 import { expect, test, type Page } from '@playwright/test'
 import type { GameState } from '../../src/core/types'
 import { OPENING_LINES } from '../../src/core/story'
+const firstTypedIndex = OPENING_LINES.findIndex(line => line.speaker !== 'narrator')
 
 async function openGame(page: Page): Promise<void> {
   await page.goto('/', { waitUntil: 'networkidle' })
@@ -41,13 +42,13 @@ test.describe('timed presentation interactions', () => {
     await page.getByRole('button', { name: /^Start$/i }).click()
     await page.waitForFunction(() => window.__GAME_STATE__?.phase === 'opening')
 
-    // The first line is narrator narration and appears instantly. Advance to
+    // Narrator opening lines appear instantly. Advance to
     // the typed Shelldon line and click in the same page task, so the reveal
     // cannot finish underneath Playwright's actionability checks first.
-    const first = await page.evaluate(() => {
+    const first = await page.evaluate((firstTypedIndex) => {
       const store = window.__GAME__?.store
       if (!store) throw new Error('Game store missing')
-      store.dispatch({ type: 'ADVANCE_DIALOGUE' })
+      for (let i=0;i<firstTypedIndex;i++) store.dispatch({ type: 'ADVANCE_DIALOGUE' })
       const panel = document.getElementById('dialogue-panel')
       if (!panel) throw new Error('Dialogue panel missing')
       const startedTyping = panel.classList.contains('is-typing')
@@ -61,26 +62,26 @@ test.describe('timed presentation interactions', () => {
         text: document.getElementById('dialogue-text')?.textContent ?? '',
         accessible: document.getElementById('dialogue-accessible')?.textContent ?? '',
       }
-    })
+    }, firstTypedIndex)
 
     expect(first.startedTyping).toBe(true)
-    expect(first.index).toBe(1)
+    expect(first.index).toBe(firstTypedIndex)
     expect(first.isTyping).toBe(false)
     expect(first.isComplete).toBe(true)
     expect(first.ariaBusy).toBe('false')
-    expect(first.accessible).toContain(OPENING_LINES[1]!.text)
+    expect(first.accessible).toContain(OPENING_LINES[firstTypedIndex]!.text)
     expect(first.accessible.length).toBeGreaterThan(40)
     expect(first.text).toBe(first.accessible.replace(/^[^:]+:\s*/, ''))
 
     // Full text holds indefinitely; completion never auto-advances.
     await page.waitForTimeout(1200)
-    expect((await getState(page)).dialogueIndex).toBe(1)
+    expect((await getState(page)).dialogueIndex).toBe(firstTypedIndex)
     expect((await getState(page)).phase).toBe('opening')
     await expect(page.locator('#dialogue-text')).toHaveText(first.text)
 
     // One deliberate later click advances exactly one line.
     await page.locator('#dialogue-panel').click()
-    await page.waitForFunction(() => window.__GAME_STATE__?.dialogueIndex === 2)
+    await page.waitForFunction(index => window.__GAME_STATE__?.dialogueIndex === index+1, firstTypedIndex)
     expect((await getState(page)).phase).toBe('opening')
   })
 

@@ -102,6 +102,7 @@
    The max-width guard only prevents edge contact on very narrow screens. */
 .dialogue-panel {
   --dialogue-art-ratio: 3872 / 1552;
+  --dialogue-speech-size: 30px;
   --name-tag-fill: #6f7480;
   bottom: clamp(16px, 1.8vh, 24px);
   max-width: calc(100vw - 24px);
@@ -137,7 +138,7 @@
 .dialogue-panel[data-speaker="narrator"] { --name-tag-fill: #6f7480; }
 
 /* Copy stays inside the clear centre of the artwork at every target size.
-   Type sizing remains the approved 31/25.95/24.06px responsive scale. */
+   All speakers use one measured font size; no per-message fitting. */
 .dialogue-panel .dialogue-copy {
   top: 27.2%;
   right: 14.2%;
@@ -145,6 +146,8 @@
   left: 16%;
   min-width: 0;
   max-width: 100%;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .dialogue-panel .dialogue-text {
@@ -153,6 +156,45 @@
   min-width: 0;
   overflow-wrap: break-word;
   word-break: normal;
+  font-size: var(--dialogue-speech-size);
+  line-height: 1.3;
+  text-align: left;
+  text-wrap: wrap;
+  white-space: pre-wrap;
+}
+
+/* Originating-element shadows paint beneath highlight overlays. Remove them
+   only while highlights are supported, then paint them on the revealed prefix. */
+.dialogue-panel .dialogue-text.has-stationary-highlight {
+  text-shadow: none;
+}
+
+::highlight(dialogue-revealed) {
+  text-shadow:
+    0 2px 2px rgba(0, 0, 0, 0.52),
+    0 0 17px rgba(0, 0, 0, 0.23);
+}
+
+/* Paint-only suffix mask: native text shaping and line boxes remain untouched. */
+::highlight(dialogue-unrevealed) {
+  color: transparent;
+  background-color: transparent;
+  text-shadow: none;
+}
+
+/* Retain the existing small-screen typography outside the projector targets. */
+@media (max-width: 850px) {
+  .dialogue-panel { --dialogue-speech-size: 20px; }
+}
+
+/* Panel transforms would move already revealed glyphs on entrance or exit. */
+.dialogue-panel:not([hidden]) {
+  animation: none;
+}
+
+.dialogue-panel.is-leaving {
+  transform: translateX(-50%);
+  transition: opacity 210ms cubic-bezier(0.3, 0, 0.62, 1);
 }
 
 .dialogue-panel .continue-pulse {
