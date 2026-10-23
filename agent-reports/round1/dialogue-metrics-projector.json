@@ -1,0 +1,941 @@
+{
+  "generatedAt": "2026-10-22T16:22:26.117Z",
+  "all": [
+    {
+      "viewport": {
+        "name": "1920x1080",
+        "width": 1920,
+        "height": 1080
+      },
+      "label": "narrator",
+      "classes": "dialogue-panel is-narrator is-complete",
+      "panel": {
+        "left": 280.3499755859375,
+        "top": 848.018310546875,
+        "width": 1359.300048828125,
+        "height": 207.434814453125,
+        "bottom": 1055.453125,
+        "right": 1639.6500244140625,
+        "borderWidth": "3px",
+        "borderColor": "rgba(241, 235, 225, 0.45)",
+        "borderRadius": "45% 58%",
+        "backgroundImage": "radial-gradient(at 42% -22%, rgba(255, 245, 224, 0.1), rgba(0, 0, 0, 0) 62%), radial-gradient(at 64% 118%, rgba(230, 170, 105, 0.06), rgba(0, 0, 0, 0) 56%), linear-gradient(166deg, rgba(43, 38, 39, 0.74) 0%, rgba(29, 25, 27, 0.79) 54%, rgba(21, 18, 20, 0.81) 100%)",
+        "backdropFilter": "blur(2.5px) saturate(1.03)"
+      },
+      "text": {
+        "left": 377.864990234375,
+        "top": 891.850830078125,
+        "width": 1164.27001953125,
+        "height": 87.7265625,
+        "bottom": 979.577392578125,
+        "right": 1542.135009765625,
+        "fontSize": "34px",
+        "lineHeight": "44.54px",
+        "fontFamily": "\"Trebuchet MS\", \"Segoe UI Variable Display\", \"Segoe UI\", ui-rounded, system-ui, sans-serif",
+        "fontWeight": "600",
+        "color": "rgb(255, 248, 238)",
+        "lines": 2,
+        "scrollWidth": 1182,
+        "clientWidth": 1182
+      },
+      "nameplate": {
+        "left": 407.41497802734375,
+        "top": 825.4556274414062,
+        "width": 151.55145263671875,
+        "height": 43.6016845703125,
+        "bottom": 869.0573120117188,
+        "right": 558.9664306640625,
+        "text": "Boardroom",
+        "fontSize": "19px",
+        "color": "rgb(255, 248, 238)",
+        "backgroundImage": "radial-gradient(at 31% 8%, rgba(232, 225, 244, 0.16), rgba(0, 0, 0, 0) 48%), linear-gradient(145deg, rgb(93, 89, 105) 0%, rgb(52, 48, 60) 100%)",
+        "gapToTextPx": 22.79351806640625,
+        "overlapsFirstLine": false
+      },
+      "button": {
+        "left": 937.344970703125,
+        "top": 976.6223754882812,
+        "width": 45.30999755859375,
+        "height": 45.30999755859375,
+        "bottom": 1021.932373046875,
+        "right": 982.6549682617188
+      },
+      "marker": {
+        "left": 951.878662109375,
+        "top": 989.6342163085938,
+        "width": 16.24261474609375,
+        "height": 19.1090087890625,
+        "bottom": 1008.7432250976562,
+        "right": 968.1212768554688,
+        "animationName": "continue-pulse",
+        "opacity": "0.82"
+      },
+      "horizontalOverflow": false,
+      "documentWidth": 1920,
+      "viewportWidth": 1920,
+      "speakerVars": {
+        "color": "#8f93a8",
+        "accent": "#e9e1d3"
+      },
+      "pageErrors": []
+    },
+    {
+      "viewport": {
+        "name": "1920x1080",
+        "width": 1920,
+        "height": 1080
+      },
+      "label": "shell",
+      "classes": "dialogue-panel is-complete",
+      "panel": {
+        "left": 270,
+        "top": 834.859375,
+        "width": 1380,
+        "height": 210.59375,
+        "bottom": 1045.453125,
+        "right": 1650,
+        "borderWidth": "3px",
+        "borderColor": "rgba(255, 245, 228, 0.58)",
+        "borderRadius": "45% 58%",
+        "backgroundImage": "radial-gradient(at 42% -22%, rgba(255, 245, 224, 0.1), rgba(0, 0, 0, 0) 62%), radial-gradient(at 64% 118%, rgba(230, 170, 105, 0.06), rgba(0, 0, 0, 0) 56%), linear-gradient(166deg, rgba(43, 38, 39, 0.74) 0%, rgba(29, 25, 27, 0.79) 54%, rgba(21, 18, 20, 0.81) 100%)",
+        "backdropFilter": "blur(2.5px) saturate(1.03)"
+      },
+      "text": {
+        "left": 369,
+        "top": 879.359375,
+        "width": 1182,
+        "height": 89.0625,
+        "bottom": 968.421875,
+        "right": 1551,
+        "fontSize": "34px",
+        "lineHeight": "44.54px",
+        "fontFamily": "\"Trebuchet MS\", \"Segoe UI Variable Display\", \"Segoe UI\", ui-rounded, system-ui, sans-serif",
+        "fontWeight": "600",
+        "color": "rgb(255, 248, 238)",
+        "lines": 2,
+        "scrollWidth": 1182,
+        "clientWidth": 1182
+      },
+      "nameplate": {
+        "left": 399,
+        "top": 811.953125,
+        "width": 152.765625,
+        "height": 44.265625,
+        "bottom": 856.21875,
+        "right": 551.765625,
+        "text": "Chair Shell",
+        "fontSize": "19px",
+        "color": "rgb(255, 248, 238)",
+        "backgroundImage": "radial-gradient(at 31% 8%, color(srgb 0.85098 0.760784 0.490196 / 0.2), rgba(0, 0, 0, 0) 48%), linear-gradient(145deg, color(srgb 0.311098 0.332745 0.308784) 0%, color(srgb 0.21051 0.232392 0.215843) 100%)",
+        "gapToTextPx": 23.140625,
+        "overlapsFirstLine": false
+      },
+      "button": {
+        "left": 937,
+        "top": 965.421875,
+        "width": 46,
+        "height": 46,
+        "bottom": 1011.421875,
+        "right": 983
+      },
+      "marker": {
+        "left": 951.7550048828125,
+        "top": 978.6318359375,
+        "width": 16.489990234375,
+        "height": 19.4000244140625,
+        "bottom": 998.0318603515625,
+        "right": 968.2449951171875,
+        "animationName": "continue-pulse",
+        "opacity": "0.82"
+      },
+      "horizontalOverflow": false,
+      "documentWidth": 1920,
+      "viewportWidth": 1920,
+      "speakerVars": {
+        "color": "#58765c",
+        "accent": "#d9c27d"
+      },
+      "pageErrors": []
+    },
+    {
+      "viewport": {
+        "name": "1920x1080",
+        "width": 1920,
+        "height": 1080
+      },
+      "label": "mori",
+      "classes": "dialogue-panel is-complete",
+      "panel": {
+        "left": 270,
+        "top": 834.859375,
+        "width": 1380,
+        "height": 210.59375,
+        "bottom": 1045.453125,
+        "right": 1650,
+        "borderWidth": "3px",
+        "borderColor": "rgba(255, 245, 228, 0.58)",
+        "borderRadius": "45% 58%",
+        "backgroundImage": "radial-gradient(at 42% -22%, rgba(255, 245, 224, 0.1), rgba(0, 0, 0, 0) 62%), radial-gradient(at 64% 118%, rgba(230, 170, 105, 0.06), rgba(0, 0, 0, 0) 56%), linear-gradient(166deg, rgba(43, 38, 39, 0.74) 0%, rgba(29, 25, 27, 0.79) 54%, rgba(21, 18, 20, 0.81) 100%)",
+        "backdropFilter": "blur(2.5px) saturate(1.03)"
+      },
+      "text": {
+        "left": 369,
+        "top": 879.359375,
+        "width": 1182,
+        "height": 89.0625,
+        "bottom": 968.421875,
+        "right": 1551,
+        "fontSize": "34px",
+        "lineHeight": "44.54px",
+        "fontFamily": "\"Trebuchet MS\", \"Segoe UI Variable Display\", \"Segoe UI\", ui-rounded, system-ui, sans-serif",
+        "fontWeight": "600",
+        "color": "rgb(255, 248, 238)",
+        "lines": 2,
+        "scrollWidth": 1182,
+        "clientWidth": 1182
+      },
+      "nameplate": {
+        "left": 399,
+        "top": 811.953125,
+        "width": 132,
+        "height": 44.265625,
+        "bottom": 856.21875,
+        "right": 531,
+        "text": "Mori",
+        "fontSize": "19px",
+        "color": "rgb(255, 248, 238)",
+        "backgroundImage": "radial-gradient(at 31% 8%, color(srgb 0.94902 0.831373 0.705882 / 0.2), rgba(0, 0, 0, 0) 48%), linear-gradient(145deg, color(srgb 0.495569 0.369255 0.329922) 0%, color(srgb 0.33851 0.257725 0.23051) 100%)",
+        "gapToTextPx": 23.140625,
+        "overlapsFirstLine": false
+      },
+      "button": {
+        "left": 937,
+        "top": 965.421875,
+        "width": 46,
+        "height": 46,
+        "bottom": 1011.421875,
+        "right": 983
+      },
+      "marker": {
+        "left": 951.7550048828125,
+        "top": 978.6318359375,
+        "width": 16.489990234375,
+        "height": 19.4000244140625,
+        "bottom": 998.0318603515625,
+        "right": 968.2449951171875,
+        "animationName": "continue-pulse",
+        "opacity": "0.82"
+      },
+      "horizontalOverflow": false,
+      "documentWidth": 1920,
+      "viewportWidth": 1920,
+      "speakerVars": {
+        "color": "#b88967",
+        "accent": "#f2d4b4"
+      },
+      "pageErrors": []
+    },
+    {
+      "viewport": {
+        "name": "1920x1080",
+        "width": 1920,
+        "height": 1080
+      },
+      "label": "pip",
+      "classes": "dialogue-panel is-complete",
+      "panel": {
+        "left": 270,
+        "top": 834.859375,
+        "width": 1380,
+        "height": 210.59375,
+        "bottom": 1045.453125,
+        "right": 1650,
+        "borderWidth": "3px",
+        "borderColor": "rgba(255, 245, 228, 0.58)",
+        "borderRadius": "45% 58%",
+        "backgroundImage": "radial-gradient(at 42% -22%, rgba(255, 245, 224, 0.1), rgba(0, 0, 0, 0) 62%), radial-gradient(at 64% 118%, rgba(230, 170, 105, 0.06), rgba(0, 0, 0, 0) 56%), linear-gradient(166deg, rgba(43, 38, 39, 0.74) 0%, rgba(29, 25, 27, 0.79) 54%, rgba(21, 18, 20, 0.81) 100%)",
+        "backdropFilter": "blur(2.5px) saturate(1.03)"
+      },
+      "text": {
+        "left": 369,
+        "top": 879.359375,
+        "width": 1182,
+        "height": 89.0625,
+        "bottom": 968.421875,
+        "right": 1551,
+        "fontSize": "34px",
+        "lineHeight": "44.54px",
+        "fontFamily": "\"Trebuchet MS\", \"Segoe UI Variable Display\", \"Segoe UI\", ui-rounded, system-ui, sans-serif",
+        "fontWeight": "600",
+        "color": "rgb(255, 248, 238)",
+        "lines": 2,
+        "scrollWidth": 1182,
+        "clientWidth": 1182
+      },
+      "nameplate": {
+        "left": 399,
+        "top": 811.953125,
+        "width": 132,
+        "height": 44.265625,
+        "bottom": 856.21875,
+        "right": 531,
+        "text": "Pip",
+        "fontSize": "19px",
+        "color": "rgb(255, 248, 238)",
+        "backgroundImage": "radial-gradient(at 31% 8%, color(srgb 1 0.819608 0.654902 / 0.2), rgba(0, 0, 0, 0) 48%), linear-gradient(145deg, color(srgb 0.55898 0.334667 0.281882) 0%, color(srgb 0.38251 0.233725 0.197176) 100%)",
+        "gapToTextPx": 23.140625,
+        "overlapsFirstLine": false
+      },
+      "button": {
+        "left": 937,
+        "top": 965.421875,
+        "width": 46,
+        "height": 46,
+        "bottom": 1011.421875,
+        "right": 983
+      },
+      "marker": {
+        "left": 951.7550048828125,
+        "top": 978.6318359375,
+        "width": 16.489990234375,
+        "height": 19.4000244140625,
+        "bottom": 998.0318603515625,
+        "right": 968.2449951171875,
+        "animationName": "continue-pulse",
+        "opacity": "0.82"
+      },
+      "horizontalOverflow": false,
+      "documentWidth": 1920,
+      "viewportWidth": 1920,
+      "speakerVars": {
+        "color": "#d9774e",
+        "accent": "#ffd1a7"
+      },
+      "pageErrors": []
+    },
+    {
+      "viewport": {
+        "name": "1920x1080",
+        "width": 1920,
+        "height": 1080
+      },
+      "label": "grumble",
+      "classes": "dialogue-panel is-complete",
+      "panel": {
+        "left": 270,
+        "top": 834.859375,
+        "width": 1380,
+        "height": 210.59375,
+        "bottom": 1045.453125,
+        "right": 1650,
+        "borderWidth": "3px",
+        "borderColor": "rgba(255, 245, 228, 0.58)",
+        "borderRadius": "45% 58%",
+        "backgroundImage": "radial-gradient(at 42% -22%, rgba(255, 245, 224, 0.1), rgba(0, 0, 0, 0) 62%), radial-gradient(at 64% 118%, rgba(230, 170, 105, 0.06), rgba(0, 0, 0, 0) 56%), linear-gradient(166deg, rgba(43, 38, 39, 0.74) 0%, rgba(29, 25, 27, 0.79) 54%, rgba(21, 18, 20, 0.81) 100%)",
+        "backdropFilter": "blur(2.5px) saturate(1.03)"
+      },
+      "text": {
+        "left": 369,
+        "top": 879.359375,
+        "width": 1182,
+        "height": 89.0625,
+        "bottom": 968.421875,
+        "right": 1551,
+        "fontSize": "34px",
+        "lineHeight": "44.54px",
+        "fontFamily": "\"Trebuchet MS\", \"Segoe UI Variable Display\", \"Segoe UI\", ui-rounded, system-ui, sans-serif",
+        "fontWeight": "600",
+        "color": "rgb(255, 248, 238)",
+        "lines": 2,
+        "scrollWidth": 1182,
+        "clientWidth": 1182
+      },
+      "nameplate": {
+        "left": 399,
+        "top": 811.953125,
+        "width": 132,
+        "height": 44.265625,
+        "bottom": 856.21875,
+        "right": 531,
+        "text": "Grumble",
+        "fontSize": "19px",
+        "color": "rgb(255, 248, 238)",
+        "backgroundImage": "radial-gradient(at 31% 8%, color(srgb 0.788235 0.678431 0.580392 / 0.2), rgba(0, 0, 0, 0) 48%), linear-gradient(145deg, color(srgb 0.332235 0.259726 0.276118) 0%, color(srgb 0.225176 0.181725 0.193176) 100%)",
+        "gapToTextPx": 23.140625,
+        "overlapsFirstLine": false
+      },
+      "button": {
+        "left": 937,
+        "top": 965.421875,
+        "width": 46,
+        "height": 46,
+        "bottom": 1011.421875,
+        "right": 983
+      },
+      "marker": {
+        "left": 951.7550048828125,
+        "top": 978.6318359375,
+        "width": 16.489990234375,
+        "height": 19.4000244140625,
+        "bottom": 998.0318603515625,
+        "right": 968.2449951171875,
+        "animationName": "continue-pulse",
+        "opacity": "0.82"
+      },
+      "horizontalOverflow": false,
+      "documentWidth": 1920,
+      "viewportWidth": 1920,
+      "speakerVars": {
+        "color": "#63504b",
+        "accent": "#c9ad94"
+      },
+      "pageErrors": []
+    },
+    {
+      "viewport": {
+        "name": "1920x1080",
+        "width": 1920,
+        "height": 1080
+      },
+      "label": "bolt",
+      "classes": "dialogue-panel is-complete",
+      "panel": {
+        "left": 270,
+        "top": 834.859375,
+        "width": 1380,
+        "height": 210.59375,
+        "bottom": 1045.453125,
+        "right": 1650,
+        "borderWidth": "3px",
+        "borderColor": "rgba(255, 245, 228, 0.58)",
+        "borderRadius": "45% 58%",
+        "backgroundImage": "radial-gradient(at 42% -22%, rgba(255, 245, 224, 0.1), rgba(0, 0, 0, 0) 62%), radial-gradient(at 64% 118%, rgba(230, 170, 105, 0.06), rgba(0, 0, 0, 0) 56%), linear-gradient(166deg, rgba(43, 38, 39, 0.74) 0%, rgba(29, 25, 27, 0.79) 54%, rgba(21, 18, 20, 0.81) 100%)",
+        "backdropFilter": "blur(2.5px) saturate(1.03)"
+      },
+      "text": {
+        "left": 369,
+        "top": 879.359375,
+        "width": 1182,
+        "height": 89.0625,
+        "bottom": 968.421875,
+        "right": 1551,
+        "fontSize": "34px",
+        "lineHeight": "44.54px",
+        "fontFamily": "\"Trebuchet MS\", \"Segoe UI Variable Display\", \"Segoe UI\", ui-rounded, system-ui, sans-serif",
+        "fontWeight": "600",
+        "color": "rgb(255, 248, 238)",
+        "lines": 2,
+        "scrollWidth": 1182,
+        "clientWidth": 1182
+      },
+      "nameplate": {
+        "left": 399,
+        "top": 811.953125,
+        "width": 132,
+        "height": 44.265625,
+        "bottom": 856.21875,
+        "right": 531,
+        "text": "Bolt",
+        "fontSize": "19px",
+        "color": "rgb(255, 248, 238)",
+        "backgroundImage": "radial-gradient(at 31% 8%, color(srgb 0.894118 0.717647 0.478431 / 0.2), rgba(0, 0, 0, 0) 48%), linear-gradient(145deg, color(srgb 0.380275 0.275098 0.25498) 0%, color(srgb 0.25851 0.192392 0.17851) 100%)",
+        "gapToTextPx": 23.140625,
+        "overlapsFirstLine": false
+      },
+      "button": {
+        "left": 937,
+        "top": 965.421875,
+        "width": 46,
+        "height": 46,
+        "bottom": 1011.421875,
+        "right": 983
+      },
+      "marker": {
+        "left": 951.7550048828125,
+        "top": 978.6318359375,
+        "width": 16.489990234375,
+        "height": 19.4000244140625,
+        "bottom": 998.0318603515625,
+        "right": 968.2449951171875,
+        "animationName": "continue-pulse",
+        "opacity": "0.82"
+      },
+      "horizontalOverflow": false,
+      "documentWidth": 1920,
+      "viewportWidth": 1920,
+      "speakerVars": {
+        "color": "#7c5840",
+        "accent": "#e4b77a"
+      },
+      "pageErrors": []
+    },
+    {
+      "viewport": {
+        "name": "1366x768",
+        "width": 1366,
+        "height": 768
+      },
+      "label": "narrator",
+      "classes": "dialogue-panel is-narrator is-complete",
+      "panel": {
+        "left": 158.25665283203125,
+        "top": 605.6875,
+        "width": 1049.48681640625,
+        "height": 147.75,
+        "bottom": 753.4375,
+        "right": 1207.7434692382812,
+        "borderWidth": "3px",
+        "borderColor": "rgba(241, 235, 225, 0.45)",
+        "borderRadius": "45% 58%",
+        "backgroundImage": "radial-gradient(at 42% -22%, rgba(255, 245, 224, 0.1), rgba(0, 0, 0, 0) 62%), radial-gradient(at 64% 118%, rgba(230, 170, 105, 0.06), rgba(0, 0, 0, 0) 56%), linear-gradient(166deg, rgba(43, 38, 39, 0.74) 0%, rgba(29, 25, 27, 0.79) 54%, rgba(21, 18, 20, 0.81) 100%)",
+        "backdropFilter": "blur(2.5px) saturate(1.03)"
+      },
+      "text": {
+        "left": 236.0716552734375,
+        "top": 636.5610961914062,
+        "width": 893.8568115234375,
+        "height": 64.14813232421875,
+        "bottom": 700.709228515625,
+        "right": 1129.928466796875,
+        "fontSize": "24.8612px",
+        "lineHeight": "32.5682px",
+        "fontFamily": "\"Trebuchet MS\", \"Segoe UI Variable Display\", \"Segoe UI\", ui-rounded, system-ui, sans-serif",
+        "fontWeight": "600",
+        "color": "rgb(255, 248, 238)",
+        "lines": 2,
+        "scrollWidth": 907,
+        "clientWidth": 907
+      },
+      "nameplate": {
+        "left": 268.8382873535156,
+        "top": 589.927490234375,
+        "width": 130.54330444335938,
+        "height": 37.42999267578125,
+        "bottom": 627.3574829101562,
+        "right": 399.381591796875,
+        "text": "Boardroom",
+        "fontSize": "16px",
+        "color": "rgb(255, 248, 238)",
+        "backgroundImage": "radial-gradient(at 31% 8%, rgba(232, 225, 244, 0.16), rgba(0, 0, 0, 0) 48%), linear-gradient(145deg, rgb(93, 89, 105) 0%, rgb(52, 48, 60) 100%)",
+        "gapToTextPx": 9.20361328125,
+        "overlapsFirstLine": false
+      },
+      "button": {
+        "left": 660.3450317382812,
+        "top": 685.1185302734375,
+        "width": 45.30999755859375,
+        "height": 45.30999755859375,
+        "bottom": 730.4285278320312,
+        "right": 705.655029296875
+      },
+      "marker": {
+        "left": 674.8787231445312,
+        "top": 698.13037109375,
+        "width": 16.24261474609375,
+        "height": 19.1090087890625,
+        "bottom": 717.2393798828125,
+        "right": 691.121337890625,
+        "animationName": "continue-pulse",
+        "opacity": "0.82"
+      },
+      "horizontalOverflow": false,
+      "documentWidth": 1366,
+      "viewportWidth": 1366,
+      "speakerVars": {
+        "color": "#8f93a8",
+        "accent": "#e9e1d3"
+      },
+      "pageErrors": []
+    },
+    {
+      "viewport": {
+        "name": "1366x768",
+        "width": 1366,
+        "height": 768
+      },
+      "label": "shell",
+      "classes": "dialogue-panel is-complete",
+      "panel": {
+        "left": 150.265625,
+        "top": 593.4375,
+        "width": 1065.46875,
+        "height": 150,
+        "bottom": 743.4375,
+        "right": 1215.734375,
+        "borderWidth": "3px",
+        "borderColor": "rgba(255, 245, 228, 0.58)",
+        "borderRadius": "45% 58%",
+        "backgroundImage": "radial-gradient(at 42% -22%, rgba(255, 245, 224, 0.1), rgba(0, 0, 0, 0) 62%), radial-gradient(at 64% 118%, rgba(230, 170, 105, 0.06), rgba(0, 0, 0, 0) 56%), linear-gradient(166deg, rgba(43, 38, 39, 0.74) 0%, rgba(29, 25, 27, 0.79) 54%, rgba(21, 18, 20, 0.81) 100%)",
+        "backdropFilter": "blur(2.5px) saturate(1.03)"
+      },
+      "text": {
+        "left": 229.265625,
+        "top": 624.78125,
+        "width": 907.46875,
+        "height": 65.125,
+        "bottom": 689.90625,
+        "right": 1136.734375,
+        "fontSize": "24.8612px",
+        "lineHeight": "32.5682px",
+        "fontFamily": "\"Trebuchet MS\", \"Segoe UI Variable Display\", \"Segoe UI\", ui-rounded, system-ui, sans-serif",
+        "fontWeight": "600",
+        "color": "rgb(255, 248, 238)",
+        "lines": 2,
+        "scrollWidth": 907,
+        "clientWidth": 907
+      },
+      "nameplate": {
+        "left": 262.53125,
+        "top": 577.4375,
+        "width": 131.609375,
+        "height": 38,
+        "bottom": 615.4375,
+        "right": 394.140625,
+        "text": "Chair Shell",
+        "fontSize": "16px",
+        "color": "rgb(255, 248, 238)",
+        "backgroundImage": "radial-gradient(at 31% 8%, color(srgb 0.85098 0.760784 0.490196 / 0.2), rgba(0, 0, 0, 0) 48%), linear-gradient(145deg, color(srgb 0.311098 0.332745 0.308784) 0%, color(srgb 0.21051 0.232392 0.215843) 100%)",
+        "gapToTextPx": 9.34375,
+        "overlapsFirstLine": false
+      },
+      "button": {
+        "left": 660,
+        "top": 674.078125,
+        "width": 46,
+        "height": 46,
+        "bottom": 720.078125,
+        "right": 706
+      },
+      "marker": {
+        "left": 674.7550048828125,
+        "top": 687.2881469726562,
+        "width": 16.489990234375,
+        "height": 19.39996337890625,
+        "bottom": 706.6881103515625,
+        "right": 691.2449951171875,
+        "animationName": "continue-pulse",
+        "opacity": "0.82"
+      },
+      "horizontalOverflow": false,
+      "documentWidth": 1366,
+      "viewportWidth": 1366,
+      "speakerVars": {
+        "color": "#58765c",
+        "accent": "#d9c27d"
+      },
+      "pageErrors": []
+    },
+    {
+      "viewport": {
+        "name": "1366x768",
+        "width": 1366,
+        "height": 768
+      },
+      "label": "mori",
+      "classes": "dialogue-panel is-complete",
+      "panel": {
+        "left": 150.265625,
+        "top": 593.4375,
+        "width": 1065.46875,
+        "height": 150,
+        "bottom": 743.4375,
+        "right": 1215.734375,
+        "borderWidth": "3px",
+        "borderColor": "rgba(255, 245, 228, 0.58)",
+        "borderRadius": "45% 58%",
+        "backgroundImage": "radial-gradient(at 42% -22%, rgba(255, 245, 224, 0.1), rgba(0, 0, 0, 0) 62%), radial-gradient(at 64% 118%, rgba(230, 170, 105, 0.06), rgba(0, 0, 0, 0) 56%), linear-gradient(166deg, rgba(43, 38, 39, 0.74) 0%, rgba(29, 25, 27, 0.79) 54%, rgba(21, 18, 20, 0.81) 100%)",
+        "backdropFilter": "blur(2.5px) saturate(1.03)"
+      },
+      "text": {
+        "left": 229.265625,
+        "top": 624.78125,
+        "width": 907.46875,
+        "height": 65.125,
+        "bottom": 689.90625,
+        "right": 1136.734375,
+        "fontSize": "24.8612px",
+        "lineHeight": "32.5682px",
+        "fontFamily": "\"Trebuchet MS\", \"Segoe UI Variable Display\", \"Segoe UI\", ui-rounded, system-ui, sans-serif",
+        "fontWeight": "600",
+        "color": "rgb(255, 248, 238)",
+        "lines": 2,
+        "scrollWidth": 907,
+        "clientWidth": 907
+      },
+      "nameplate": {
+        "left": 262.53125,
+        "top": 577.4375,
+        "width": 109.265625,
+        "height": 38,
+        "bottom": 615.4375,
+        "right": 371.796875,
+        "text": "Mori",
+        "fontSize": "16px",
+        "color": "rgb(255, 248, 238)",
+        "backgroundImage": "radial-gradient(at 31% 8%, color(srgb 0.94902 0.831373 0.705882 / 0.2), rgba(0, 0, 0, 0) 48%), linear-gradient(145deg, color(srgb 0.495569 0.369255 0.329922) 0%, color(srgb 0.33851 0.257725 0.23051) 100%)",
+        "gapToTextPx": 9.34375,
+        "overlapsFirstLine": false
+      },
+      "button": {
+        "left": 660,
+        "top": 674.078125,
+        "width": 46,
+        "height": 46,
+        "bottom": 720.078125,
+        "right": 706
+      },
+      "marker": {
+        "left": 674.7550048828125,
+        "top": 687.2881469726562,
+        "width": 16.489990234375,
+        "height": 19.39996337890625,
+        "bottom": 706.6881103515625,
+        "right": 691.2449951171875,
+        "animationName": "continue-pulse",
+        "opacity": "0.82"
+      },
+      "horizontalOverflow": false,
+      "documentWidth": 1366,
+      "viewportWidth": 1366,
+      "speakerVars": {
+        "color": "#b88967",
+        "accent": "#f2d4b4"
+      },
+      "pageErrors": []
+    },
+    {
+      "viewport": {
+        "name": "1366x768",
+        "width": 1366,
+        "height": 768
+      },
+      "label": "pip",
+      "classes": "dialogue-panel is-complete",
+      "panel": {
+        "left": 150.265625,
+        "top": 593.4375,
+        "width": 1065.46875,
+        "height": 150,
+        "bottom": 743.4375,
+        "right": 1215.734375,
+        "borderWidth": "3px",
+        "borderColor": "rgba(255, 245, 228, 0.58)",
+        "borderRadius": "45% 58%",
+        "backgroundImage": "radial-gradient(at 42% -22%, rgba(255, 245, 224, 0.1), rgba(0, 0, 0, 0) 62%), radial-gradient(at 64% 118%, rgba(230, 170, 105, 0.06), rgba(0, 0, 0, 0) 56%), linear-gradient(166deg, rgba(43, 38, 39, 0.74) 0%, rgba(29, 25, 27, 0.79) 54%, rgba(21, 18, 20, 0.81) 100%)",
+        "backdropFilter": "blur(2.5px) saturate(1.03)"
+      },
+      "text": {
+        "left": 229.265625,
+        "top": 624.78125,
+        "width": 907.46875,
+        "height": 65.125,
+        "bottom": 689.90625,
+        "right": 1136.734375,
+        "fontSize": "24.8612px",
+        "lineHeight": "32.5682px",
+        "fontFamily": "\"Trebuchet MS\", \"Segoe UI Variable Display\", \"Segoe UI\", ui-rounded, system-ui, sans-serif",
+        "fontWeight": "600",
+        "color": "rgb(255, 248, 238)",
+        "lines": 2,
+        "scrollWidth": 907,
+        "clientWidth": 907
+      },
+      "nameplate": {
+        "left": 262.53125,
+        "top": 577.4375,
+        "width": 109.265625,
+        "height": 38,
+        "bottom": 615.4375,
+        "right": 371.796875,
+        "text": "Pip",
+        "fontSize": "16px",
+        "color": "rgb(255, 248, 238)",
+        "backgroundImage": "radial-gradient(at 31% 8%, color(srgb 1 0.819608 0.654902 / 0.2), rgba(0, 0, 0, 0) 48%), linear-gradient(145deg, color(srgb 0.55898 0.334667 0.281882) 0%, color(srgb 0.38251 0.233725 0.197176) 100%)",
+        "gapToTextPx": 9.34375,
+        "overlapsFirstLine": false
+      },
+      "button": {
+        "left": 660,
+        "top": 674.078125,
+        "width": 46,
+        "height": 46,
+        "bottom": 720.078125,
+        "right": 706
+      },
+      "marker": {
+        "left": 674.7550048828125,
+        "top": 687.2881469726562,
+        "width": 16.489990234375,
+        "height": 19.39996337890625,
+        "bottom": 706.6881103515625,
+        "right": 691.2449951171875,
+        "animationName": "continue-pulse",
+        "opacity": "0.82"
+      },
+      "horizontalOverflow": false,
+      "documentWidth": 1366,
+      "viewportWidth": 1366,
+      "speakerVars": {
+        "color": "#d9774e",
+        "accent": "#ffd1a7"
+      },
+      "pageErrors": []
+    },
+    {
+      "viewport": {
+        "name": "1366x768",
+        "width": 1366,
+        "height": 768
+      },
+      "label": "grumble",
+      "classes": "dialogue-panel is-complete",
+      "panel": {
+        "left": 150.265625,
+        "top": 593.4375,
+        "width": 1065.46875,
+        "height": 150,
+        "bottom": 743.4375,
+        "right": 1215.734375,
+        "borderWidth": "3px",
+        "borderColor": "rgba(255, 245, 228, 0.58)",
+        "borderRadius": "45% 58%",
+        "backgroundImage": "radial-gradient(at 42% -22%, rgba(255, 245, 224, 0.1), rgba(0, 0, 0, 0) 62%), radial-gradient(at 64% 118%, rgba(230, 170, 105, 0.06), rgba(0, 0, 0, 0) 56%), linear-gradient(166deg, rgba(43, 38, 39, 0.74) 0%, rgba(29, 25, 27, 0.79) 54%, rgba(21, 18, 20, 0.81) 100%)",
+        "backdropFilter": "blur(2.5px) saturate(1.03)"
+      },
+      "text": {
+        "left": 229.265625,
+        "top": 624.78125,
+        "width": 907.46875,
+        "height": 65.125,
+        "bottom": 689.90625,
+        "right": 1136.734375,
+        "fontSize": "24.8612px",
+        "lineHeight": "32.5682px",
+        "fontFamily": "\"Trebuchet MS\", \"Segoe UI Variable Display\", \"Segoe UI\", ui-rounded, system-ui, sans-serif",
+        "fontWeight": "600",
+        "color": "rgb(255, 248, 238)",
+        "lines": 2,
+        "scrollWidth": 907,
+        "clientWidth": 907
+      },
+      "nameplate": {
+        "left": 262.53125,
+        "top": 577.4375,
+        "width": 114.125,
+        "height": 38,
+        "bottom": 615.4375,
+        "right": 376.65625,
+        "text": "Grumble",
+        "fontSize": "16px",
+        "color": "rgb(255, 248, 238)",
+        "backgroundImage": "radial-gradient(at 31% 8%, color(srgb 0.788235 0.678431 0.580392 / 0.2), rgba(0, 0, 0, 0) 48%), linear-gradient(145deg, color(srgb 0.332235 0.259726 0.276118) 0%, color(srgb 0.225176 0.181725 0.193176) 100%)",
+        "gapToTextPx": 9.34375,
+        "overlapsFirstLine": false
+      },
+      "button": {
+        "left": 660,
+        "top": 674.078125,
+        "width": 46,
+        "height": 46,
+        "bottom": 720.078125,
+        "right": 706
+      },
+      "marker": {
+        "left": 674.7550048828125,
+        "top": 687.2881469726562,
+        "width": 16.489990234375,
+        "height": 19.39996337890625,
+        "bottom": 706.6881103515625,
+        "right": 691.2449951171875,
+        "animationName": "continue-pulse",
+        "opacity": "0.82"
+      },
+      "horizontalOverflow": false,
+      "documentWidth": 1366,
+      "viewportWidth": 1366,
+      "speakerVars": {
+        "color": "#63504b",
+        "accent": "#c9ad94"
+      },
+      "pageErrors": []
+    },
+    {
+      "viewport": {
+        "name": "1366x768",
+        "width": 1366,
+        "height": 768
+      },
+      "label": "bolt",
+      "classes": "dialogue-panel is-complete",
+      "panel": {
+        "left": 150.265625,
+        "top": 593.4375,
+        "width": 1065.46875,
+        "height": 150,
+        "bottom": 743.4375,
+        "right": 1215.734375,
+        "borderWidth": "3px",
+        "borderColor": "rgba(255, 245, 228, 0.58)",
+        "borderRadius": "45% 58%",
+        "backgroundImage": "radial-gradient(at 42% -22%, rgba(255, 245, 224, 0.1), rgba(0, 0, 0, 0) 62%), radial-gradient(at 64% 118%, rgba(230, 170, 105, 0.06), rgba(0, 0, 0, 0) 56%), linear-gradient(166deg, rgba(43, 38, 39, 0.74) 0%, rgba(29, 25, 27, 0.79) 54%, rgba(21, 18, 20, 0.81) 100%)",
+        "backdropFilter": "blur(2.5px) saturate(1.03)"
+      },
+      "text": {
+        "left": 229.265625,
+        "top": 624.78125,
+        "width": 907.46875,
+        "height": 65.125,
+        "bottom": 689.90625,
+        "right": 1136.734375,
+        "fontSize": "24.8612px",
+        "lineHeight": "32.5682px",
+        "fontFamily": "\"Trebuchet MS\", \"Segoe UI Variable Display\", \"Segoe UI\", ui-rounded, system-ui, sans-serif",
+        "fontWeight": "600",
+        "color": "rgb(255, 248, 238)",
+        "lines": 2,
+        "scrollWidth": 907,
+        "clientWidth": 907
+      },
+      "nameplate": {
+        "left": 262.53125,
+        "top": 577.4375,
+        "width": 109.265625,
+        "height": 38,
+        "bottom": 615.4375,
+        "right": 371.796875,
+        "text": "Bolt",
+        "fontSize": "16px",
+        "color": "rgb(255, 248, 238)",
+        "backgroundImage": "radial-gradient(at 31% 8%, color(srgb 0.894118 0.717647 0.478431 / 0.2), rgba(0, 0, 0, 0) 48%), linear-gradient(145deg, color(srgb 0.380275 0.275098 0.25498) 0%, color(srgb 0.25851 0.192392 0.17851) 100%)",
+        "gapToTextPx": 9.34375,
+        "overlapsFirstLine": false
+      },
+      "button": {
+        "left": 660,
+        "top": 674.078125,
+        "width": 46,
+        "height": 46,
+        "bottom": 720.078125,
+        "right": 706
+      },
+      "marker": {
+        "left": 674.7550048828125,
+        "top": 687.2881469726562,
+        "width": 16.489990234375,
+        "height": 19.39996337890625,
+        "bottom": 706.6881103515625,
+        "right": 691.2449951171875,
+        "animationName": "continue-pulse",
+        "opacity": "0.82"
+      },
+      "horizontalOverflow": false,
+      "documentWidth": 1366,
+      "viewportWidth": 1366,
+      "speakerVars": {
+        "color": "#7c5840",
+        "accent": "#e4b77a"
+      },
+      "pageErrors": []
+    }
+  ]
+}

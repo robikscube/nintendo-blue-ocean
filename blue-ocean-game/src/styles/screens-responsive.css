@@ -1,0 +1,434 @@
+/* ------------------------------------------------------------------ */
+/* Vote / factory / archive / presenter — owner: Workstream C          */
+/* Loaded after style.css + universal.css; scope overrides to these    */
+/* screens only. Do not restyle title, dialogue or HUD here.           */
+/* ------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------ */
+/* Shared fit: keep every Workstream C surface inside the .view gutter */
+/* at 1920x1080, 1366x768 and 1024x768 with no horizontal overflow.    */
+/* ------------------------------------------------------------------ */
+
+.voting-screen {
+  width: min(1460px, calc(100vw - 104px));
+}
+
+.briefing-screen {
+  width: min(1280px, calc(100vw - 104px));
+}
+
+.archive-screen {
+  width: min(1560px, calc(100vw - 96px));
+}
+
+@media (max-width: 900px) {
+  .voting-screen,
+  .briefing-screen,
+  .archive-screen {
+    width: calc(100vw - 32px);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Briefing — same rhythm and button geometry as the other screens.    */
+/* ------------------------------------------------------------------ */
+
+.briefing-screen {
+  /* The legacy rule clipped stacked content at 1024; allow the footer and */
+  /* sealed-history note to remain reachable when the grid stacks.         */
+  overflow-y: auto;
+}
+
+.briefing-screen .screen-header {
+  margin-bottom: clamp(20px, 2.4vw, 32px);
+}
+
+.briefing-screen .screen-footer {
+  gap: clamp(16px, 2vw, 28px);
+}
+
+.briefing-screen .screen-footer .primary-button {
+  min-height: var(--control-height);
+  padding: 0 22px;
+  font-size: var(--control-font);
+  border-radius: var(--radius-control);
+}
+
+.briefing-screen .footer-note {
+  color: rgba(216, 203, 185, 0.62);
+  font-size: 11px;
+}
+
+@media (max-width: 1100px) {
+  .briefing-screen .briefing-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  /* The sealed-history disclosure lives inside this card; keep it visible */
+  /* instead of inheriting the legacy display:none at tablet widths.       */
+  .briefing-screen .watch-card {
+    display: block;
+  }
+
+  .briefing-screen .vote-promise {
+    margin-top: 20px;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Voting — one gold action, right aligned, never clipped.             */
+/* ------------------------------------------------------------------ */
+
+.voting-screen .vote-header {
+  margin-bottom: clamp(12px, 1.6vh, 20px);
+}
+
+.voting-screen .vote-header h2 {
+  margin-bottom: 0;
+}
+
+.voting-screen .vote-footer {
+  justify-content: flex-end;
+  margin-top: clamp(14px, 1.9vh, 22px);
+  padding-top: clamp(12px, 1.5vh, 18px);
+}
+
+.voting-screen .vote-footer .primary-button {
+  min-width: 152px;
+  min-height: var(--control-height);
+  font-size: var(--control-font);
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-control);
+}
+
+.voting-screen .choice-card {
+  border-radius: var(--radius-card);
+}
+
+/* ------------------------------------------------------------------ */
+/* Transition — remove the surplus footnote spacing, one clear action. */
+/* ------------------------------------------------------------------ */
+
+.transition-screen .primary-button {
+  min-width: 168px;
+  min-height: var(--control-height);
+  font-size: var(--control-font);
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-control);
+}
+
+.transition-screen .transition-copy {
+  margin-bottom: clamp(22px, 3vh, 30px);
+}
+
+/* ------------------------------------------------------------------ */
+/* Factory — quiet truth line, card clear of the 3D stage.             */
+/* ------------------------------------------------------------------ */
+
+.factory-screen .factory-card h2 {
+  /* The card eyebrow is gone, so the title owns the top edge. */
+  margin-top: 0;
+}
+
+.factory-screen .factory-source {
+  /* Traceability only: present for assistive tech and tests, not shown. */
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.factory-screen .factory-truth {
+  margin: clamp(12px, 1.7vh, 18px) 0 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.055em;
+  line-height: 1.45;
+}
+
+.factory-screen .build-actions {
+  margin-top: clamp(14px, 1.9vh, 20px);
+}
+
+.factory-screen .build-actions .primary-button,
+.factory-screen .build-actions .secondary-button {
+  min-height: var(--control-height);
+  padding: 0 18px;
+  font-size: 12px;
+  border-radius: var(--radius-control);
+}
+
+.factory-screen .build-actions .primary-button {
+  min-width: 124px;
+}
+
+.factory-screen .prototype-readout p {
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1100px) {
+  /* Keep the right-hand card narrow on 4:3 projectors so the assembled  */
+  /* prototype and robot arms stay visible in the uncovered left area.   */
+  .factory-screen .factory-card {
+    width: min(340px, 30vw);
+    padding: 18px;
+  }
+
+  .factory-screen .factory-card h2 {
+    font-size: clamp(25px, 2.9vw, 31px);
+  }
+
+  .factory-screen .build-actions .primary-button,
+  .factory-screen .build-actions .secondary-button {
+    min-height: 42px;
+    font-size: 11.5px;
+    padding: 0 14px;
+  }
+}
+
+/* @media (max-width: 1100px) legacy rule sets width min(420px,30vw);
+   the scoped rule above wins and keeps the same 30vw footprint. */
+
+/* ------------------------------------------------------------------ */
+/* Finale / archive — same grid, type and spacing at projector sizes.  */
+/* All copy is unchanged; this block only tunes layout and legibility. */
+/* ------------------------------------------------------------------ */
+
+.archive-screen .archive-header > div:first-child {
+  min-width: 0;
+}
+
+.archive-screen .archive-grid {
+  gap: clamp(12px, 1vw, 16px);
+}
+
+.archive-screen .history-card {
+  min-width: 0;
+}
+
+.archive-screen .history-detail {
+  font-size: clamp(12.5px, 1.02vw, 13.5px);
+}
+
+.archive-screen .history-caution {
+  font-size: clamp(11.5px, 0.98vw, 12.5px);
+}
+
+.archive-screen .history-launch {
+  font-size: 9px;
+}
+
+.archive-screen .class-path {
+  flex-wrap: wrap;
+  row-gap: 10px;
+}
+
+.archive-screen .class-path > div {
+  min-width: 0;
+}
+
+.archive-screen .path-chip {
+  max-width: 100%;
+}
+
+.archive-screen .path-chip small {
+  max-width: min(290px, 100%);
+  overflow-wrap: anywhere;
+}
+
+.archive-screen .archive-jump {
+  padding: 4px 0;
+  font-size: 10.5px;
+}
+
+.archive-screen .sources {
+  min-width: 0;
+}
+
+.archive-screen .sources a {
+  overflow-wrap: anywhere;
+  font-size: clamp(11.5px, 0.95vw, 12.5px);
+}
+
+.archive-screen .source-date {
+  font-size: 10.5px !important;
+  line-height: 1.5 !important;
+}
+
+.archive-screen .class-comparison em {
+  font-size: 10px;
+}
+
+.archive-screen .discussion-actions .primary-button,
+.archive-screen .discussion-actions .secondary-button {
+  min-height: var(--control-height);
+  padding: 0 18px;
+  font-size: var(--control-font);
+  border-radius: var(--radius-control);
+}
+
+@media (min-width: 1101px) {
+  .archive-screen .archive-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .archive-screen .history-card {
+    padding: clamp(16px, 1.4vw, 20px);
+  }
+}
+
+@media (max-width: 1100px) {
+  .archive-screen .archive-header {
+    gap: 16px;
+  }
+
+  .archive-screen .archive-stamp {
+    width: 100%;
+    text-align: left;
+  }
+
+  .archive-screen .archive-jump {
+    text-align: left;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Presenter — consistent type scale; compact at 768px-tall projectors */
+/* and a sticky Reset row so recovery never requires hunting.          */
+/* All controls, data-actions and dialog semantics stay as authored.   */
+/* ------------------------------------------------------------------ */
+
+.presenter-drawer {
+  width: min(470px, 100vw);
+  padding: 22px 20px 26px;
+}
+
+.drawer-header h2 {
+  font-size: 34px;
+}
+
+.drawer-row {
+  padding: 5px 0;
+  font-size: 11px;
+}
+
+.drawer-row strong {
+  font-size: 10px;
+}
+
+.toggle-row strong {
+  font-size: 13px;
+}
+
+.toggle-row small {
+  font-size: 10.5px;
+}
+
+.drawer-hint {
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.jump-button span {
+  font-size: 9px;
+}
+
+.jump-button strong {
+  font-size: 10.5px;
+}
+
+.control-button {
+  min-height: 40px;
+  font-size: 10.5px;
+}
+
+.volume-row > span {
+  font-size: 11px;
+}
+
+.volume-row small {
+  font-size: 10px;
+}
+
+.drawer-shortcuts > div {
+  padding: 5px 0;
+  font-size: 10px;
+}
+
+.drawer-danger p {
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+@media (max-height: 900px) {
+  .presenter-drawer .drawer-danger {
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+    margin-top: 6px;
+    padding: 16px 0 8px;
+    background: linear-gradient(180deg, rgba(18, 17, 22, 0.55), rgba(18, 17, 22, 0.985) 34%);
+  }
+}
+
+@media (max-height: 800px) {
+  .presenter-drawer {
+    width: min(490px, 100vw);
+    padding: 16px 18px 18px;
+  }
+
+  .drawer-header {
+    margin-bottom: 10px;
+  }
+
+  .drawer-header h2 {
+    font-size: 28px;
+  }
+
+  .drawer-section {
+    padding: 11px 0;
+  }
+
+  .drawer-location {
+    margin: 4px 0 8px;
+    font-size: 17px;
+  }
+
+  .jump-grid,
+  .control-grid {
+    gap: 6px;
+  }
+
+  .jump-button {
+    min-height: 44px;
+    padding: 6px 9px;
+  }
+
+  .control-button {
+    min-height: 34px;
+  }
+
+  .volume-row + .volume-row {
+    margin-top: 10px;
+  }
+
+  .drawer-shortcuts > div {
+    padding: 3px 0;
+  }
+
+  .presenter-drawer .drawer-danger {
+    bottom: 0;
+    padding-top: 14px;
+  }
+}

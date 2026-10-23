@@ -1,0 +1,188 @@
+/* ------------------------------------------------------------------ */
+/* Welcome / title — owner: Welcome agent                              */
+/* Loaded after style.css; override the legacy title composition here. */
+/* ------------------------------------------------------------------ */
+
+/*
+ * Composition: approved wooden badge high-center, one Start low-center,
+ * music credit bottom-left. The screen becomes a full-viewport overlay so
+ * the 3D boardroom stays visible behind a soft legibility gradient only.
+ */
+.title-screen {
+  --title-art-width: min(65vw, 900px, 72vh);
+  --title-stage-top: clamp(52px, 6vh, 84px);
+  --start-center-y: 87.5vh;
+
+  position: fixed;
+  inset: 0;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  animation: title-screen-in var(--ui-slow, 320ms) ease-out both;
+}
+
+/* Soft legibility wash; keeps the boardroom cast visible. */
+.title-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  display: block;
+  height: auto;
+  opacity: 1;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 52% 30% at 50% 20%, rgba(9, 8, 12, 0.4), rgba(9, 8, 12, 0.12) 58%, transparent 78%),
+    linear-gradient(to bottom, rgba(9, 8, 12, 0.42) 0%, rgba(9, 8, 12, 0.12) 22%, transparent 34%),
+    linear-gradient(to top, rgba(9, 8, 12, 0.5) 0%, rgba(9, 8, 12, 0.12) 18%, transparent 30%);
+}
+
+.title-screen .title-art {
+  position: absolute;
+  top: var(--title-stage-top);
+  left: 50%;
+  z-index: 1;
+  display: block;
+  width: var(--title-art-width);
+  max-width: min(65vw, 900px);
+  height: auto;
+  aspect-ratio: 1672 / 941;
+  margin: 0;
+  transform: translateX(-50%);
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+  filter: drop-shadow(0 22px 34px rgba(0, 0, 0, 0.32));
+  animation: title-art-in 560ms cubic-bezier(0.22, 0.7, 0.22, 1) both;
+}
+
+.title-screen .primary-button.start-button {
+  position: absolute;
+  top: var(--start-center-y);
+  left: 50%;
+  z-index: 2;
+  min-width: 188px;
+  min-height: 54px;
+  height: auto;
+  margin: 0;
+  padding: 0 34px;
+  transform: translate(-50%, -50%);
+  border-radius: var(--radius-control, 11px);
+  font-size: var(--control-font-large, 15px);
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.38),
+    0 9px 24px rgba(194, 142, 64, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.title-screen .primary-button.start-button:hover:not(:disabled) {
+  transform: translate(-50%, calc(-50% - 1px));
+}
+
+.title-screen .primary-button.start-button:focus-visible {
+  outline: 2px solid var(--gold-soft, #f1d79d);
+  outline-offset: 5px;
+  box-shadow:
+    0 0 0 6px rgba(9, 8, 12, 0.55),
+    0 0 0 8px rgba(241, 215, 157, 0.42),
+    0 10px 30px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.title-screen .title-credit {
+  position: absolute;
+  left: clamp(18px, 2.4vw, 40px);
+  bottom: max(18px, env(safe-area-inset-bottom, 0px));
+  z-index: 2;
+  max-width: min(460px, 42vw);
+  margin: 0;
+  color: rgba(232, 220, 203, 0.74);
+  font-size: clamp(11px, 0.62vw, 12.5px);
+  line-height: 1.5;
+  letter-spacing: 0.015em;
+  text-align: left;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.62);
+}
+
+.title-screen .title-credit a {
+  color: rgba(241, 215, 157, 0.9);
+  text-decoration-color: rgba(241, 215, 157, 0.42);
+  text-underline-offset: 2px;
+}
+
+.title-screen .title-credit a:hover {
+  color: #ffe6b5;
+}
+
+@keyframes title-screen-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes title-art-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* 1366×768 and 1024×768: keep the badge clear of the compact HUD,
+   Start above the bottom safe margin, credit clear of Start. */
+@media (max-height: 800px) {
+  .title-screen {
+    --title-stage-top: 52px;
+    --start-center-y: 87.5vh;
+  }
+
+  .title-screen .title-credit {
+    bottom: max(16px, env(safe-area-inset-bottom, 0px));
+    max-width: min(400px, 40vw);
+  }
+}
+
+/* Narrow/short fallback: preserve the composition without overflow. */
+@media (max-width: 700px), (max-height: 600px) {
+  .title-screen {
+    --title-art-width: min(80vw, 72vh);
+    --title-stage-top: 54px;
+  }
+
+  .title-screen .primary-button.start-button {
+    min-width: 172px;
+    padding: 0 28px;
+  }
+
+  .title-screen .title-credit {
+    max-width: min(62vw, 360px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title-screen,
+  .title-screen .title-art {
+    animation: none;
+  }
+
+  .title-screen .primary-button.start-button {
+    transition: none;
+  }
+}

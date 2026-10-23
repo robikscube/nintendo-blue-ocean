@@ -1,0 +1,59 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Local production build (not the GitHub Pages artifact)
+blue-ocean-game/dist/
+
+# Older Pages snapshots
+blue-ocean-game/dist-pages-dialogue/
+
+# Test and QA output
+blue-ocean-game/test-results/
+blue-ocean-game/playwright-report/
+blue-ocean-game/blob-report/
+blue-ocean-game/qa-screens/
+**/.playwright-artifacts-*/
+
+# Logs and transient agent output
+logs/
+*.log
+agent-reports/**/claude-stdout.jsonl
+agent-reports/**/claude-stderr.log
+agent-reports/**/*.zip
+
+# Design/preview history (contains user-supplied reference images and QA captures)
+previews/
+
+# Working character drafts; canonical art lives in character-reference-images/<animal>/
+character-reference-images/drafts/
+
+# Third-party tool checkouts and archives (each may have its own nested .git)
+tools/
+
+# Claude Code transient worktrees (separate working copies with their own .git)
+.claude/worktrees/
+.claude/settings.local.json
+
+# Environment and editor/OS files
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*~
+
+# NOTE: blue-ocean-game/dist-pages/ is intentionally NOT ignored.
+# It is the GitHub Pages artifact (built with GITHUB_PAGES=true).
+
+# Transient Playwright run output inside agent reports
+agent-reports/**/playwright-lead-*/
+agent-reports/**/playwright-team-*/
+agent-reports/**/qa-independent-results/
+agent-reports/**/test-results/
+agent-reports/**/screens/.last-run.txt
+

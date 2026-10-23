@@ -1,0 +1,194 @@
+/* ------------------------------------------------------------------ */
+/* Dialogue + shared buttons — owner: Workstream B                     */
+/* Loaded after style.css, universal.css and welcome.css.             */
+/* The approved bubble PNG and its artwork are never redrawn here.     */
+/* ------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------ */
+/* One button language across every screen                             */
+/* ------------------------------------------------------------------ */
+
+/* This late, explicit geometry wins over the screen-local 38px/40px
+   exceptions in style.css so Start, Confirm, Continue and secondary
+   actions all share the same control height. */
+.ui-root :is(.primary-button, .secondary-button, .text-button, .danger-button) {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: var(--control-height, 45px);
+  padding: 0 20px;
+  border-radius: var(--radius-control, 11px);
+  font-family: inherit;
+  font-size: var(--control-font, 13px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  text-align: center;
+  text-transform: none;
+  cursor: pointer;
+  transition:
+    background-color var(--ui-fast, 160ms) ease,
+    border-color var(--ui-fast, 160ms) ease,
+    color var(--ui-fast, 160ms) ease,
+    box-shadow var(--ui-fast, 160ms) ease,
+    transform var(--ui-fast, 160ms) ease;
+}
+
+.ui-root :is(.primary-button, .secondary-button, .text-button, .danger-button).large {
+  min-height: var(--control-height-large, 54px);
+  padding-inline: 26px;
+  font-size: var(--control-font-large, 15px);
+}
+
+/* Ghost actions keep their quiet surface but not a smaller hit target or
+   a different label rhythm. */
+.ui-root .text-button {
+  padding-inline: 2px;
+  border: 0;
+  background: transparent;
+  color: var(--gold-soft, #f1d79d);
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.ui-root .text-button:hover:not(:disabled) {
+  color: #ffe7b3;
+}
+
+.ui-root .danger-button:hover:not(:disabled) {
+  background: rgba(174, 65, 47, 0.22);
+}
+
+.ui-root :is(.primary-button, .secondary-button, .text-button, .danger-button):focus-visible {
+  outline: 2px solid var(--gold, #e3bd72);
+  outline-offset: 3px;
+}
+
+/* Cover every tone, including ghost/danger which the legacy disabled rule
+   omitted. pointer-events also prevents hover paint on disabled controls. */
+.ui-root :is(.primary-button, .secondary-button, .text-button, .danger-button):disabled {
+  opacity: 0.36;
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none;
+  box-shadow: none;
+}
+
+/* actionButton() wraps its trusted decorative HTML in this element. */
+.button-icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+}
+
+.button-icon > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ------------------------------------------------------------------ */
+/* Approved image-backed dialogue bubble                               */
+/* ------------------------------------------------------------------ */
+
+/* Width remains the approved responsive rule from style.css:
+   min(55vw, 1000px), with the 73vw/900px adaptation below 1200px.
+   The max-width guard only prevents edge contact on very narrow screens. */
+.dialogue-panel {
+  --dialogue-art-ratio: 3872 / 1552;
+  --name-tag-fill: #6f7480;
+  bottom: clamp(16px, 1.8vh, 24px);
+  max-width: calc(100vw - 24px);
+  aspect-ratio: var(--dialogue-art-ratio);
+  background: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Preserve the transparent PNG and the exact 3872:1552 presentation. */
+.dialogue-panel .dialogue-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: var(--dialogue-art-ratio);
+  object-fit: contain;
+  background: transparent;
+  border: 0;
+}
+
+.dialogue-panel .name-tag-tint {
+  fill: var(--name-tag-fill);
+}
+
+.dialogue-panel .name-tag-tint path {
+  fill: inherit;
+}
+
+.dialogue-panel[data-speaker="pip"] { --name-tag-fill: #67aeca; }
+.dialogue-panel[data-speaker="mori"] { --name-tag-fill: #6aa87b; }
+.dialogue-panel[data-speaker="grumble"] { --name-tag-fill: #d27ba6; }
+.dialogue-panel[data-speaker="bolt"] { --name-tag-fill: #c58b3f; }
+.dialogue-panel[data-speaker="shell"] { --name-tag-fill: #9185b8; }
+.dialogue-panel[data-speaker="narrator"] { --name-tag-fill: #6f7480; }
+
+/* Copy stays inside the clear centre of the artwork at every target size.
+   Type sizing remains the approved 31/25.95/24.06px responsive scale. */
+.dialogue-panel .dialogue-copy {
+  top: 27.2%;
+  right: 14.2%;
+  bottom: 20.5%;
+  left: 16%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.dialogue-panel .dialogue-text {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.dialogue-panel .continue-pulse {
+  pointer-events: none;
+}
+
+.dialogue-panel .dialogue-continue {
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  min-height: 44px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.dialogue-panel .dialogue-continue:focus-visible {
+  outline: 2px solid var(--gold-soft, #f1d79d);
+  outline-offset: 3px;
+}
+
+/* The bubble has no breathing motion for reduced-motion viewers; the
+   source-art chevron stays visible as a static affordance. */
+@media (prefers-reduced-motion: reduce) {
+  .dialogue-panel:not([hidden]),
+  .dialogue-panel.is-leaving {
+    animation: none;
+    transition: none;
+  }
+
+  .dialogue-panel.is-complete .continue-pulse {
+    animation: none;
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .ui-root :is(.primary-button, .secondary-button, .text-button, .danger-button) {
+    transition: none;
+  }
+}

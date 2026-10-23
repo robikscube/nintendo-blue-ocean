@@ -1,0 +1,25 @@
+{
+  "url": "http://127.0.0.1:4174/nintendo-next-blue-ocean/",
+  "speaker": "narrator",
+  "name": "Boardroom",
+  "nameColor": "rgb(255, 255, 255)",
+  "tagFill": "#6f7480",
+  "artSrc": "http://127.0.0.1:4174/nintendo-next-blue-ocean/assets/ui/dialogue-bubble.png",
+  "naturalWidth": 3872,
+  "naturalHeight": 1552,
+  "imageResources": [
+    "http://127.0.0.1:4174/nintendo-next-blue-ocean/assets/ui/dialogue-bubble.png"
+  ],
+  "bottomGap": 19.4375,
+  "path": "/nintendo-next-blue-ocean/",
+  "imageIsSubpath": true,
+  "tagPathLength": 5762,
+  "responses": [
+    {
+      "url": "http://127.0.0.1:4174/nintendo-next-blue-ocean/assets/ui/dialogue-bubble.png",
+      "status": 200
+    }
+  ],
+  "pageErrors": [],
+  "failedRequests": []
+}

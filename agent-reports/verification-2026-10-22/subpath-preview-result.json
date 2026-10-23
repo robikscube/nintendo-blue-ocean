@@ -1,0 +1,16 @@
+﻿{
+  "subpath": "http://127.0.0.1:4174/nintendo-next-blue-ocean/",
+  "ready": true,
+  "fallbackHidden": true,
+  "factsPresent": true,
+  "resourceCount": 7,
+  "outsideSubpath": [
+    "http://127.0.0.1:4174/assets/characters/tortoise/tortoise.glb",
+    "http://127.0.0.1:4174/assets/characters/owl/owl.glb",
+    "http://127.0.0.1:4174/assets/characters/fox/fox.glb",
+    "http://127.0.0.1:4174/assets/characters/bear/bear.glb",
+    "http://127.0.0.1:4174/assets/characters/beaver/beaver.glb"
+  ],
+  "failedLocal": [],
+  "pageErrors": []
+}

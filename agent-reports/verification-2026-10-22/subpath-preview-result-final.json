@@ -1,0 +1,10 @@
+﻿{
+  "subpath": "http://127.0.0.1:4174/nintendo-next-blue-ocean/",
+  "ready": true,
+  "fallbackHidden": true,
+  "factsPresent": true,
+  "resourceCount": 7,
+  "outsideSubpath": [],
+  "failedLocal": [],
+  "pageErrors": []
+}

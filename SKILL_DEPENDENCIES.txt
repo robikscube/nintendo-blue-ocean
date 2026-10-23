@@ -1,0 +1,115 @@
+NINTENDO: THE NEXT BLUE OCEAN — CLAUDE CODE SKILL DEPENDENCIES
+Last verified: 2026-10-22
+
+PURPOSE
+-------
+This file lists the Claude Code skills used to design, write, and verify the
+game. Skills are authoring/development tools only. The shipped game does NOT
+load skills, call an AI service, or need network access at runtime.
+
+PROJECT-LOCAL SKILLS (already inside this repository)
+-----------------------------------------------------
+These travel with the Nintendo project:
+
+  .claude/skills/game-architecture/
+  .claude/skills/game-designer/
+  .claude/skills/game-qa/
+  .claude/skills/nintendo-game-design/
+  .claude/skills/threejs-game/
+
+Use them for:
+  game-architecture       modular state, restart safety, scene/UI boundaries
+  game-designer           visual hierarchy, cozy presentation, UI polish
+  game-qa                 Playwright/browser verification and regressions
+  nintendo-game-design    classroom decisions, dialogue, pedagogy, history rules
+  threejs-game            renderer, scene, camera, character integration
+
+GLOBAL / USER-LEVEL WRITING SKILLS (required for dialogue work)
+---------------------------------------------------------------
+These are installed for the current Windows user, not inside this project.
+They will not travel with a project copy unless installed again.
+
+  no-ai-slop
+    Source:   https://skills.sh/petergyang/no-ai-slop/no-ai-slop
+    Install:  npx skills add petergyang/no-ai-slop@no-ai-slop -g -y
+    Use:      audit or edit prose/dialogue for AI-writing tells while
+              preserving the intended character voice. Supports detect-only.
+
+  character-sim
+    Source:   https://skills.sh/haowjy/creative-writing-skills/character-sim
+    Install:  npx skills add haowjy/creative-writing-skills@character-sim -g -y
+    Use:      role-play a specific character from their knowledge, wants,
+              fears, and emotional pressure; test whether voices stay distinct.
+
+  natural-dialogue-techniques
+    Source:   https://skills.sh/wordflowlab/novel-writer-skills/natural-dialogue-techniques
+    Install:  npx skills add wordflowlab/novel-writer-skills@natural-dialogue-techniques -g -y
+    Use:      voice tables, subtext, interruptions, silence, and anti-info-dump
+              dialogue craft. Source text is in Chinese; use the techniques.
+
+INSTALLED LOCATIONS ON THIS MACHINE
+-----------------------------------
+Source directories:
+  C:\Users\robwa\.agents\skills\no-ai-slop
+  C:\Users\robwa\.agents\skills\character-sim
+  C:\Users\robwa\.agents\skills\natural-dialogue-techniques
+
+Claude Code symlinks:
+  C:\Users\robwa\.claude\skills\no-ai-slop
+  C:\Users\robwa\.claude\skills\character-sim
+  C:\Users\robwa\.claude\skills\natural-dialogue-techniques
+
+VERIFIED: 2026-10-22. All three installed at user level and were available
+through the Skill tool. The "PromptScript does not support global skill
+installation" warning during install referred only to that host integration;
+the shared .agents install and Claude Code symlinks succeeded.
+
+OPTIONAL
+--------
+  find-skills
+    Source:   https://skills.sh/vercel-labs/skills/find-skills
+    Use:      discover/install additional agent skills.
+    Not required to build, run, or test this game.
+
+HOW THE WRITING SKILLS WERE APPLIED
+-----------------------------------
+1. no-ai-slop
+   Used to remove generic AI patterns: balanced corporate clauses, summary
+   endings, importance puffery, repeated sentence shapes, and empty jargon.
+
+2. character-sim
+   Used to separate each character's speaking STYLE from their character
+   STATE (history, knowledge, wants, fears, avoidances), and to write their
+   behavior under pressure instead of clean exposition.
+
+3. natural-dialogue-techniques
+   Used to build distinct voice fingerprints, add subtext, let characters
+   interrupt and deflect, and apply the blind test: cover the speaker name and
+   the line should still be identifiable.
+
+CAST / INTERNAL ID MAPPING
+--------------------------
+Display names are used in the UI and documents. Internal ids and Tripo3D asset
+folders remain stable for saved state and test compatibility.
+
+  Hootley   = owl    = internal id mori    = asset folder owl/
+  Slyvester = fox    = internal id pip     = asset folder fox/
+  Damian    = beaver = internal id bolt    = asset folder beaver/
+  Pawson    = bear   = internal id grumble = asset folder bear/
+  Shelldon  = turtle = internal id shell   = asset folder tortoise/
+
+WRITING RULES
+-------------
+- Original characters and lines only. Animal Crossing-style archetypes are
+  design scaffolding, not source material.
+- No Nintendo character names, catchphrases, voice samples, or copied text.
+- Authored dialogue only. No runtime LLM, API key, TTS, or generated dialogue.
+- Preserve the 3-chapter / 4-vote structure and sealed historical archive.
+- No real product names, launch years, or lifetime figures before the finale.
+- Character voice bible: blue-ocean-game/CHARACTER_PERSONAS.md
+
+RUNTIME/NPM DEPENDENCIES
+------------------------
+Skills are not npm packages and are not imported by the app. The game's actual
+runtime dependencies remain the pinned packages in blue-ocean-game/package.json
+(Vite, TypeScript, Three.js, GSAP, Playwright/Vitest for development).

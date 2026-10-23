@@ -1,0 +1,42 @@
+/* ------------------------------------------------------------------ */
+/* Universal Round 1 — shared design tokens (lead-owned)               */
+/* Loaded after style.css and before the three domain overrides.       */
+/* ------------------------------------------------------------------ */
+
+:root {
+  --radius-card: 16px;
+  --radius-panel: 20px;
+  --radius-control: 11px;
+  --radius-pill: 999px;
+
+  --space-1: 6px;
+  --space-2: 10px;
+  --space-3: 14px;
+  --space-4: 20px;
+  --space-5: 28px;
+  --space-6: 40px;
+
+  --control-height: 45px;
+  --control-height-large: 54px;
+  --control-font: 13px;
+  --control-font-large: 15px;
+
+  --ui-fast: 160ms;
+  --ui-base: 210ms;
+  --ui-slow: 320ms;
+}
+
+/* Keep the shared focus language identical on every screen. */
+.ui-root button:focus-visible,
+.ui-root a:focus-visible,
+.ui-root input:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* Decorative glyphs should never become the event target; the enclosing
+   button owns the action and its accessible name. */
+.ui-root button svg,
+.ui-root button .button-icon {
+  pointer-events: none;
+}

@@ -1,0 +1,3515 @@
+{
+  "base": "http://127.0.0.1:5173",
+  "viewports": [
+    {
+      "size": "1920x1080",
+      "seen": [
+        "narrator",
+        "shell",
+        "mori",
+        "pip",
+        "grumble",
+        "bolt"
+      ],
+      "pageErrors": [],
+      "failed": [],
+      "records": [
+        {
+          "phase": "opening",
+          "dialogueIndex": 0,
+          "speaker": "narrator",
+          "name": "Boardroom",
+          "line": "This is a fictional boardroom with five original animal executives and one sealed archive. The products are real; the meeting is a teaching story.",
+          "panelHidden": false,
+          "panel": {
+            "x": 460,
+            "y": 659.75,
+            "width": 1000,
+            "height": 400.8125,
+            "top": 659.75,
+            "right": 1460,
+            "bottom": 1060.5625,
+            "left": 460
+          },
+          "art": {
+            "x": 460,
+            "y": 659.75,
+            "width": 1000,
+            "height": 400.8125,
+            "top": 659.75,
+            "right": 1460,
+            "bottom": 1060.5625,
+            "left": 460
+          },
+          "copy": {
+            "x": 620,
+            "y": 768.765625,
+            "width": 698,
+            "height": 209.640625,
+            "top": 768.765625,
+            "right": 1318,
+            "bottom": 978.40625,
+            "left": 620
+          },
+          "text": {
+            "x": 620,
+            "y": 792.984375,
+            "width": 698,
+            "height": 161.1875,
+            "top": 792.984375,
+            "right": 1318,
+            "bottom": 954.171875,
+            "left": 620
+          },
+          "nameBox": {
+            "x": 574.8515625,
+            "y": 693.25,
+            "width": 173.296875,
+            "height": 36,
+            "top": 693.25,
+            "right": 748.1484375,
+            "bottom": 729.25,
+            "left": 574.8515625
+          },
+          "bottomGap": 19.4375,
+          "tagFill": "#6f7480",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "31px",
+          "lineHeight": "40.3px",
+          "nameFontSize": "32px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.4949321690316544,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 1343.5,
+              "y": 929.53125,
+              "width": 44,
+              "height": 44,
+              "top": 929.53125,
+              "right": 1387.5,
+              "bottom": 973.53125,
+              "left": 1343.5
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1920,
+            "height": 1080
+          },
+          "label": "opening-0"
+        },
+        {
+          "phase": "opening",
+          "dialogueIndex": 1,
+          "speaker": "shell",
+          "name": "Shelldon",
+          "line": "Welcome to the board. Oh, good, you’re all here. Three launches, four votes, and one archive with a very stubborn lock. I have time. The clock does not.",
+          "panelHidden": false,
+          "panel": {
+            "x": 460,
+            "y": 659.75,
+            "width": 1000,
+            "height": 400.8125,
+            "top": 659.75,
+            "right": 1460,
+            "bottom": 1060.5625,
+            "left": 460
+          },
+          "art": {
+            "x": 460,
+            "y": 659.75,
+            "width": 1000,
+            "height": 400.8125,
+            "top": 659.75,
+            "right": 1460,
+            "bottom": 1060.5625,
+            "left": 460
+          },
+          "copy": {
+            "x": 620,
+            "y": 768.765625,
+            "width": 698,
+            "height": 209.640625,
+            "top": 768.765625,
+            "right": 1318,
+            "bottom": 978.40625,
+            "left": 620
+          },
+          "text": {
+            "x": 620,
+            "y": 792.984375,
+            "width": 698,
+            "height": 161.1875,
+            "top": 792.984375,
+            "right": 1318,
+            "bottom": 954.171875,
+            "left": 620
+          },
+          "nameBox": {
+            "x": 592.7734375,
+            "y": 693.25,
+            "width": 137.453125,
+            "height": 36,
+            "top": 693.25,
+            "right": 730.2265625,
+            "bottom": 729.25,
+            "left": 592.7734375
+          },
+          "bottomGap": 19.4375,
+          "tagFill": "#9185b8",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "31px",
+          "lineHeight": "40.3px",
+          "nameFontSize": "32px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.4949321690316544,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 1343.5,
+              "y": 929.53125,
+              "width": 44,
+              "height": 44,
+              "top": 929.53125,
+              "right": 1387.5,
+              "bottom": 973.53125,
+              "left": 1343.5
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1920,
+            "height": 1080
+          },
+          "label": "opening-1"
+        },
+        {
+          "phase": "opening",
+          "dialogueIndex": 2,
+          "speaker": "mori",
+          "name": "Hootley",
+          "line": "I was up late again. I kept thinking about the people who never pick up a controller. Could we start with them?",
+          "panelHidden": false,
+          "panel": {
+            "x": 460,
+            "y": 659.75,
+            "width": 1000,
+            "height": 400.8125,
+            "top": 659.75,
+            "right": 1460,
+            "bottom": 1060.5625,
+            "left": 460
+          },
+          "art": {
+            "x": 460,
+            "y": 659.75,
+            "width": 1000,
+            "height": 400.8125,
+            "top": 659.75,
+            "right": 1460,
+            "bottom": 1060.5625,
+            "left": 460
+          },
+          "copy": {
+            "x": 620,
+            "y": 768.765625,
+            "width": 698,
+            "height": 209.640625,
+            "top": 768.765625,
+            "right": 1318,
+            "bottom": 978.40625,
+            "left": 620
+          },
+          "text": {
+            "x": 620,
+            "y": 813.140625,
+            "width": 698,
+            "height": 120.890625,
+            "top": 813.140625,
+            "right": 1318,
+            "bottom": 934.03125,
+            "left": 620
+          },
+          "nameBox": {
+            "x": 599.09375,
+            "y": 693.25,
+            "width": 124.8125,
+            "height": 36,
+            "top": 693.25,
+            "right": 723.90625,
+            "bottom": 729.25,
+            "left": 599.09375
+          },
+          "bottomGap": 19.4375,
+          "tagFill": "#6aa87b",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "31px",
+          "lineHeight": "40.3px",
+          "nameFontSize": "32px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.4949321690316544,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 1343.5,
+              "y": 929.53125,
+              "width": 44,
+              "height": 44,
+              "top": 929.53125,
+              "right": 1387.5,
+              "bottom": 973.53125,
+              "left": 1343.5
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1920,
+            "height": 1080
+          },
+          "label": "opening-2"
+        },
+        {
+          "phase": "opening",
+          "dialogueIndex": 3,
+          "speaker": "pip",
+          "name": "Slyvester",
+          "line": "Oh! I have a poster for them. Is that weird? That’s weird. I’ll hold it.",
+          "panelHidden": false,
+          "panel": {
+            "x": 460,
+            "y": 659.75,
+            "width": 1000,
+            "height": 400.8125,
+            "top": 659.75,
+            "right": 1460,
+            "bottom": 1060.5625,
+            "left": 460
+          },
+          "art": {
+            "x": 460,
+            "y": 659.75,
+            "width": 1000,
+            "height": 400.8125,
+            "top": 659.75,
+            "right": 1460,
+            "bottom": 1060.5625,
+            "left": 460
+          },
+          "copy": {
+            "x": 620,
+            "y": 768.765625,
+            "width": 698,
+            "height": 209.640625,
+            "top": 768.765625,
+            "right": 1318,
+            "bottom": 978.40625,
+            "left": 620
+          },
+          "text": {
+            "x": 620,
+            "y": 833.28125,
+            "width": 698,
+            "height": 80.59375,
+            "top": 833.28125,
+            "right": 1318,
+            "bottom": 913.875,
+            "left": 620
+          },
+          "nameBox": {
+            "x": 588.4375,
+            "y": 693.25,
+            "width": 146.125,
+            "height": 36,
+            "top": 693.25,
+            "right": 734.5625,
+            "bottom": 729.25,
+            "left": 588.4375
+          },
+          "bottomGap": 19.4375,
+          "tagFill": "#67aeca",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "31px",
+          "lineHeight": "40.3px",
+          "nameFontSize": "32px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.4949321690316544,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 1343.5,
+              "y": 929.53125,
+              "width": 44,
+              "height": 44,
+              "top": 929.53125,
+              "right": 1387.5,
+              "bottom": 973.53125,
+              "left": 1343.5
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1920,
+            "height": 1080
+          },
+          "label": "opening-3"
+        },
+        {
+          "phase": "opening",
+          "dialogueIndex": 4,
+          "speaker": "shell",
+          "name": "Shelldon",
+          "line": "Hold it until after the vote, Slyvester. Your prototypes are make-believe. History stays under seal until the last page. Shall we begin?",
+          "panelHidden": false,
+          "panel": {
+            "x": 460,
+            "y": 659.75,
+            "width": 1000,
+            "height": 400.8125,
+            "top": 659.75,
+            "right": 1460,
+            "bottom": 1060.5625,
+            "left": 460
+          },
+          "art": {
+            "x": 460,
+            "y": 659.75,
+            "width": 1000,
+            "height": 400.8125,
+            "top": 659.75,
+            "right": 1460,
+            "bottom": 1060.5625,
+            "left": 460
+          },
+          "copy": {
+            "x": 620,
+            "y": 768.765625,
+            "width": 698,
+            "height": 209.640625,
+            "top": 768.765625,
+            "right": 1318,
+            "bottom": 978.40625,
+            "left": 620
+          },
+          "text": {
+            "x": 620,
+            "y": 813.140625,
+            "width": 698,
+            "height": 120.890625,
+            "top": 813.140625,
+            "right": 1318,
+            "bottom": 934.03125,
+            "left": 620
+          },
+          "nameBox": {
+            "x": 592.7734375,
+            "y": 693.25,
+            "width": 137.453125,
+            "height": 36,
+            "top": 693.25,
+            "right": 730.2265625,
+            "bottom": 729.25,
+            "left": 592.7734375
+          },
+          "bottomGap": 19.4375,
+          "tagFill": "#9185b8",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "31px",
+          "lineHeight": "40.3px",
+          "nameFontSize": "32px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.4949321690316544,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 1343.5,
+              "y": 929.53125,
+              "width": 44,
+              "height": 44,
+              "top": 929.53125,
+              "right": 1387.5,
+              "bottom": 973.53125,
+              "left": 1343.5
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1920,
+            "height": 1080
+          },
+          "label": "opening-4"
+        },
+        {
+          "phase": "advisors",
+          "dialogueIndex": 0,
+          "speaker": "mori",
+          "name": "Hootley",
+          "line": "I visited three families who don’t own a console. Two shrugged. One asked, ‘Could my dad play too?’ I wrote that down.",
+          "panelHidden": false,
+          "panel": {
+            "x": 460,
+            "y": 659.75,
+            "width": 1000,
+            "height": 400.8125,
+            "top": 659.75,
+            "right": 1460,
+            "bottom": 1060.5625,
+            "left": 460
+          },
+          "art": {
+            "x": 460,
+            "y": 659.75,
+            "width": 1000,
+            "height": 400.8125,
+            "top": 659.75,
+            "right": 1460,
+            "bottom": 1060.5625,
+            "left": 460
+          },
+          "copy": {
+            "x": 620,
+            "y": 768.765625,
+            "width": 698,
+            "height": 209.640625,
+            "top": 768.765625,
+            "right": 1318,
+            "bottom": 978.40625,
+            "left": 620
+          },
+          "text": {
+            "x": 620,
+            "y": 813.140625,
+            "width": 698,
+            "height": 120.890625,
+            "top": 813.140625,
+            "right": 1318,
+            "bottom": 934.03125,
+            "left": 620
+          },
+          "nameBox": {
+            "x": 599.09375,
+            "y": 693.25,
+            "width": 124.8125,
+            "height": 36,
+            "top": 693.25,
+            "right": 723.90625,
+            "bottom": 729.25,
+            "left": 599.09375
+          },
+          "bottomGap": 19.4375,
+          "tagFill": "#6aa87b",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "31px",
+          "lineHeight": "40.3px",
+          "nameFontSize": "32px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.4949321690316544,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 1343.5,
+              "y": 929.53125,
+              "width": 44,
+              "height": 44,
+              "top": 929.53125,
+              "right": 1387.5,
+              "bottom": 973.53125,
+              "left": 1343.5
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1920,
+            "height": 1080
+          },
+          "label": "advisors-0"
+        },
+        {
+          "phase": "advisors",
+          "dialogueIndex": 1,
+          "speaker": "pip",
+          "name": "Slyvester",
+          "line": "Oh! Picture the commercial. Grandma bowls, Dad cheers, nobody asks about polygons. I can see the poster already. Retailers will ask what’s inside, though.",
+          "panelHidden": false,
+          "panel": {
+            "x": 460,
+            "y": 659.75,
+            "width": 1000,
+            "height": 400.8125,
+            "top": 659.75,
+            "right": 1460,
+            "bottom": 1060.5625,
+            "left": 460
+          },
+          "art": {
+            "x": 460,
+            "y": 659.75,
+            "width": 1000,
+            "height": 400.8125,
+            "top": 659.75,
+            "right": 1460,
+            "bottom": 1060.5625,
+            "left": 460
+          },
+          "copy": {
+            "x": 620,
+            "y": 768.765625,
+            "width": 698,
+            "height": 209.640625,
+            "top": 768.765625,
+            "right": 1318,
+            "bottom": 978.40625,
+            "left": 620
+          },
+          "text": {
+            "x": 620,
+            "y": 792.984375,
+            "width": 698,
+            "height": 161.1875,
+            "top": 792.984375,
+            "right": 1318,
+            "bottom": 954.171875,
+            "left": 620
+          },
+          "nameBox": {
+            "x": 588.4375,
+            "y": 693.25,
+            "width": 146.125,
+            "height": 36,
+            "top": 693.25,
+            "right": 734.5625,
+            "bottom": 729.25,
+            "left": 588.4375
+          },
+          "bottomGap": 19.4375,
+          "tagFill": "#67aeca",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "31px",
+          "lineHeight": "40.3px",
+          "nameFontSize": "32px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.4949321690316544,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 1343.5,
+              "y": 929.53125,
+              "width": 44,
+              "height": 44,
+              "top": 929.53125,
+              "right": 1387.5,
+              "bottom": 973.53125,
+              "left": 1343.5
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1920,
+            "height": 1080
+          },
+          "label": "advisors-1"
+        },
+        {
+          "phase": "advisors",
+          "dialogueIndex": 2,
+          "speaker": "grumble",
+          "name": "Pawson",
+          "line": "Cute poster, Slyvester. Now show me the bill for motion sensors and the six-word slogan you call a forecast.",
+          "panelHidden": false,
+          "panel": {
+            "x": 460,
+            "y": 659.75,
+            "width": 1000,
+            "height": 400.8125,
+            "top": 659.75,
+            "right": 1460,
+            "bottom": 1060.5625,
+            "left": 460
+          },
+          "art": {
+            "x": 460,
+            "y": 659.75,
+            "width": 1000,
+            "height": 400.8125,
+            "top": 659.75,
+            "right": 1460,
+            "bottom": 1060.5625,
+            "left": 460
+          },
+          "copy": {
+            "x": 620,
+            "y": 768.765625,
+            "width": 698,
+            "height": 209.640625,
+            "top": 768.765625,
+            "right": 1318,
+            "bottom": 978.40625,
+            "left": 620
+          },
+          "text": {
+            "x": 620,
+            "y": 813.140625,
+            "width": 698,
+            "height": 120.890625,
+            "top": 813.140625,
+            "right": 1318,
+            "bottom": 934.03125,
+            "left": 620
+          },
+          "nameBox": {
+            "x": 601.921875,
+            "y": 693.25,
+            "width": 119.15625,
+            "height": 36,
+            "top": 693.25,
+            "right": 721.078125,
+            "bottom": 729.25,
+            "left": 601.921875
+          },
+          "bottomGap": 19.4375,
+          "tagFill": "#d27ba6",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "31px",
+          "lineHeight": "40.3px",
+          "nameFontSize": "32px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.4949321690316544,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 1343.5,
+              "y": 929.53125,
+              "width": 44,
+              "height": 44,
+              "top": 929.53125,
+              "right": 1387.5,
+              "bottom": 973.53125,
+              "left": 1343.5
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1920,
+            "height": 1080
+          },
+          "label": "advisors-2"
+        },
+        {
+          "phase": "advisors",
+          "dialogueIndex": 3,
+          "speaker": "pip",
+          "name": "Slyvester",
+          "line": "Retailers don’t buy posters, Pawson. They buy feelings. Then they buy lunch.",
+          "panelHidden": false,
+          "panel": {
+            "x": 460,
+            "y": 659.75,
+            "width": 1000,
+            "height": 400.8125,
+            "top": 659.75,
+            "right": 1460,
+            "bottom": 1060.5625,
+            "left": 460
+          },
+          "art": {
+            "x": 460,
+            "y": 659.75,
+            "width": 1000,
+            "height": 400.8125,
+            "top": 659.75,
+            "right": 1460,
+            "bottom": 1060.5625,
+            "left": 460
+          },
+          "copy": {
+            "x": 620,
+            "y": 768.765625,
+            "width": 698,
+            "height": 209.640625,
+            "top": 768.765625,
+            "right": 1318,
+            "bottom": 978.40625,
+            "left": 620
+          },
+          "text": {
+            "x": 620,
+            "y": 833.28125,
+            "width": 698,
+            "height": 80.59375,
+            "top": 833.28125,
+            "right": 1318,
+            "bottom": 913.875,
+            "left": 620
+          },
+          "nameBox": {
+            "x": 588.4375,
+            "y": 693.25,
+            "width": 146.125,
+            "height": 36,
+            "top": 693.25,
+            "right": 734.5625,
+            "bottom": 729.25,
+            "left": 588.4375
+          },
+          "bottomGap": 19.4375,
+          "tagFill": "#67aeca",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "31px",
+          "lineHeight": "40.3px",
+          "nameFontSize": "32px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.4949321690316544,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 1343.5,
+              "y": 929.53125,
+              "width": 44,
+              "height": 44,
+              "top": 929.53125,
+              "right": 1387.5,
+              "bottom": 973.53125,
+              "left": 1343.5
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1920,
+            "height": 1080
+          },
+          "label": "advisors-3"
+        },
+        {
+          "phase": "advisors",
+          "dialogueIndex": 4,
+          "speaker": "grumble",
+          "name": "Pawson",
+          "line": "I’m not buying either. Motion sensors aren’t free, and neither is my lunch.",
+          "panelHidden": false,
+          "panel": {
+            "x": 460,
+            "y": 659.75,
+            "width": 1000,
+            "height": 400.8125,
+            "top": 659.75,
+            "right": 1460,
+            "bottom": 1060.5625,
+            "left": 460
+          },
+          "art": {
+            "x": 460,
+            "y": 659.75,
+            "width": 1000,
+            "height": 400.8125,
+            "top": 659.75,
+            "right": 1460,
+            "bottom": 1060.5625,
+            "left": 460
+          },
+          "copy": {
+            "x": 620,
+            "y": 768.765625,
+            "width": 698,
+            "height": 209.640625,
+            "top": 768.765625,
+            "right": 1318,
+            "bottom": 978.40625,
+            "left": 620
+          },
+          "text": {
+            "x": 620,
+            "y": 833.28125,
+            "width": 698,
+            "height": 80.59375,
+            "top": 833.28125,
+            "right": 1318,
+            "bottom": 913.875,
+            "left": 620
+          },
+          "nameBox": {
+            "x": 601.921875,
+            "y": 693.25,
+            "width": 119.15625,
+            "height": 36,
+            "top": 693.25,
+            "right": 721.078125,
+            "bottom": 729.25,
+            "left": 601.921875
+          },
+          "bottomGap": 19.4375,
+          "tagFill": "#d27ba6",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "31px",
+          "lineHeight": "40.3px",
+          "nameFontSize": "32px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.4949321690316544,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 1343.5,
+              "y": 929.53125,
+              "width": 44,
+              "height": 44,
+              "top": 929.53125,
+              "right": 1387.5,
+              "bottom": 973.53125,
+              "left": 1343.5
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1920,
+            "height": 1080
+          },
+          "label": "advisors-4"
+        },
+        {
+          "phase": "advisors",
+          "dialogueIndex": 5,
+          "speaker": "bolt",
+          "name": "Damian",
+          "line": "I can build a wand a kid can wave. Probably. The trick is making every wild swing count without hitting Pawson’s coffee.",
+          "panelHidden": false,
+          "panel": {
+            "x": 460,
+            "y": 659.75,
+            "width": 1000,
+            "height": 400.8125,
+            "top": 659.75,
+            "right": 1460,
+            "bottom": 1060.5625,
+            "left": 460
+          },
+          "art": {
+            "x": 460,
+            "y": 659.75,
+            "width": 1000,
+            "height": 400.8125,
+            "top": 659.75,
+            "right": 1460,
+            "bottom": 1060.5625,
+            "left": 460
+          },
+          "copy": {
+            "x": 620,
+            "y": 768.765625,
+            "width": 698,
+            "height": 209.640625,
+            "top": 768.765625,
+            "right": 1318,
+            "bottom": 978.40625,
+            "left": 620
+          },
+          "text": {
+            "x": 620,
+            "y": 813.140625,
+            "width": 698,
+            "height": 120.890625,
+            "top": 813.140625,
+            "right": 1318,
+            "bottom": 934.03125,
+            "left": 620
+          },
+          "nameBox": {
+            "x": 601.71875,
+            "y": 693.25,
+            "width": 119.5625,
+            "height": 36,
+            "top": 693.25,
+            "right": 721.28125,
+            "bottom": 729.25,
+            "left": 601.71875
+          },
+          "bottomGap": 19.4375,
+          "tagFill": "#c58b3f",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "31px",
+          "lineHeight": "40.3px",
+          "nameFontSize": "32px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.4949321690316544,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 1343.5,
+              "y": 929.53125,
+              "width": 44,
+              "height": 44,
+              "top": 929.53125,
+              "right": 1387.5,
+              "bottom": 973.53125,
+              "left": 1343.5
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1920,
+            "height": 1080
+          },
+          "label": "advisors-5"
+        },
+        {
+          "phase": "advisors",
+          "dialogueIndex": 6,
+          "speaker": "mori",
+          "name": "Hootley",
+          "line": "Who’s missing from the room? The parent who slips out when the console turns on. I keep thinking about her.",
+          "panelHidden": false,
+          "panel": {
+            "x": 460,
+            "y": 659.75,
+            "width": 1000,
+            "height": 400.8125,
+            "top": 659.75,
+            "right": 1460,
+            "bottom": 1060.5625,
+            "left": 460
+          },
+          "art": {
+            "x": 460,
+            "y": 659.75,
+            "width": 1000,
+            "height": 400.8125,
+            "top": 659.75,
+            "right": 1460,
+            "bottom": 1060.5625,
+            "left": 460
+          },
+          "copy": {
+            "x": 620,
+            "y": 768.765625,
+            "width": 698,
+            "height": 209.640625,
+            "top": 768.765625,
+            "right": 1318,
+            "bottom": 978.40625,
+            "left": 620
+          },
+          "text": {
+            "x": 620,
+            "y": 813.140625,
+            "width": 698,
+            "height": 120.890625,
+            "top": 813.140625,
+            "right": 1318,
+            "bottom": 934.03125,
+            "left": 620
+          },
+          "nameBox": {
+            "x": 599.09375,
+            "y": 693.25,
+            "width": 124.8125,
+            "height": 36,
+            "top": 693.25,
+            "right": 723.90625,
+            "bottom": 729.25,
+            "left": 599.09375
+          },
+          "bottomGap": 19.4375,
+          "tagFill": "#6aa87b",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "31px",
+          "lineHeight": "40.3px",
+          "nameFontSize": "32px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.4949321690316544,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 1343.5,
+              "y": 929.53125,
+              "width": 44,
+              "height": 44,
+              "top": 929.53125,
+              "right": 1387.5,
+              "bottom": 973.53125,
+              "left": 1343.5
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1920,
+            "height": 1080
+          },
+          "label": "advisors-6"
+        }
+      ]
+    },
+    {
+      "size": "1366x768",
+      "seen": [
+        "narrator",
+        "shell",
+        "mori",
+        "pip",
+        "grumble",
+        "bolt"
+      ],
+      "pageErrors": [],
+      "failed": [],
+      "records": [
+        {
+          "phase": "opening",
+          "dialogueIndex": 0,
+          "speaker": "narrator",
+          "name": "Boardroom",
+          "line": "This is a fictional boardroom with five original animal executives and one sealed archive. The products are real; the meeting is a teaching story.",
+          "panelHidden": false,
+          "panel": {
+            "x": 307.3515625,
+            "y": 450.875,
+            "width": 751.296875,
+            "height": 301.125,
+            "top": 450.875,
+            "right": 1058.6484375,
+            "bottom": 752,
+            "left": 307.3515625
+          },
+          "art": {
+            "x": 307.3515625,
+            "y": 450.875,
+            "width": 751.296875,
+            "height": 301.125,
+            "top": 450.875,
+            "right": 1058.6484375,
+            "bottom": 752,
+            "left": 307.3515625
+          },
+          "copy": {
+            "x": 427.5546875,
+            "y": 532.765625,
+            "width": 524.421875,
+            "height": 157.515625,
+            "top": 532.765625,
+            "right": 951.9765625,
+            "bottom": 690.28125,
+            "left": 427.5546875
+          },
+          "text": {
+            "x": 427.5546875,
+            "y": 544.046875,
+            "width": 524.421875,
+            "height": 134.9375,
+            "top": 544.046875,
+            "right": 951.9765625,
+            "bottom": 678.984375,
+            "left": 427.5546875
+          },
+          "nameBox": {
+            "x": 372.078125,
+            "y": 471.5625,
+            "width": 173.296875,
+            "height": 36,
+            "top": 471.5625,
+            "right": 545.375,
+            "bottom": 507.5625,
+            "left": 372.078125
+          },
+          "bottomGap": 16,
+          "tagFill": "#6f7480",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "25.954px",
+          "lineHeight": "33.7402px",
+          "nameFontSize": "32px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.494966791199668,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 965.6484375,
+              "y": 648.09375,
+              "width": 44,
+              "height": 44,
+              "top": 648.09375,
+              "right": 1009.6484375,
+              "bottom": 692.09375,
+              "left": 965.6484375
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          },
+          "label": "opening-0"
+        },
+        {
+          "phase": "opening",
+          "dialogueIndex": 1,
+          "speaker": "shell",
+          "name": "Shelldon",
+          "line": "Welcome to the board. Oh, good, you’re all here. Three launches, four votes, and one archive with a very stubborn lock. I have time. The clock does not.",
+          "panelHidden": false,
+          "panel": {
+            "x": 307.3515625,
+            "y": 450.875,
+            "width": 751.296875,
+            "height": 301.125,
+            "top": 450.875,
+            "right": 1058.6484375,
+            "bottom": 752,
+            "left": 307.3515625
+          },
+          "art": {
+            "x": 307.3515625,
+            "y": 450.875,
+            "width": 751.296875,
+            "height": 301.125,
+            "top": 450.875,
+            "right": 1058.6484375,
+            "bottom": 752,
+            "left": 307.3515625
+          },
+          "copy": {
+            "x": 427.5546875,
+            "y": 532.765625,
+            "width": 524.421875,
+            "height": 157.515625,
+            "top": 532.765625,
+            "right": 951.9765625,
+            "bottom": 690.28125,
+            "left": 427.5546875
+          },
+          "text": {
+            "x": 427.5546875,
+            "y": 544.046875,
+            "width": 524.421875,
+            "height": 134.9375,
+            "top": 544.046875,
+            "right": 951.9765625,
+            "bottom": 678.984375,
+            "left": 427.5546875
+          },
+          "nameBox": {
+            "x": 390,
+            "y": 471.5625,
+            "width": 137.453125,
+            "height": 36,
+            "top": 471.5625,
+            "right": 527.453125,
+            "bottom": 507.5625,
+            "left": 390
+          },
+          "bottomGap": 16,
+          "tagFill": "#9185b8",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "25.954px",
+          "lineHeight": "33.7402px",
+          "nameFontSize": "32px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.494966791199668,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 965.6484375,
+              "y": 648.09375,
+              "width": 44,
+              "height": 44,
+              "top": 648.09375,
+              "right": 1009.6484375,
+              "bottom": 692.09375,
+              "left": 965.6484375
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          },
+          "label": "opening-1"
+        },
+        {
+          "phase": "opening",
+          "dialogueIndex": 2,
+          "speaker": "mori",
+          "name": "Hootley",
+          "line": "I was up late again. I kept thinking about the people who never pick up a controller. Could we start with them?",
+          "panelHidden": false,
+          "panel": {
+            "x": 307.3515625,
+            "y": 450.875,
+            "width": 751.296875,
+            "height": 301.125,
+            "top": 450.875,
+            "right": 1058.6484375,
+            "bottom": 752,
+            "left": 307.3515625
+          },
+          "art": {
+            "x": 307.3515625,
+            "y": 450.875,
+            "width": 751.296875,
+            "height": 301.125,
+            "top": 450.875,
+            "right": 1058.6484375,
+            "bottom": 752,
+            "left": 307.3515625
+          },
+          "copy": {
+            "x": 427.5546875,
+            "y": 532.765625,
+            "width": 524.421875,
+            "height": 157.515625,
+            "top": 532.765625,
+            "right": 951.9765625,
+            "bottom": 690.28125,
+            "left": 427.5546875
+          },
+          "text": {
+            "x": 427.5546875,
+            "y": 560.921875,
+            "width": 524.421875,
+            "height": 101.203125,
+            "top": 560.921875,
+            "right": 951.9765625,
+            "bottom": 662.125,
+            "left": 427.5546875
+          },
+          "nameBox": {
+            "x": 396.3203125,
+            "y": 471.5625,
+            "width": 124.8125,
+            "height": 36,
+            "top": 471.5625,
+            "right": 521.1328125,
+            "bottom": 507.5625,
+            "left": 396.3203125
+          },
+          "bottomGap": 16,
+          "tagFill": "#6aa87b",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "25.954px",
+          "lineHeight": "33.7402px",
+          "nameFontSize": "32px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.494966791199668,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 965.6484375,
+              "y": 648.09375,
+              "width": 44,
+              "height": 44,
+              "top": 648.09375,
+              "right": 1009.6484375,
+              "bottom": 692.09375,
+              "left": 965.6484375
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          },
+          "label": "opening-2"
+        },
+        {
+          "phase": "opening",
+          "dialogueIndex": 3,
+          "speaker": "pip",
+          "name": "Slyvester",
+          "line": "Oh! I have a poster for them. Is that weird? That’s weird. I’ll hold it.",
+          "panelHidden": false,
+          "panel": {
+            "x": 307.3515625,
+            "y": 450.875,
+            "width": 751.296875,
+            "height": 301.125,
+            "top": 450.875,
+            "right": 1058.6484375,
+            "bottom": 752,
+            "left": 307.3515625
+          },
+          "art": {
+            "x": 307.3515625,
+            "y": 450.875,
+            "width": 751.296875,
+            "height": 301.125,
+            "top": 450.875,
+            "right": 1058.6484375,
+            "bottom": 752,
+            "left": 307.3515625
+          },
+          "copy": {
+            "x": 427.5546875,
+            "y": 532.765625,
+            "width": 524.421875,
+            "height": 157.515625,
+            "top": 532.765625,
+            "right": 951.9765625,
+            "bottom": 690.28125,
+            "left": 427.5546875
+          },
+          "text": {
+            "x": 427.5546875,
+            "y": 577.78125,
+            "width": 524.421875,
+            "height": 67.46875,
+            "top": 577.78125,
+            "right": 951.9765625,
+            "bottom": 645.25,
+            "left": 427.5546875
+          },
+          "nameBox": {
+            "x": 385.6640625,
+            "y": 471.5625,
+            "width": 146.125,
+            "height": 36,
+            "top": 471.5625,
+            "right": 531.7890625,
+            "bottom": 507.5625,
+            "left": 385.6640625
+          },
+          "bottomGap": 16,
+          "tagFill": "#67aeca",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "25.954px",
+          "lineHeight": "33.7402px",
+          "nameFontSize": "32px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.494966791199668,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 965.6484375,
+              "y": 648.09375,
+              "width": 44,
+              "height": 44,
+              "top": 648.09375,
+              "right": 1009.6484375,
+              "bottom": 692.09375,
+              "left": 965.6484375
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          },
+          "label": "opening-3"
+        },
+        {
+          "phase": "opening",
+          "dialogueIndex": 4,
+          "speaker": "shell",
+          "name": "Shelldon",
+          "line": "Hold it until after the vote, Slyvester. Your prototypes are make-believe. History stays under seal until the last page. Shall we begin?",
+          "panelHidden": false,
+          "panel": {
+            "x": 307.3515625,
+            "y": 450.875,
+            "width": 751.296875,
+            "height": 301.125,
+            "top": 450.875,
+            "right": 1058.6484375,
+            "bottom": 752,
+            "left": 307.3515625
+          },
+          "art": {
+            "x": 307.3515625,
+            "y": 450.875,
+            "width": 751.296875,
+            "height": 301.125,
+            "top": 450.875,
+            "right": 1058.6484375,
+            "bottom": 752,
+            "left": 307.3515625
+          },
+          "copy": {
+            "x": 427.5546875,
+            "y": 532.765625,
+            "width": 524.421875,
+            "height": 157.515625,
+            "top": 532.765625,
+            "right": 951.9765625,
+            "bottom": 690.28125,
+            "left": 427.5546875
+          },
+          "text": {
+            "x": 427.5546875,
+            "y": 544.046875,
+            "width": 524.421875,
+            "height": 134.9375,
+            "top": 544.046875,
+            "right": 951.9765625,
+            "bottom": 678.984375,
+            "left": 427.5546875
+          },
+          "nameBox": {
+            "x": 390,
+            "y": 471.5625,
+            "width": 137.453125,
+            "height": 36,
+            "top": 471.5625,
+            "right": 527.453125,
+            "bottom": 507.5625,
+            "left": 390
+          },
+          "bottomGap": 16,
+          "tagFill": "#9185b8",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "25.954px",
+          "lineHeight": "33.7402px",
+          "nameFontSize": "32px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.494966791199668,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 965.6484375,
+              "y": 648.09375,
+              "width": 44,
+              "height": 44,
+              "top": 648.09375,
+              "right": 1009.6484375,
+              "bottom": 692.09375,
+              "left": 965.6484375
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          },
+          "label": "opening-4"
+        },
+        {
+          "phase": "advisors",
+          "dialogueIndex": 0,
+          "speaker": "mori",
+          "name": "Hootley",
+          "line": "I visited three families who don’t own a console. Two shrugged. One asked, ‘Could my dad play too?’ I wrote that down.",
+          "panelHidden": false,
+          "panel": {
+            "x": 307.3515625,
+            "y": 450.875,
+            "width": 751.296875,
+            "height": 301.125,
+            "top": 450.875,
+            "right": 1058.6484375,
+            "bottom": 752,
+            "left": 307.3515625
+          },
+          "art": {
+            "x": 307.3515625,
+            "y": 450.875,
+            "width": 751.296875,
+            "height": 301.125,
+            "top": 450.875,
+            "right": 1058.6484375,
+            "bottom": 752,
+            "left": 307.3515625
+          },
+          "copy": {
+            "x": 427.5546875,
+            "y": 532.765625,
+            "width": 524.421875,
+            "height": 157.515625,
+            "top": 532.765625,
+            "right": 951.9765625,
+            "bottom": 690.28125,
+            "left": 427.5546875
+          },
+          "text": {
+            "x": 427.5546875,
+            "y": 560.921875,
+            "width": 524.421875,
+            "height": 101.203125,
+            "top": 560.921875,
+            "right": 951.9765625,
+            "bottom": 662.125,
+            "left": 427.5546875
+          },
+          "nameBox": {
+            "x": 396.3203125,
+            "y": 471.5625,
+            "width": 124.8125,
+            "height": 36,
+            "top": 471.5625,
+            "right": 521.1328125,
+            "bottom": 507.5625,
+            "left": 396.3203125
+          },
+          "bottomGap": 16,
+          "tagFill": "#6aa87b",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "25.954px",
+          "lineHeight": "33.7402px",
+          "nameFontSize": "32px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.494966791199668,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 965.6484375,
+              "y": 648.09375,
+              "width": 44,
+              "height": 44,
+              "top": 648.09375,
+              "right": 1009.6484375,
+              "bottom": 692.09375,
+              "left": 965.6484375
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          },
+          "label": "advisors-0"
+        },
+        {
+          "phase": "advisors",
+          "dialogueIndex": 1,
+          "speaker": "pip",
+          "name": "Slyvester",
+          "line": "Oh! Picture the commercial. Grandma bowls, Dad cheers, nobody asks about polygons. I can see the poster already. Retailers will ask what’s inside, though.",
+          "panelHidden": false,
+          "panel": {
+            "x": 307.3515625,
+            "y": 450.875,
+            "width": 751.296875,
+            "height": 301.125,
+            "top": 450.875,
+            "right": 1058.6484375,
+            "bottom": 752,
+            "left": 307.3515625
+          },
+          "art": {
+            "x": 307.3515625,
+            "y": 450.875,
+            "width": 751.296875,
+            "height": 301.125,
+            "top": 450.875,
+            "right": 1058.6484375,
+            "bottom": 752,
+            "left": 307.3515625
+          },
+          "copy": {
+            "x": 427.5546875,
+            "y": 532.765625,
+            "width": 524.421875,
+            "height": 157.515625,
+            "top": 532.765625,
+            "right": 951.9765625,
+            "bottom": 690.28125,
+            "left": 427.5546875
+          },
+          "text": {
+            "x": 427.5546875,
+            "y": 544.046875,
+            "width": 524.421875,
+            "height": 134.9375,
+            "top": 544.046875,
+            "right": 951.9765625,
+            "bottom": 678.984375,
+            "left": 427.5546875
+          },
+          "nameBox": {
+            "x": 385.6640625,
+            "y": 471.5625,
+            "width": 146.125,
+            "height": 36,
+            "top": 471.5625,
+            "right": 531.7890625,
+            "bottom": 507.5625,
+            "left": 385.6640625
+          },
+          "bottomGap": 16,
+          "tagFill": "#67aeca",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "25.954px",
+          "lineHeight": "33.7402px",
+          "nameFontSize": "32px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.494966791199668,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 965.6484375,
+              "y": 648.09375,
+              "width": 44,
+              "height": 44,
+              "top": 648.09375,
+              "right": 1009.6484375,
+              "bottom": 692.09375,
+              "left": 965.6484375
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          },
+          "label": "advisors-1"
+        },
+        {
+          "phase": "advisors",
+          "dialogueIndex": 2,
+          "speaker": "grumble",
+          "name": "Pawson",
+          "line": "Cute poster, Slyvester. Now show me the bill for motion sensors and the six-word slogan you call a forecast.",
+          "panelHidden": false,
+          "panel": {
+            "x": 307.3515625,
+            "y": 450.875,
+            "width": 751.296875,
+            "height": 301.125,
+            "top": 450.875,
+            "right": 1058.6484375,
+            "bottom": 752,
+            "left": 307.3515625
+          },
+          "art": {
+            "x": 307.3515625,
+            "y": 450.875,
+            "width": 751.296875,
+            "height": 301.125,
+            "top": 450.875,
+            "right": 1058.6484375,
+            "bottom": 752,
+            "left": 307.3515625
+          },
+          "copy": {
+            "x": 427.5546875,
+            "y": 532.765625,
+            "width": 524.421875,
+            "height": 157.515625,
+            "top": 532.765625,
+            "right": 951.9765625,
+            "bottom": 690.28125,
+            "left": 427.5546875
+          },
+          "text": {
+            "x": 427.5546875,
+            "y": 560.921875,
+            "width": 524.421875,
+            "height": 101.203125,
+            "top": 560.921875,
+            "right": 951.9765625,
+            "bottom": 662.125,
+            "left": 427.5546875
+          },
+          "nameBox": {
+            "x": 399.1484375,
+            "y": 471.5625,
+            "width": 119.15625,
+            "height": 36,
+            "top": 471.5625,
+            "right": 518.3046875,
+            "bottom": 507.5625,
+            "left": 399.1484375
+          },
+          "bottomGap": 16,
+          "tagFill": "#d27ba6",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "25.954px",
+          "lineHeight": "33.7402px",
+          "nameFontSize": "32px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.494966791199668,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 965.6484375,
+              "y": 648.09375,
+              "width": 44,
+              "height": 44,
+              "top": 648.09375,
+              "right": 1009.6484375,
+              "bottom": 692.09375,
+              "left": 965.6484375
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          },
+          "label": "advisors-2"
+        },
+        {
+          "phase": "advisors",
+          "dialogueIndex": 3,
+          "speaker": "pip",
+          "name": "Slyvester",
+          "line": "Retailers don’t buy posters, Pawson. They buy feelings. Then they buy lunch.",
+          "panelHidden": false,
+          "panel": {
+            "x": 307.3515625,
+            "y": 450.875,
+            "width": 751.296875,
+            "height": 301.125,
+            "top": 450.875,
+            "right": 1058.6484375,
+            "bottom": 752,
+            "left": 307.3515625
+          },
+          "art": {
+            "x": 307.3515625,
+            "y": 450.875,
+            "width": 751.296875,
+            "height": 301.125,
+            "top": 450.875,
+            "right": 1058.6484375,
+            "bottom": 752,
+            "left": 307.3515625
+          },
+          "copy": {
+            "x": 427.5546875,
+            "y": 532.765625,
+            "width": 524.421875,
+            "height": 157.515625,
+            "top": 532.765625,
+            "right": 951.9765625,
+            "bottom": 690.28125,
+            "left": 427.5546875
+          },
+          "text": {
+            "x": 427.5546875,
+            "y": 577.78125,
+            "width": 524.421875,
+            "height": 67.46875,
+            "top": 577.78125,
+            "right": 951.9765625,
+            "bottom": 645.25,
+            "left": 427.5546875
+          },
+          "nameBox": {
+            "x": 385.6640625,
+            "y": 471.5625,
+            "width": 146.125,
+            "height": 36,
+            "top": 471.5625,
+            "right": 531.7890625,
+            "bottom": 507.5625,
+            "left": 385.6640625
+          },
+          "bottomGap": 16,
+          "tagFill": "#67aeca",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "25.954px",
+          "lineHeight": "33.7402px",
+          "nameFontSize": "32px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.494966791199668,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 965.6484375,
+              "y": 648.09375,
+              "width": 44,
+              "height": 44,
+              "top": 648.09375,
+              "right": 1009.6484375,
+              "bottom": 692.09375,
+              "left": 965.6484375
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          },
+          "label": "advisors-3"
+        },
+        {
+          "phase": "advisors",
+          "dialogueIndex": 4,
+          "speaker": "grumble",
+          "name": "Pawson",
+          "line": "I’m not buying either. Motion sensors aren’t free, and neither is my lunch.",
+          "panelHidden": false,
+          "panel": {
+            "x": 307.3515625,
+            "y": 450.875,
+            "width": 751.296875,
+            "height": 301.125,
+            "top": 450.875,
+            "right": 1058.6484375,
+            "bottom": 752,
+            "left": 307.3515625
+          },
+          "art": {
+            "x": 307.3515625,
+            "y": 450.875,
+            "width": 751.296875,
+            "height": 301.125,
+            "top": 450.875,
+            "right": 1058.6484375,
+            "bottom": 752,
+            "left": 307.3515625
+          },
+          "copy": {
+            "x": 427.5546875,
+            "y": 532.765625,
+            "width": 524.421875,
+            "height": 157.515625,
+            "top": 532.765625,
+            "right": 951.9765625,
+            "bottom": 690.28125,
+            "left": 427.5546875
+          },
+          "text": {
+            "x": 427.5546875,
+            "y": 577.78125,
+            "width": 524.421875,
+            "height": 67.46875,
+            "top": 577.78125,
+            "right": 951.9765625,
+            "bottom": 645.25,
+            "left": 427.5546875
+          },
+          "nameBox": {
+            "x": 399.1484375,
+            "y": 471.5625,
+            "width": 119.15625,
+            "height": 36,
+            "top": 471.5625,
+            "right": 518.3046875,
+            "bottom": 507.5625,
+            "left": 399.1484375
+          },
+          "bottomGap": 16,
+          "tagFill": "#d27ba6",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "25.954px",
+          "lineHeight": "33.7402px",
+          "nameFontSize": "32px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.494966791199668,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 965.6484375,
+              "y": 648.09375,
+              "width": 44,
+              "height": 44,
+              "top": 648.09375,
+              "right": 1009.6484375,
+              "bottom": 692.09375,
+              "left": 965.6484375
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          },
+          "label": "advisors-4"
+        },
+        {
+          "phase": "advisors",
+          "dialogueIndex": 5,
+          "speaker": "bolt",
+          "name": "Damian",
+          "line": "I can build a wand a kid can wave. Probably. The trick is making every wild swing count without hitting Pawson’s coffee.",
+          "panelHidden": false,
+          "panel": {
+            "x": 307.3515625,
+            "y": 450.875,
+            "width": 751.296875,
+            "height": 301.125,
+            "top": 450.875,
+            "right": 1058.6484375,
+            "bottom": 752,
+            "left": 307.3515625
+          },
+          "art": {
+            "x": 307.3515625,
+            "y": 450.875,
+            "width": 751.296875,
+            "height": 301.125,
+            "top": 450.875,
+            "right": 1058.6484375,
+            "bottom": 752,
+            "left": 307.3515625
+          },
+          "copy": {
+            "x": 427.5546875,
+            "y": 532.765625,
+            "width": 524.421875,
+            "height": 157.515625,
+            "top": 532.765625,
+            "right": 951.9765625,
+            "bottom": 690.28125,
+            "left": 427.5546875
+          },
+          "text": {
+            "x": 427.5546875,
+            "y": 560.921875,
+            "width": 524.421875,
+            "height": 101.203125,
+            "top": 560.921875,
+            "right": 951.9765625,
+            "bottom": 662.125,
+            "left": 427.5546875
+          },
+          "nameBox": {
+            "x": 398.9453125,
+            "y": 471.5625,
+            "width": 119.5625,
+            "height": 36,
+            "top": 471.5625,
+            "right": 518.5078125,
+            "bottom": 507.5625,
+            "left": 398.9453125
+          },
+          "bottomGap": 16,
+          "tagFill": "#c58b3f",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "25.954px",
+          "lineHeight": "33.7402px",
+          "nameFontSize": "32px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.494966791199668,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 965.6484375,
+              "y": 648.09375,
+              "width": 44,
+              "height": 44,
+              "top": 648.09375,
+              "right": 1009.6484375,
+              "bottom": 692.09375,
+              "left": 965.6484375
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          },
+          "label": "advisors-5"
+        },
+        {
+          "phase": "advisors",
+          "dialogueIndex": 6,
+          "speaker": "mori",
+          "name": "Hootley",
+          "line": "Who’s missing from the room? The parent who slips out when the console turns on. I keep thinking about her.",
+          "panelHidden": false,
+          "panel": {
+            "x": 307.3515625,
+            "y": 450.875,
+            "width": 751.296875,
+            "height": 301.125,
+            "top": 450.875,
+            "right": 1058.6484375,
+            "bottom": 752,
+            "left": 307.3515625
+          },
+          "art": {
+            "x": 307.3515625,
+            "y": 450.875,
+            "width": 751.296875,
+            "height": 301.125,
+            "top": 450.875,
+            "right": 1058.6484375,
+            "bottom": 752,
+            "left": 307.3515625
+          },
+          "copy": {
+            "x": 427.5546875,
+            "y": 532.765625,
+            "width": 524.421875,
+            "height": 157.515625,
+            "top": 532.765625,
+            "right": 951.9765625,
+            "bottom": 690.28125,
+            "left": 427.5546875
+          },
+          "text": {
+            "x": 427.5546875,
+            "y": 560.921875,
+            "width": 524.421875,
+            "height": 101.203125,
+            "top": 560.921875,
+            "right": 951.9765625,
+            "bottom": 662.125,
+            "left": 427.5546875
+          },
+          "nameBox": {
+            "x": 396.3203125,
+            "y": 471.5625,
+            "width": 124.8125,
+            "height": 36,
+            "top": 471.5625,
+            "right": 521.1328125,
+            "bottom": 507.5625,
+            "left": 396.3203125
+          },
+          "bottomGap": 16,
+          "tagFill": "#6aa87b",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "25.954px",
+          "lineHeight": "33.7402px",
+          "nameFontSize": "32px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.494966791199668,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 965.6484375,
+              "y": 648.09375,
+              "width": 44,
+              "height": 44,
+              "top": 648.09375,
+              "right": 1009.6484375,
+              "bottom": 692.09375,
+              "left": 965.6484375
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          },
+          "label": "advisors-6"
+        }
+      ]
+    },
+    {
+      "size": "1024x768",
+      "seen": [
+        "narrator",
+        "shell",
+        "mori",
+        "pip",
+        "grumble",
+        "bolt"
+      ],
+      "pageErrors": [],
+      "failed": [],
+      "records": [
+        {
+          "phase": "opening",
+          "dialogueIndex": 0,
+          "speaker": "narrator",
+          "name": "Boardroom",
+          "line": "This is a fictional boardroom with five original animal executives and one sealed archive. The products are real; the meeting is a teaching story.",
+          "panelHidden": false,
+          "panel": {
+            "x": 138.2421875,
+            "y": 452.390625,
+            "width": 747.515625,
+            "height": 299.609375,
+            "top": 452.390625,
+            "right": 885.7578125,
+            "bottom": 752,
+            "left": 138.2421875
+          },
+          "art": {
+            "x": 138.2421875,
+            "y": 452.390625,
+            "width": 747.515625,
+            "height": 299.609375,
+            "top": 452.390625,
+            "right": 885.7578125,
+            "bottom": 752,
+            "left": 138.2421875
+          },
+          "copy": {
+            "x": 257.8359375,
+            "y": 533.875,
+            "width": 521.78125,
+            "height": 156.71875,
+            "top": 533.875,
+            "right": 779.6171875,
+            "bottom": 690.59375,
+            "left": 257.8359375
+          },
+          "text": {
+            "x": 257.8359375,
+            "y": 549.671875,
+            "width": 521.78125,
+            "height": 125.125,
+            "top": 549.671875,
+            "right": 779.6171875,
+            "bottom": 674.796875,
+            "left": 257.8359375
+          },
+          "nameBox": {
+            "x": 219.2734375,
+            "y": 476.1796875,
+            "width": 139.15625,
+            "height": 29.390625,
+            "top": 476.1796875,
+            "right": 358.4296875,
+            "bottom": 505.5703125,
+            "left": 219.2734375
+          },
+          "bottomGap": 16,
+          "tagFill": "#6f7480",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "24.064px",
+          "lineHeight": "31.2832px",
+          "nameFontSize": "25.3952px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.49496740547588,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 793.1171875,
+              "y": 648.5,
+              "width": 44,
+              "height": 44,
+              "top": 648.5,
+              "right": 837.1171875,
+              "bottom": 692.5,
+              "left": 793.1171875
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1024,
+            "height": 768
+          },
+          "label": "opening-0"
+        },
+        {
+          "phase": "opening",
+          "dialogueIndex": 1,
+          "speaker": "shell",
+          "name": "Shelldon",
+          "line": "Welcome to the board. Oh, good, you’re all here. Three launches, four votes, and one archive with a very stubborn lock. I have time. The clock does not.",
+          "panelHidden": false,
+          "panel": {
+            "x": 138.2421875,
+            "y": 452.390625,
+            "width": 747.515625,
+            "height": 299.609375,
+            "top": 452.390625,
+            "right": 885.7578125,
+            "bottom": 752,
+            "left": 138.2421875
+          },
+          "art": {
+            "x": 138.2421875,
+            "y": 452.390625,
+            "width": 747.515625,
+            "height": 299.609375,
+            "top": 452.390625,
+            "right": 885.7578125,
+            "bottom": 752,
+            "left": 138.2421875
+          },
+          "copy": {
+            "x": 257.8359375,
+            "y": 533.875,
+            "width": 521.78125,
+            "height": 156.71875,
+            "top": 533.875,
+            "right": 779.6171875,
+            "bottom": 690.59375,
+            "left": 257.8359375
+          },
+          "text": {
+            "x": 257.8359375,
+            "y": 549.671875,
+            "width": 521.78125,
+            "height": 125.125,
+            "top": 549.671875,
+            "right": 779.6171875,
+            "bottom": 674.796875,
+            "left": 257.8359375
+          },
+          "nameBox": {
+            "x": 233.4921875,
+            "y": 476.1796875,
+            "width": 110.71875,
+            "height": 29.390625,
+            "top": 476.1796875,
+            "right": 344.2109375,
+            "bottom": 505.5703125,
+            "left": 233.4921875
+          },
+          "bottomGap": 16,
+          "tagFill": "#9185b8",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "24.064px",
+          "lineHeight": "31.2832px",
+          "nameFontSize": "25.3952px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.49496740547588,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 793.1171875,
+              "y": 648.5,
+              "width": 44,
+              "height": 44,
+              "top": 648.5,
+              "right": 837.1171875,
+              "bottom": 692.5,
+              "left": 793.1171875
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1024,
+            "height": 768
+          },
+          "label": "opening-1"
+        },
+        {
+          "phase": "opening",
+          "dialogueIndex": 2,
+          "speaker": "mori",
+          "name": "Hootley",
+          "line": "I was up late again. I kept thinking about the people who never pick up a controller. Could we start with them?",
+          "panelHidden": false,
+          "panel": {
+            "x": 138.2421875,
+            "y": 452.390625,
+            "width": 747.515625,
+            "height": 299.609375,
+            "top": 452.390625,
+            "right": 885.7578125,
+            "bottom": 752,
+            "left": 138.2421875
+          },
+          "art": {
+            "x": 138.2421875,
+            "y": 452.390625,
+            "width": 747.515625,
+            "height": 299.609375,
+            "top": 452.390625,
+            "right": 885.7578125,
+            "bottom": 752,
+            "left": 138.2421875
+          },
+          "copy": {
+            "x": 257.8359375,
+            "y": 533.875,
+            "width": 521.78125,
+            "height": 156.71875,
+            "top": 533.875,
+            "right": 779.6171875,
+            "bottom": 690.59375,
+            "left": 257.8359375
+          },
+          "text": {
+            "x": 257.8359375,
+            "y": 565.3125,
+            "width": 521.78125,
+            "height": 93.84375,
+            "top": 565.3125,
+            "right": 779.6171875,
+            "bottom": 659.15625,
+            "left": 257.8359375
+          },
+          "nameBox": {
+            "x": 238.5078125,
+            "y": 476.1796875,
+            "width": 100.6875,
+            "height": 29.390625,
+            "top": 476.1796875,
+            "right": 339.1953125,
+            "bottom": 505.5703125,
+            "left": 238.5078125
+          },
+          "bottomGap": 16,
+          "tagFill": "#6aa87b",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "24.064px",
+          "lineHeight": "31.2832px",
+          "nameFontSize": "25.3952px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.49496740547588,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 793.1171875,
+              "y": 648.5,
+              "width": 44,
+              "height": 44,
+              "top": 648.5,
+              "right": 837.1171875,
+              "bottom": 692.5,
+              "left": 793.1171875
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1024,
+            "height": 768
+          },
+          "label": "opening-2"
+        },
+        {
+          "phase": "opening",
+          "dialogueIndex": 3,
+          "speaker": "pip",
+          "name": "Slyvester",
+          "line": "Oh! I have a poster for them. Is that weird? That’s weird. I’ll hold it.",
+          "panelHidden": false,
+          "panel": {
+            "x": 138.2421875,
+            "y": 452.390625,
+            "width": 747.515625,
+            "height": 299.609375,
+            "top": 452.390625,
+            "right": 885.7578125,
+            "bottom": 752,
+            "left": 138.2421875
+          },
+          "art": {
+            "x": 138.2421875,
+            "y": 452.390625,
+            "width": 747.515625,
+            "height": 299.609375,
+            "top": 452.390625,
+            "right": 885.7578125,
+            "bottom": 752,
+            "left": 138.2421875
+          },
+          "copy": {
+            "x": 257.8359375,
+            "y": 533.875,
+            "width": 521.78125,
+            "height": 156.71875,
+            "top": 533.875,
+            "right": 779.6171875,
+            "bottom": 690.59375,
+            "left": 257.8359375
+          },
+          "text": {
+            "x": 257.8359375,
+            "y": 580.953125,
+            "width": 521.78125,
+            "height": 62.5625,
+            "top": 580.953125,
+            "right": 779.6171875,
+            "bottom": 643.515625,
+            "left": 257.8359375
+          },
+          "nameBox": {
+            "x": 230.0546875,
+            "y": 476.1796875,
+            "width": 117.59375,
+            "height": 29.390625,
+            "top": 476.1796875,
+            "right": 347.6484375,
+            "bottom": 505.5703125,
+            "left": 230.0546875
+          },
+          "bottomGap": 16,
+          "tagFill": "#67aeca",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "24.064px",
+          "lineHeight": "31.2832px",
+          "nameFontSize": "25.3952px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.49496740547588,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 793.1171875,
+              "y": 648.5,
+              "width": 44,
+              "height": 44,
+              "top": 648.5,
+              "right": 837.1171875,
+              "bottom": 692.5,
+              "left": 793.1171875
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1024,
+            "height": 768
+          },
+          "label": "opening-3"
+        },
+        {
+          "phase": "opening",
+          "dialogueIndex": 4,
+          "speaker": "shell",
+          "name": "Shelldon",
+          "line": "Hold it until after the vote, Slyvester. Your prototypes are make-believe. History stays under seal until the last page. Shall we begin?",
+          "panelHidden": false,
+          "panel": {
+            "x": 138.2421875,
+            "y": 452.390625,
+            "width": 747.515625,
+            "height": 299.609375,
+            "top": 452.390625,
+            "right": 885.7578125,
+            "bottom": 752,
+            "left": 138.2421875
+          },
+          "art": {
+            "x": 138.2421875,
+            "y": 452.390625,
+            "width": 747.515625,
+            "height": 299.609375,
+            "top": 452.390625,
+            "right": 885.7578125,
+            "bottom": 752,
+            "left": 138.2421875
+          },
+          "copy": {
+            "x": 257.8359375,
+            "y": 533.875,
+            "width": 521.78125,
+            "height": 156.71875,
+            "top": 533.875,
+            "right": 779.6171875,
+            "bottom": 690.59375,
+            "left": 257.8359375
+          },
+          "text": {
+            "x": 257.8359375,
+            "y": 565.3125,
+            "width": 521.78125,
+            "height": 93.84375,
+            "top": 565.3125,
+            "right": 779.6171875,
+            "bottom": 659.15625,
+            "left": 257.8359375
+          },
+          "nameBox": {
+            "x": 233.4921875,
+            "y": 476.1796875,
+            "width": 110.71875,
+            "height": 29.390625,
+            "top": 476.1796875,
+            "right": 344.2109375,
+            "bottom": 505.5703125,
+            "left": 233.4921875
+          },
+          "bottomGap": 16,
+          "tagFill": "#9185b8",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "24.064px",
+          "lineHeight": "31.2832px",
+          "nameFontSize": "25.3952px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.49496740547588,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 793.1171875,
+              "y": 648.5,
+              "width": 44,
+              "height": 44,
+              "top": 648.5,
+              "right": 837.1171875,
+              "bottom": 692.5,
+              "left": 793.1171875
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1024,
+            "height": 768
+          },
+          "label": "opening-4"
+        },
+        {
+          "phase": "advisors",
+          "dialogueIndex": 0,
+          "speaker": "mori",
+          "name": "Hootley",
+          "line": "I visited three families who don’t own a console. Two shrugged. One asked, ‘Could my dad play too?’ I wrote that down.",
+          "panelHidden": false,
+          "panel": {
+            "x": 138.2421875,
+            "y": 452.390625,
+            "width": 747.515625,
+            "height": 299.609375,
+            "top": 452.390625,
+            "right": 885.7578125,
+            "bottom": 752,
+            "left": 138.2421875
+          },
+          "art": {
+            "x": 138.2421875,
+            "y": 452.390625,
+            "width": 747.515625,
+            "height": 299.609375,
+            "top": 452.390625,
+            "right": 885.7578125,
+            "bottom": 752,
+            "left": 138.2421875
+          },
+          "copy": {
+            "x": 257.8359375,
+            "y": 533.875,
+            "width": 521.78125,
+            "height": 156.71875,
+            "top": 533.875,
+            "right": 779.6171875,
+            "bottom": 690.59375,
+            "left": 257.8359375
+          },
+          "text": {
+            "x": 257.8359375,
+            "y": 565.3125,
+            "width": 521.78125,
+            "height": 93.84375,
+            "top": 565.3125,
+            "right": 779.6171875,
+            "bottom": 659.15625,
+            "left": 257.8359375
+          },
+          "nameBox": {
+            "x": 238.5078125,
+            "y": 476.1796875,
+            "width": 100.6875,
+            "height": 29.390625,
+            "top": 476.1796875,
+            "right": 339.1953125,
+            "bottom": 505.5703125,
+            "left": 238.5078125
+          },
+          "bottomGap": 16,
+          "tagFill": "#6aa87b",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "24.064px",
+          "lineHeight": "31.2832px",
+          "nameFontSize": "25.3952px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.49496740547588,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 793.1171875,
+              "y": 648.5,
+              "width": 44,
+              "height": 44,
+              "top": 648.5,
+              "right": 837.1171875,
+              "bottom": 692.5,
+              "left": 793.1171875
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1024,
+            "height": 768
+          },
+          "label": "advisors-0"
+        },
+        {
+          "phase": "advisors",
+          "dialogueIndex": 1,
+          "speaker": "pip",
+          "name": "Slyvester",
+          "line": "Oh! Picture the commercial. Grandma bowls, Dad cheers, nobody asks about polygons. I can see the poster already. Retailers will ask what’s inside, though.",
+          "panelHidden": false,
+          "panel": {
+            "x": 138.2421875,
+            "y": 452.390625,
+            "width": 747.515625,
+            "height": 299.609375,
+            "top": 452.390625,
+            "right": 885.7578125,
+            "bottom": 752,
+            "left": 138.2421875
+          },
+          "art": {
+            "x": 138.2421875,
+            "y": 452.390625,
+            "width": 747.515625,
+            "height": 299.609375,
+            "top": 452.390625,
+            "right": 885.7578125,
+            "bottom": 752,
+            "left": 138.2421875
+          },
+          "copy": {
+            "x": 257.8359375,
+            "y": 533.875,
+            "width": 521.78125,
+            "height": 156.71875,
+            "top": 533.875,
+            "right": 779.6171875,
+            "bottom": 690.59375,
+            "left": 257.8359375
+          },
+          "text": {
+            "x": 257.8359375,
+            "y": 549.671875,
+            "width": 521.78125,
+            "height": 125.125,
+            "top": 549.671875,
+            "right": 779.6171875,
+            "bottom": 674.796875,
+            "left": 257.8359375
+          },
+          "nameBox": {
+            "x": 230.0546875,
+            "y": 476.1796875,
+            "width": 117.59375,
+            "height": 29.390625,
+            "top": 476.1796875,
+            "right": 347.6484375,
+            "bottom": 505.5703125,
+            "left": 230.0546875
+          },
+          "bottomGap": 16,
+          "tagFill": "#67aeca",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "24.064px",
+          "lineHeight": "31.2832px",
+          "nameFontSize": "25.3952px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.49496740547588,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 793.1171875,
+              "y": 648.5,
+              "width": 44,
+              "height": 44,
+              "top": 648.5,
+              "right": 837.1171875,
+              "bottom": 692.5,
+              "left": 793.1171875
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1024,
+            "height": 768
+          },
+          "label": "advisors-1"
+        },
+        {
+          "phase": "advisors",
+          "dialogueIndex": 2,
+          "speaker": "grumble",
+          "name": "Pawson",
+          "line": "Cute poster, Slyvester. Now show me the bill for motion sensors and the six-word slogan you call a forecast.",
+          "panelHidden": false,
+          "panel": {
+            "x": 138.2421875,
+            "y": 452.390625,
+            "width": 747.515625,
+            "height": 299.609375,
+            "top": 452.390625,
+            "right": 885.7578125,
+            "bottom": 752,
+            "left": 138.2421875
+          },
+          "art": {
+            "x": 138.2421875,
+            "y": 452.390625,
+            "width": 747.515625,
+            "height": 299.609375,
+            "top": 452.390625,
+            "right": 885.7578125,
+            "bottom": 752,
+            "left": 138.2421875
+          },
+          "copy": {
+            "x": 257.8359375,
+            "y": 533.875,
+            "width": 521.78125,
+            "height": 156.71875,
+            "top": 533.875,
+            "right": 779.6171875,
+            "bottom": 690.59375,
+            "left": 257.8359375
+          },
+          "text": {
+            "x": 257.8359375,
+            "y": 565.3125,
+            "width": 521.78125,
+            "height": 93.84375,
+            "top": 565.3125,
+            "right": 779.6171875,
+            "bottom": 659.15625,
+            "left": 257.8359375
+          },
+          "nameBox": {
+            "x": 240.75,
+            "y": 476.1796875,
+            "width": 96.203125,
+            "height": 29.390625,
+            "top": 476.1796875,
+            "right": 336.953125,
+            "bottom": 505.5703125,
+            "left": 240.75
+          },
+          "bottomGap": 16,
+          "tagFill": "#d27ba6",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "24.064px",
+          "lineHeight": "31.2832px",
+          "nameFontSize": "25.3952px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.49496740547588,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 793.1171875,
+              "y": 648.5,
+              "width": 44,
+              "height": 44,
+              "top": 648.5,
+              "right": 837.1171875,
+              "bottom": 692.5,
+              "left": 793.1171875
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1024,
+            "height": 768
+          },
+          "label": "advisors-2"
+        },
+        {
+          "phase": "advisors",
+          "dialogueIndex": 3,
+          "speaker": "pip",
+          "name": "Slyvester",
+          "line": "Retailers don’t buy posters, Pawson. They buy feelings. Then they buy lunch.",
+          "panelHidden": false,
+          "panel": {
+            "x": 138.2421875,
+            "y": 452.390625,
+            "width": 747.515625,
+            "height": 299.609375,
+            "top": 452.390625,
+            "right": 885.7578125,
+            "bottom": 752,
+            "left": 138.2421875
+          },
+          "art": {
+            "x": 138.2421875,
+            "y": 452.390625,
+            "width": 747.515625,
+            "height": 299.609375,
+            "top": 452.390625,
+            "right": 885.7578125,
+            "bottom": 752,
+            "left": 138.2421875
+          },
+          "copy": {
+            "x": 257.8359375,
+            "y": 533.875,
+            "width": 521.78125,
+            "height": 156.71875,
+            "top": 533.875,
+            "right": 779.6171875,
+            "bottom": 690.59375,
+            "left": 257.8359375
+          },
+          "text": {
+            "x": 257.8359375,
+            "y": 580.953125,
+            "width": 521.78125,
+            "height": 62.5625,
+            "top": 580.953125,
+            "right": 779.6171875,
+            "bottom": 643.515625,
+            "left": 257.8359375
+          },
+          "nameBox": {
+            "x": 230.0546875,
+            "y": 476.1796875,
+            "width": 117.59375,
+            "height": 29.390625,
+            "top": 476.1796875,
+            "right": 347.6484375,
+            "bottom": 505.5703125,
+            "left": 230.0546875
+          },
+          "bottomGap": 16,
+          "tagFill": "#67aeca",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "24.064px",
+          "lineHeight": "31.2832px",
+          "nameFontSize": "25.3952px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.49496740547588,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 793.1171875,
+              "y": 648.5,
+              "width": 44,
+              "height": 44,
+              "top": 648.5,
+              "right": 837.1171875,
+              "bottom": 692.5,
+              "left": 793.1171875
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1024,
+            "height": 768
+          },
+          "label": "advisors-3"
+        },
+        {
+          "phase": "advisors",
+          "dialogueIndex": 4,
+          "speaker": "grumble",
+          "name": "Pawson",
+          "line": "I’m not buying either. Motion sensors aren’t free, and neither is my lunch.",
+          "panelHidden": false,
+          "panel": {
+            "x": 138.2421875,
+            "y": 452.390625,
+            "width": 747.515625,
+            "height": 299.609375,
+            "top": 452.390625,
+            "right": 885.7578125,
+            "bottom": 752,
+            "left": 138.2421875
+          },
+          "art": {
+            "x": 138.2421875,
+            "y": 452.390625,
+            "width": 747.515625,
+            "height": 299.609375,
+            "top": 452.390625,
+            "right": 885.7578125,
+            "bottom": 752,
+            "left": 138.2421875
+          },
+          "copy": {
+            "x": 257.8359375,
+            "y": 533.875,
+            "width": 521.78125,
+            "height": 156.71875,
+            "top": 533.875,
+            "right": 779.6171875,
+            "bottom": 690.59375,
+            "left": 257.8359375
+          },
+          "text": {
+            "x": 257.8359375,
+            "y": 580.953125,
+            "width": 521.78125,
+            "height": 62.5625,
+            "top": 580.953125,
+            "right": 779.6171875,
+            "bottom": 643.515625,
+            "left": 257.8359375
+          },
+          "nameBox": {
+            "x": 240.75,
+            "y": 476.1796875,
+            "width": 96.203125,
+            "height": 29.390625,
+            "top": 476.1796875,
+            "right": 336.953125,
+            "bottom": 505.5703125,
+            "left": 240.75
+          },
+          "bottomGap": 16,
+          "tagFill": "#d27ba6",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "24.064px",
+          "lineHeight": "31.2832px",
+          "nameFontSize": "25.3952px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.49496740547588,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 793.1171875,
+              "y": 648.5,
+              "width": 44,
+              "height": 44,
+              "top": 648.5,
+              "right": 837.1171875,
+              "bottom": 692.5,
+              "left": 793.1171875
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1024,
+            "height": 768
+          },
+          "label": "advisors-4"
+        },
+        {
+          "phase": "advisors",
+          "dialogueIndex": 5,
+          "speaker": "bolt",
+          "name": "Damian",
+          "line": "I can build a wand a kid can wave. Probably. The trick is making every wild swing count without hitting Pawson’s coffee.",
+          "panelHidden": false,
+          "panel": {
+            "x": 138.2421875,
+            "y": 452.390625,
+            "width": 747.515625,
+            "height": 299.609375,
+            "top": 452.390625,
+            "right": 885.7578125,
+            "bottom": 752,
+            "left": 138.2421875
+          },
+          "art": {
+            "x": 138.2421875,
+            "y": 452.390625,
+            "width": 747.515625,
+            "height": 299.609375,
+            "top": 452.390625,
+            "right": 885.7578125,
+            "bottom": 752,
+            "left": 138.2421875
+          },
+          "copy": {
+            "x": 257.8359375,
+            "y": 533.875,
+            "width": 521.78125,
+            "height": 156.71875,
+            "top": 533.875,
+            "right": 779.6171875,
+            "bottom": 690.59375,
+            "left": 257.8359375
+          },
+          "text": {
+            "x": 257.8359375,
+            "y": 565.3125,
+            "width": 521.78125,
+            "height": 93.84375,
+            "top": 565.3125,
+            "right": 779.6171875,
+            "bottom": 659.15625,
+            "left": 257.8359375
+          },
+          "nameBox": {
+            "x": 240.59375,
+            "y": 476.1796875,
+            "width": 96.515625,
+            "height": 29.390625,
+            "top": 476.1796875,
+            "right": 337.109375,
+            "bottom": 505.5703125,
+            "left": 240.59375
+          },
+          "bottomGap": 16,
+          "tagFill": "#c58b3f",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "24.064px",
+          "lineHeight": "31.2832px",
+          "nameFontSize": "25.3952px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.49496740547588,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 793.1171875,
+              "y": 648.5,
+              "width": 44,
+              "height": 44,
+              "top": 648.5,
+              "right": 837.1171875,
+              "bottom": 692.5,
+              "left": 793.1171875
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1024,
+            "height": 768
+          },
+          "label": "advisors-5"
+        },
+        {
+          "phase": "advisors",
+          "dialogueIndex": 6,
+          "speaker": "mori",
+          "name": "Hootley",
+          "line": "Who’s missing from the room? The parent who slips out when the console turns on. I keep thinking about her.",
+          "panelHidden": false,
+          "panel": {
+            "x": 138.2421875,
+            "y": 452.390625,
+            "width": 747.515625,
+            "height": 299.609375,
+            "top": 452.390625,
+            "right": 885.7578125,
+            "bottom": 752,
+            "left": 138.2421875
+          },
+          "art": {
+            "x": 138.2421875,
+            "y": 452.390625,
+            "width": 747.515625,
+            "height": 299.609375,
+            "top": 452.390625,
+            "right": 885.7578125,
+            "bottom": 752,
+            "left": 138.2421875
+          },
+          "copy": {
+            "x": 257.8359375,
+            "y": 533.875,
+            "width": 521.78125,
+            "height": 156.71875,
+            "top": 533.875,
+            "right": 779.6171875,
+            "bottom": 690.59375,
+            "left": 257.8359375
+          },
+          "text": {
+            "x": 257.8359375,
+            "y": 565.3125,
+            "width": 521.78125,
+            "height": 93.84375,
+            "top": 565.3125,
+            "right": 779.6171875,
+            "bottom": 659.15625,
+            "left": 257.8359375
+          },
+          "nameBox": {
+            "x": 238.5078125,
+            "y": 476.1796875,
+            "width": 100.6875,
+            "height": 29.390625,
+            "top": 476.1796875,
+            "right": 339.1953125,
+            "bottom": 505.5703125,
+            "left": 238.5078125
+          },
+          "bottomGap": 16,
+          "tagFill": "#6aa87b",
+          "nameColor": "rgb(255, 255, 255)",
+          "fontSize": "24.064px",
+          "lineHeight": "31.2832px",
+          "nameFontSize": "25.3952px",
+          "nameOverflowX": 0,
+          "textOverflowX": 0,
+          "textInsideCopyY": true,
+          "textInsideCopyX": true,
+          "artNatural": {
+            "width": 3872,
+            "height": 1552,
+            "complete": true,
+            "src": "http://127.0.0.1:5173/assets/ui/dialogue-bubble.png"
+          },
+          "artRatio": 2.49496740547588,
+          "continueButton": {
+            "tag": "BUTTON",
+            "aria": "Continue to the next line",
+            "box": {
+              "x": 793.1171875,
+              "y": 648.5,
+              "width": 44,
+              "height": 44,
+              "top": 648.5,
+              "right": 837.1171875,
+              "bottom": 692.5,
+              "left": 793.1171875
+            }
+          },
+          "duplicateArrow": 0,
+          "horizontalOverflow": 0,
+          "viewport": {
+            "width": 1024,
+            "height": 768
+          },
+          "label": "advisors-6"
+        }
+      ]
+    }
+  ],
+  "speakers": [
+    "narrator",
+    "shell",
+    "mori",
+    "pip",
+    "grumble",
+    "bolt"
+  ],
+  "failures": []
+}

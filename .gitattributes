@@ -1,0 +1,26 @@
+* text=auto eol=lf
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.mp3 binary
+*.wav binary
+*.ogg binary
+*.glb binary
+*.gltf binary
+*.zip binary
+*.docx binary
+*.woff binary
+*.woff2 binary
+
+# Windows launchers keep CRLF
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Build output: generated, but intentionally committed for the Pages fallback
+blue-ocean-game/dist-pages/** linguist-generated=true
