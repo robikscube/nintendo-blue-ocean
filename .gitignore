@@ -18,9 +18,27 @@ blue-ocean-game/qa-screens/
 # Logs and transient agent output
 logs/
 *.log
-agent-reports/**/claude-stdout.jsonl
-agent-reports/**/claude-stderr.log
-agent-reports/**/*.zip
+
+# Local-only plans, task assignments, recovery notes, and agent evidence.
+# These files may remain on a developer machine but are not public source.
+# Already-tracked copies are removed from GitHub by this cleanup commit.
+/agent-reports/
+/_archive/
+/24_HOUR_BUILD_PLAN.md
+/AGENT_TEAM_TAKEOVER.md
+/BUILD_STATUS.md
+/OVERNIGHT_MONITOR.md
+/PLAYTEST_FEEDBACK_ROUND1.md
+/RECOVERY_HANDOFF_*.md
+/UI_*.md
+/Procedural_speech_prd.md
+/Blue Ocean Strategy - Lecture Research and Structure.md
+/character-reference-images/BOLT_TAIL_FIX_*.md
+/character-reference-images/MULTI_FIX_SUMMARY.md
+/run-overnight.ps1
+/run-subagent-reviews.ps1
+/run-team-after-handoff.ps1
+/run-ui-team-after-clear.ps1
 
 # Design/preview history (contains user-supplied reference images and QA captures)
 previews/
@@ -49,11 +67,3 @@ desktop.ini
 
 # NOTE: blue-ocean-game/dist-pages/ is intentionally NOT ignored.
 # It is the GitHub Pages artifact (built with GITHUB_PAGES=true).
-
-# Transient Playwright run output inside agent reports
-agent-reports/**/playwright-lead-*/
-agent-reports/**/playwright-team-*/
-agent-reports/**/qa-independent-results/
-agent-reports/**/test-results/
-agent-reports/**/screens/.last-run.txt
-

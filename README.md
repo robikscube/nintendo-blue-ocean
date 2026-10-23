@@ -75,8 +75,6 @@ The app is a static single-page web application. It has no backend, database, lo
 | `blue-ocean-game/tests/` | Vitest unit tests and Playwright specs |
 | `blue-ocean-game/dist-pages/` | Prebuilt GitHub Pages artifact |
 | `.github/workflows/` | CI and GitHub Pages deployment |
-| `agent-reports/` | Implementation and verification evidence |
-| `_archive/` | Superseded reports and one-off task documents |
 
 ## Documentation
 
@@ -85,9 +83,6 @@ The app is a static single-page web application. It has no backend, database, lo
 | [`GAME_DESIGN.md`](GAME_DESIGN.md) | Creative intent, chapter dialogue, exact decisions, historical boundaries |
 | [`TECHNICAL_SPEC.md`](TECHNICAL_SPEC.md) | Architecture and interface contracts |
 | [`ASSET_PIPELINE.md`](ASSET_PIPELINE.md) | Optional Tripo3D character pipeline and drop-in GLB rules |
-| [`BUILD_STATUS.md`](BUILD_STATUS.md) | Verified build/test results and current known limits |
-| [`24_HOUR_BUILD_PLAN.md`](24_HOUR_BUILD_PLAN.md) | Original timeboxed build plan |
-| [`PLAYTEST_FEEDBACK_ROUND1.md`](PLAYTEST_FEEDBACK_ROUND1.md) | Classroom playtest requirements |
 | [`blue-ocean-game/README.md`](blue-ocean-game/README.md) | Full run, controls, historical sources, and implementation notes |
 | [`blue-ocean-game/CHARACTER_PERSONAS.md`](blue-ocean-game/CHARACTER_PERSONAS.md) | The five advisors' voices and personalities |
 
@@ -112,7 +107,7 @@ The repository includes a Pages workflow and a prebuilt `dist-pages/` artifact. 
 
 <https://robikscube.github.io/nintendo-blue-ocean/>
 
-For classroom use, the local production build remains the primary delivery method; the hosted copy is a backup. See [`BUILD_STATUS.md`](BUILD_STATUS.md) for presentation-day limits.
+For classroom use, the local production build remains the primary delivery method; the hosted copy is a backup. See [`blue-ocean-game/README.md`](blue-ocean-game/README.md) for run instructions and presentation controls.
 
 ## Historical accuracy
 
